@@ -1,0 +1,11 @@
+{
+  "slug": "qa-java-automation-starter",
+  "title": "Java QA automation starter",
+  "summary": "Proyecto de automatización QA en Java con pruebas UI en Selenium/JUnit, escenarios BDD con Cucumber y pruebas API con Postman/Newman, con generación de reportes y ejecución en GitHub Actions.",
+  "date": "2026-02-02",
+  "stack": ["Java", "Selenium", "JUnit", "Cucumber", "Postman", "Newman", "GitHub Actions", "Maven"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/qa-java-automation-starter",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}

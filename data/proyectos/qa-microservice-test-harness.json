@@ -1,0 +1,11 @@
+{
+  "slug": "qa-microservice-test-harness",
+  "title": "Java microservice test harness",
+  "summary": "Microservicio Java con API REST y batería de pruebas de integración reproducibles sobre PostgreSQL real, con migraciones Flyway, Testcontainers, validación de idempotencia y quality gates en GitHub Actions.",
+  "date": "2026-02-18",
+  "stack": ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JPA", "JUnit 5", "RestAssured", "Testcontainers", "Maven", "JaCoCo", "GitHub Actions"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/qa-microservice-test-harness",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}

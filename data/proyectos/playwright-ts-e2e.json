@@ -1,0 +1,11 @@
+{
+  "slug": "playwright-ts-e2e",
+  "title": "Playwright + TypeScript E2E automation",
+  "summary": "Proyecto de automatización E2E con Playwright y TypeScript que implementa Page Object Model, suites smoke y regression, evidencia en fallo y ejecución automática en GitHub Actions con publicación del informe HTML en GitHub Pages.",
+  "date": "2026-02-26",
+  "stack": ["Playwright", "TypeScript", "GitHub Actions", "GitHub Pages", "Node.js"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/playwright-ts-e2e",
+  "live_url": "https://joseantoniocgonzalez.github.io/playwright-ts-e2e/",
+  "featured": false,
+  "draft": false
+}

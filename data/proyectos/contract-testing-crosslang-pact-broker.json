@@ -1,0 +1,11 @@
+{
+  "slug": "contract-testing-crosslang-pact-broker",
+  "title": "Cross-language contract testing with Pact + Broker",
+  "summary": "Proyecto de contract testing cross-language con consumer en Python y provider en Java/Spring Boot, usando Pact Broker en Docker con Postgres, verificación de contratos y gating real con can-i-deploy en GitHub Actions.",
+  "date": "2026-03-03",
+  "stack": ["Pact", "Pact Broker", "Python", "Java", "Spring Boot", "Docker", "PostgreSQL", "GitHub Actions"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/contract-testing-crosslang-pact-broker",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}

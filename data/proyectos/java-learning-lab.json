@@ -1,0 +1,11 @@
+{
+  "slug": "java-learning-lab",
+  "title": "Java learning lab",
+  "summary": "Repositorio de práctica en Java orientado a backend que combina katas con JUnit y una API REST en Spring Boot con validación, CRUD, tests de integración, documentación Swagger y cobertura con JaCoCo.",
+  "date": "2026-01-29",
+  "stack": ["Java", "JUnit", "Spring Boot", "JPA", "H2", "Swagger", "JaCoCo", "GitHub Actions", "Maven"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/java-learning-lab",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}

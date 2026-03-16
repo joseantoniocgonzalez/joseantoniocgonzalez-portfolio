@@ -1,10 +1,12 @@
 from pathlib import Path
 from shutil import copytree, rmtree
+import json
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
+DATA_DIR = BASE_DIR / "data"
 DIST_DIR = BASE_DIR / "dist"
 
 
@@ -25,14 +27,17 @@ def prepare_dist() -> None:
     copytree(STATIC_DIR, static_dist)
 
 
+def load_json(filename: str) -> dict:
+    file_path = DATA_DIR / filename
+    with file_path.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
 def build_home(env: Environment) -> None:
     template = env.get_template("index.html")
-    output = template.render(
-        page_title="José Antonio Canalo González",
-        site_title="José Antonio Canalo González",
-        tagline="QA Automation, DevOps y Administración de Sistemas",
-        summary="Portfolio personal con proyectos, artículos técnicos y certificaciones."
-    )
+    home_data = load_json("home.json")
+
+    output = template.render(**home_data)
 
     (DIST_DIR / "index.html").write_text(output, encoding="utf-8")
 

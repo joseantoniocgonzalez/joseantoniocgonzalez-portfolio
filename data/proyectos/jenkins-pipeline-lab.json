@@ -1,0 +1,11 @@
+{
+  "slug": "jenkins-pipeline-lab",
+  "title": "Pipeline CI/CD con Jenkins, Docker y Flask",
+  "summary": "Pipeline CI/CD con Jenkins para una aplicación web desarrollada con Flask (Python).",
+  "date": "2025-09-22",
+  "stack": ["Python", "Flask", "Docker", "Jenkins", "Linux"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/jenkins-pipeline-lab",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}

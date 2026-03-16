@@ -1,0 +1,11 @@
+{
+  "slug": "python-sysadmin-toolkit",
+  "title": "Python sysadmin toolkit",
+  "summary": "CLI en Python con Typer para comprobaciones de disco y red, además de análisis de logs con exportación de resultados, acompañada de tests y ejecución automática en CI con ruff y pytest.",
+  "date": "2026-01-29",
+  "stack": ["Python", "Typer", "Pytest", "Ruff", "GitHub Actions"],
+  "repo_url": "https://github.com/joseantoniocgonzalez/python-sysadmin-toolkit",
+  "live_url": "",
+  "featured": false,
+  "draft": false
+}
