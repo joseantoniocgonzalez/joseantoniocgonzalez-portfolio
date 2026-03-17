@@ -7,10 +7,11 @@ BASE_DIR = Path(__file__).parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
+PROJECTS_DIR = DATA_DIR / "proyectos"
 DIST_DIR = BASE_DIR / "dist"
 
 
-def get_environment() -> Environment:
+def create_environment() -> Environment:
     return Environment(
         loader=FileSystemLoader(TEMPLATES_DIR),
         autoescape=select_autoescape(["html", "xml"])
@@ -18,32 +19,62 @@ def get_environment() -> Environment:
 
 
 def prepare_dist() -> None:
+    if DIST_DIR.exists():
+        rmtree(DIST_DIR)
+
     DIST_DIR.mkdir(parents=True, exist_ok=True)
 
     static_dist = DIST_DIR / "static"
-    if static_dist.exists():
-        rmtree(static_dist)
-
     copytree(STATIC_DIR, static_dist)
 
 
-def load_json(filename: str) -> dict:
-    file_path = DATA_DIR / filename
-    with file_path.open("r", encoding="utf-8") as file:
+def load_json(path: Path) -> dict:
+    with path.open("r", encoding="utf-8") as file:
         return json.load(file)
+
+
+def load_home_data() -> dict:
+    return load_json(DATA_DIR / "home.json")
+
+
+def load_projects() -> list[dict]:
+    projects = []
+
+    for project_file in PROJECTS_DIR.glob("*.json"):
+        if project_file.name.startswith("_"):
+            continue
+
+        project_data = load_json(project_file)
+
+        if project_data.get("draft", False):
+            continue
+
+        if not project_data.get("date"):
+            continue
+
+        projects.append(project_data)
+
+    projects.sort(key=lambda project: project["date"], reverse=True)
+    return projects
 
 
 def build_home(env: Environment) -> None:
     template = env.get_template("index.html")
-    home_data = load_json("home.json")
 
-    output = template.render(**home_data)
+    home_data = load_home_data()
+    projects = load_projects()
+    latest_project = projects[0] if projects else None
+
+    output = template.render(
+        **home_data,
+        latest_project=latest_project
+    )
 
     (DIST_DIR / "index.html").write_text(output, encoding="utf-8")
 
 
 def main() -> None:
-    env = get_environment()
+    env = create_environment()
     prepare_dist()
     build_home(env)
     print("Sitio generado en dist/index.html")

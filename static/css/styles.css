@@ -206,3 +206,23 @@ h3 {
     text-align: center;
   }
 }
+.project-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.project-summary {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+}
+
+.project-date {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.project-link-wrap {
+  margin: 0;
+}

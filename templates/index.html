@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+k{% extends "base.html" %}
 
 {% block content %}
 <section class="hero">
@@ -21,12 +21,32 @@
   </div>
 </section>
 
-{% for section in home_sections %}
 <section class="home-block">
-  <h3>{{ section.title }}</h3>
-  {% for paragraph in section.content %}
-    <p>{{ paragraph }}</p>
-  {% endfor %}
+  <h3>Último proyecto</h3>
+
+  {% if latest_project %}
+    <p class="project-title"><strong>{{ latest_project.title }}</strong></p>
+    <p class="project-summary">{{ latest_project.summary }}</p>
+
+    {% if latest_project.repo_url %}
+      <p class="project-link-wrap">
+        <a
+          href="{{ latest_project.repo_url }}"
+          class="button button-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver repositorio
+        </a>
+      </p>
+    {% endif %}
+  {% else %}
+    <p>Próximamente.</p>
+  {% endif %}
 </section>
-{% endfor %}
+
+<section class="home-block">
+  <h3>Últimos artículos</h3>
+  <p>Próximamente.</p>
+</section>
 {% endblock %}
