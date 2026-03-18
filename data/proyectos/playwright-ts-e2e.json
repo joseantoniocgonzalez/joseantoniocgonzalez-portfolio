@@ -1,11 +1,20 @@
 {
   "slug": "playwright-ts-e2e",
   "title": "Playwright + TypeScript E2E automation",
-  "summary": "Proyecto de automatización E2E con Playwright y TypeScript que implementa Page Object Model, suites smoke y regression, evidencia en fallo y ejecución automática en GitHub Actions con publicación del informe HTML en GitHub Pages.",
+  "summary": "Proyecto de automatización E2E con Playwright y TypeScript que aplica Page Object Model sobre Sauce Demo, separa suites smoke y regression mediante tags, y conserva evidencia en fallo con screenshot y trace. El proyecto incluye ejecución reproducible en local y en CI, con workflow de PR para smoke y publicación nightly del informe HTML en GitHub Pages.",
   "date": "2026-02-26",
   "stack": ["Playwright", "TypeScript", "GitHub Actions", "GitHub Pages", "Node.js"],
   "repo_url": "https://github.com/joseantoniocgonzalez/playwright-ts-e2e",
   "live_url": "https://joseantoniocgonzalez.github.io/playwright-ts-e2e/",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Repositorio de automatización E2E con Playwright y TypeScript orientado a mostrar una base de trabajo sólida para pruebas de interfaz, organización con Page Object Model y ejecución continua en GitHub Actions.",
+  "problem": "El proyecto busca disponer de una base mantenible para pruebas end-to-end sobre una aplicación web pública, separando comprobaciones rápidas de humo y escenarios más amplios de regresión. También cubre la necesidad de conservar evidencia útil cuando un test falla y de publicar resultados de forma automática.",
+  "build": "La solución se apoya en Playwright con TypeScript y estructura Page Object Model para Sauce Demo, con páginas y flujos para login, inventario, carrito y checkout. La configuración usa BASE_URL desde .env, tags en el título de los tests para filtrar suites y un HTML report accesible tanto en local como desde GitHub Pages.",
+  "automation": "El flujo ejecuta suites smoke y regression con filtros por tags, guarda screenshot solo en fallo y conserva trace para depuración. En CI, el workflow de pull request lanza la suite smoke y sube artefactos, mientras que el workflow nightly ejecuta regression, publica artefactos y despliega el informe HTML en GitHub Pages.",
+  "highlights": [
+    "Page Object Model sobre Sauce Demo con flujos de login, inventario, carrito y checkout.",
+    "Separación clara entre smoke y regression mediante tags y ejecución filtrada en Playwright.",
+    "Evidencia en fallo y publicación automática del informe HTML en GitHub Pages desde CI."
+  ]
 }

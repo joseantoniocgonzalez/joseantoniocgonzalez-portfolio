@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Portfolio</p>
+  <h2>Proyectos</h2>
+  <p class="hero-summary">
+    Proyectos técnicos orientados a QA, automatización, backend y administración de sistemas.
+  </p>
+</section>
+
+{% if projects %}
+  {% for project in projects %}
+    <article class="project-card">
+      <h3 class="project-title">
+        <a href="/proyectos/{{ project.slug }}/" class="project-title-link">{{ project.title }}</a>
+      </h3>
+      <p class="project-summary">{{ project.summary }}</p>
+
+      {% if project.stack %}
+        <p class="project-stack">
+          <strong>Stack:</strong> {{ project.stack | join(", ") }}
+        </p>
+      {% endif %}
+
+      <p class="project-link-wrap">
+        <a href="/proyectos/{{ project.slug }}/" class="button button-secondary">
+          Ver proyecto
+        </a>
+      </p>
+    </article>
+  {% endfor %}
+{% else %}
+  <section class="home-block">
+    <h3>Proyectos</h3>
+    <p>Próximamente.</p>
+  </section>
+{% endif %}
+{% endblock %}

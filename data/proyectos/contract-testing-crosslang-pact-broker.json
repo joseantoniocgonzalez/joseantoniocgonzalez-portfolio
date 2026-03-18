@@ -1,11 +1,20 @@
 {
   "slug": "contract-testing-crosslang-pact-broker",
   "title": "Cross-language contract testing with Pact + Broker",
-  "summary": "Proyecto de contract testing cross-language con consumer en Python y provider en Java/Spring Boot, usando Pact Broker en Docker con Postgres, verificación de contratos y gating real con can-i-deploy en GitHub Actions.",
+  "summary": "Proyecto de contract testing cross-language entre un consumer en Python y un provider en Java/Spring Boot, con Pact Broker sobre Docker y PostgreSQL para publicar y verificar contratos. El flujo incluye versionado por commit, verificación desde el Broker y gating real con can-i-deploy en GitHub Actions para bloquear despliegues cuando hay breaking changes.",
   "date": "2026-03-03",
   "stack": ["Pact", "Pact Broker", "Python", "Java", "Spring Boot", "Docker", "PostgreSQL", "GitHub Actions"],
   "repo_url": "https://github.com/joseantoniocgonzalez/contract-testing-crosslang-pact-broker",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Monorepo de contract testing cross-language que conecta un consumer en Python con un provider en Java/Spring Boot mediante Pact Broker, con un flujo completo de publicación, verificación y gating antes del despliegue.",
+  "problem": "El proyecto busca evitar roturas silenciosas entre servicios o equipos que evolucionan por separado. El consumer publica el contrato que espera, el provider lo verifica en su build y can-i-deploy bloquea el despliegue cuando no existe una verificación válida o aparece un breaking change.",
+  "build": "La solución se organiza como un monorepo con apps/consumer-python, apps/provider-java e infra para levantar Pact Broker con PostgreSQL en Docker. Implementa tres contratos reales, Auth, Catalog y Checkout, y en este último el provider persiste pedidos en H2 con JPA y devuelve un orderId generado.",
+  "automation": "El flujo end-to-end ejecuta pytest en el consumer para generar el pact JSON, publica el contrato en el Broker con versionado por commit, verifica el provider desde el Broker y publica los resultados. Después, can-i-deploy consulta el Broker para decidir si el despliegue debe permitirse, y la CI en GitHub Actions deja artefactos como pacts y provider-surefire-reports.",
+  "highlights": [
+    "Consumer en Python y provider en Java/Spring Boot con contratos reales entre ambos.",
+    "Pact Broker en Docker con PostgreSQL y versionado por commit para publicar y verificar contratos.",
+    "Gating real con can-i-deploy en GitHub Actions para bloquear despliegues con breaking changes."
+  ]
 }

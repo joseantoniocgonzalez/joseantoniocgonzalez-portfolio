@@ -16,7 +16,7 @@
     },
     {
       "label": "LinkedIn",
-      "url": "#",
+      "url": "https://www.linkedin.com/in/joseantoniocgonzalez/",
       "class_name": "button button-secondary"
     }
   ],
@@ -52,12 +52,21 @@
       "content": [
         "Próximamente."
       ]
-    },
-    {
-      "title": "Contacto",
-      "content": [
-        "Puedes contactar conmigo a través de LinkedIn, GitHub o mediante los canales que añadiré en esta web."
-      ]
     }
-  ]
+  ],
+  "contact": {
+    "title": "Contacto",
+    "intro": "Puedes encontrarme en estos canales profesionales o escribirme directamente por correo:",
+    "email": "joseantoniocgonzalez83@gmail.com",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/joseantoniocgonzalez/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/joseantoniocgonzalez"
+      }
+    ]
+  }
 }

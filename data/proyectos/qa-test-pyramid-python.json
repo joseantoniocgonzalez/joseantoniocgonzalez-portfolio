@@ -1,11 +1,20 @@
 {
   "slug": "qa-test-pyramid-python",
   "title": "Python testing pyramid lab",
-  "summary": "Proyecto de testing en Python sobre una FastAPI SUT con tests unitarios, integración API con FastAPI TestClient, pruebas con persistencia SQLite y ejecución automática en CI con ruff, pytest y coverage.",
+  "summary": "Proyecto de testing en Python centrado en la testing pyramid sobre una FastAPI SUT mínima, con tests unitarios para lógica de negocio, pruebas de integración API con FastAPI TestClient y validación de entrada con Pydantic. El proyecto incluye además una implementación con persistencia SQLite para contrastar pruebas rápidas y pruebas con almacenamiento real, y aplica quality gates en CI con ruff, pytest y coverage.",
   "date": "2026-02-10",
   "stack": ["Python", "FastAPI", "Pytest", "SQLite", "Ruff", "GitHub Actions"],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-test-pyramid-python",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Proyecto de testing en Python construido alrededor de una FastAPI SUT mínima para mostrar cómo aplicar la testing pyramid con una base clara, reproducible y fácil de extender.",
+  "problem": "El proyecto busca enseñar cómo repartir las pruebas según su nivel de coste y alcance, evitando depender solo de tests lentos o demasiado acoplados. Para ello combina validación rápida de lógica de negocio, comprobaciones de integración API y una variante con persistencia real.",
+  "build": "La solución se apoya en una aplicación mínima con FastAPI y validación de entrada con Pydantic, organizada para probar reglas de negocio, endpoints y comportamiento de persistencia. Además de la versión más ligera, incluye una implementación con SQLite para contrastar escenarios sin almacenamiento real y escenarios con base de datos.",
+  "automation": "El flujo ejecuta tests unitarios y de integración con pytest y FastAPI TestClient, y aplica quality gates en CI con ruff, pytest y coverage. Esto permite comprobar rápidamente la lógica principal, validar respuestas de la API y medir cobertura con una ejecución reproducible en local y en GitHub Actions.",
+  "highlights": [
+    "Aplicación mínima con FastAPI diseñada para trabajar la testing pyramid de forma práctica.",
+    "Combinación de tests unitarios, integración API y variante con persistencia SQLite.",
+    "Quality gates en CI con ruff, pytest y coverage para asegurar reproducibilidad y control."
+  ]
 }

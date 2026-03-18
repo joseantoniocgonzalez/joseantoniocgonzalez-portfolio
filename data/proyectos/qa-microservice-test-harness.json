@@ -1,11 +1,20 @@
 {
   "slug": "qa-microservice-test-harness",
   "title": "Java microservice test harness",
-  "summary": "Microservicio Java con API REST y batería de pruebas de integración reproducibles sobre PostgreSQL real, con migraciones Flyway, Testcontainers, validación de idempotencia y quality gates en GitHub Actions.",
+  "summary": "Microservicio Java con API REST y persistencia real sobre PostgreSQL, diseñado para validar corrección, reproducibilidad y pruebas end-to-end en condiciones cercanas a producción. El proyecto gestiona el esquema exclusivamente con Flyway, ejecuta pruebas de integración con RestAssured y Testcontainers, verifica idempotencia y casos de error, y aplica quality gates en GitHub Actions con Spotless y JaCoCo.",
   "date": "2026-02-18",
   "stack": ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JPA", "JUnit 5", "RestAssured", "Testcontainers", "Maven", "JaCoCo", "GitHub Actions"],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-microservice-test-harness",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Microservicio Java con API REST y base de datos PostgreSQL real, planteado como entorno de pruebas reproducible para validar comportamiento funcional, integración y calidad en un contexto cercano a producción.",
+  "problem": "El proyecto busca evitar pruebas demasiado simplificadas o poco fiables sobre servicios backend. Para ello trabaja con persistencia real, esquema versionado y un flujo que permite comprobar respuestas, errores e idempotencia sin depender de dobles o configuraciones artificiales.",
+  "build": "La solución está construida con Spring Boot y JPA sobre PostgreSQL, con el esquema gestionado exclusivamente por Flyway. La API expone operaciones REST y el proyecto se apoya en Maven, JaCoCo y una estructura pensada para ejecutar pruebas repetibles con una base de datos real levantada bajo demanda.",
+  "automation": "Las pruebas de integración usan RestAssured y Testcontainers para levantar PostgreSQL en tiempo de ejecución y validar escenarios end-to-end sobre el servicio. El flujo comprueba respuestas correctas, casos de error e idempotencia persistente, y en CI aplica quality gates con Spotless, tests automáticos y cobertura con JaCoCo en GitHub Actions.",
+  "highlights": [
+    "API REST en Spring Boot con PostgreSQL real y esquema gestionado solo con Flyway.",
+    "Pruebas end-to-end con RestAssured y Testcontainers sobre una base de datos levantada en tiempo de ejecución.",
+    "Validación de idempotencia, casos de error y quality gates en CI con Spotless y JaCoCo."
+  ]
 }

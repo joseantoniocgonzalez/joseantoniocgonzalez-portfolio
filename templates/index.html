@@ -1,4 +1,4 @@
-k{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <section class="hero">
@@ -21,25 +21,22 @@ k{% extends "base.html" %}
   </div>
 </section>
 
-<section class="home-block">
+<section class="home-block" id="contacto">
   <h3>Último proyecto</h3>
 
   {% if latest_project %}
-    <p class="project-title"><strong>{{ latest_project.title }}</strong></p>
+    <p class="project-title">
+      <a href="/proyectos/{{ latest_project.slug }}/" class="project-title-link">
+        <strong>{{ latest_project.title }}</strong>
+      </a>
+    </p>
     <p class="project-summary">{{ latest_project.summary }}</p>
 
-    {% if latest_project.repo_url %}
-      <p class="project-link-wrap">
-        <a
-          href="{{ latest_project.repo_url }}"
-          class="button button-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver repositorio
-        </a>
-      </p>
-    {% endif %}
+    <p class="project-link-wrap">
+      <a href="/proyectos/{{ latest_project.slug }}/" class="button button-secondary">
+        Ver proyecto
+      </a>
+    </p>
   {% else %}
     <p>Próximamente.</p>
   {% endif %}
@@ -48,5 +45,15 @@ k{% extends "base.html" %}
 <section class="home-block">
   <h3>Últimos artículos</h3>
   <p>Próximamente.</p>
+</section>
+
+<section class="home-block">
+  <h3>{{ contact.title }}</h3>
+  <p class="project-summary">{{ contact.intro }}</p>
+
+  <p class="project-summary">
+    <strong>Email:</strong>
+    <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+  </p>
 </section>
 {% endblock %}

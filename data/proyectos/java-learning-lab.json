@@ -1,11 +1,20 @@
 {
   "slug": "java-learning-lab",
   "title": "Java learning lab",
-  "summary": "Repositorio de práctica en Java orientado a backend que combina katas con JUnit y una API REST en Spring Boot con validación, CRUD, tests de integración, documentación Swagger y cobertura con JaCoCo.",
+  "summary": "Repositorio de práctica en Java orientado a backend que combina katas de fundamentos validadas con JUnit y un módulo Spring Boot con API REST, respuestas JSON, validación de entrada, operaciones CRUD y tests de integración. El proyecto añade persistencia con H2 y JPA, documentación Swagger y cobertura con JaCoCo para reunir práctica de lenguaje y desarrollo backend en una base de trabajo estructurada.",
   "date": "2026-01-29",
   "stack": ["Java", "JUnit", "Spring Boot", "JPA", "H2", "Swagger", "JaCoCo", "GitHub Actions", "Maven"],
   "repo_url": "https://github.com/joseantoniocgonzalez/java-learning-lab",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Repositorio de práctica en Java orientado a backend que reúne ejercicios de fundamentos y un módulo Spring Boot para trabajar API REST, validación y persistencia dentro de una misma base de trabajo.",
+  "problem": "El proyecto busca unir práctica de lenguaje y desarrollo backend en una estructura más útil que una colección de ejercicios sueltos. Combina trabajo sobre fundamentos de Java con un bloque más cercano a un entorno real, donde hay validación, CRUD, documentación y pruebas de integración.",
+  "build": "La solución se divide entre katas y ejercicios validados con JUnit, y un módulo Spring Boot con API REST, respuestas JSON, validación de entrada y operaciones CRUD. Añade persistencia con H2 y JPA, documentación Swagger y una base organizada con Maven para poder ampliar la práctica de forma gradual.",
+  "automation": "El proyecto incluye tests automatizados para los ejercicios y para el módulo backend, además de cobertura con JaCoCo y ejecución reproducible en CI. Esto permite validar tanto la lógica de los fundamentos como el comportamiento del módulo Spring Boot dentro de una misma rutina de trabajo.",
+  "highlights": [
+    "Katas y ejercicios de fundamentos en Java validados con JUnit.",
+    "Módulo Spring Boot con API REST, validación, CRUD y persistencia con H2 y JPA.",
+    "Cobertura con JaCoCo y ejecución reproducible en CI para práctica de lenguaje y backend."
+  ]
 }

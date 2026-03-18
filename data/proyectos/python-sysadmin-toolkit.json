@@ -1,11 +1,20 @@
 {
   "slug": "python-sysadmin-toolkit",
   "title": "Python sysadmin toolkit",
-  "summary": "CLI en Python con Typer para comprobaciones de disco y red, además de análisis de logs con exportación de resultados, acompañada de tests y ejecución automática en CI con ruff y pytest.",
+  "summary": "CLI en Python con Typer para comprobaciones de disco y red, y análisis de logs con exportación de resultados en JSON y CSV. El proyecto organiza comandos específicos para monitorización básica y validación de servicios, e incluye tests automatizados y CI con ruff y pytest para asegurar calidad y reproducibilidad.",
   "date": "2026-01-29",
   "stack": ["Python", "Typer", "Pytest", "Ruff", "GitHub Actions"],
   "repo_url": "https://github.com/joseantoniocgonzalez/python-sysadmin-toolkit",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "CLI en Python orientada a tareas básicas de sistemas, pensada para agrupar comprobaciones útiles de disco, red y logs en una herramienta ligera, reproducible y fácil de ampliar.",
+  "problem": "El proyecto busca evitar scripts sueltos o comprobaciones manuales repetitivas en tareas de administración básica. Reúne en una sola utilidad comandos para revisar espacio en disco, validar puertos y analizar logs, con salida estructurada para facilitar revisión y reutilización.",
+  "build": "La solución está construida con Python y Typer para ofrecer una interfaz de línea de comandos clara, organizada en comandos específicos para disco, red y logs. En la parte de análisis de logs permite además exportar resultados en JSON y CSV, de modo que la información pueda reutilizarse en otros flujos o revisiones.",
+  "automation": "El proyecto incluye tests automatizados con pytest y control de estilo con ruff, ejecutados de forma reproducible tanto en local como en CI. Este flujo permite validar el comportamiento de los comandos principales y mantener una base de trabajo más fiable para futuras ampliaciones.",
+  "highlights": [
+    "CLI en Python con Typer para disco, red y análisis de logs en una sola herramienta.",
+    "Exportación de resultados en JSON y CSV para reutilizar datos de los chequeos.",
+    "Tests y CI con pytest y ruff para asegurar calidad y reproducibilidad."
+  ]
 }

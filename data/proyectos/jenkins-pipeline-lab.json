@@ -1,11 +1,20 @@
 {
   "slug": "jenkins-pipeline-lab",
   "title": "Pipeline CI/CD con Jenkins, Docker y Flask",
-  "summary": "Pipeline CI/CD con Jenkins para una aplicación web desarrollada con Flask (Python).",
+  "summary": "Pipeline CI/CD para una aplicación web en Flask que ejecuta pruebas automatizadas con pytest, construye y publica la imagen Docker, y despliega en un VPS Linux mediante SSH y docker-compose, con notificación por correo al finalizar.",
   "date": "2025-09-22",
   "stack": ["Python", "Flask", "Docker", "Jenkins", "Linux"],
   "repo_url": "https://github.com/joseantoniocgonzalez/jenkins-pipeline-lab",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Proyecto de CI/CD con Jenkins para una aplicación web en Flask, pensado para mostrar un flujo completo de validación, empaquetado, publicación y despliegue remoto sobre un VPS Linux.",
+  "problem": "El proyecto busca evitar despliegues manuales y poco consistentes en una aplicación web sencilla. Para ello automatiza desde la validación inicial con tests hasta la construcción de la imagen, su publicación y el despliegue remoto en servidor, dejando un flujo repetible de principio a fin.",
+  "build": "La solución se apoya en una aplicación Flask contenida en Docker, con Jenkinsfile para definir las etapas del pipeline, Dockerfile para empaquetado y docker-compose para el despliegue en el VPS. El flujo conecta GitHub, Docker Hub y el servidor Linux mediante acceso SSH para ejecutar la actualización remota.",
+  "automation": "El pipeline clona el repositorio, instala dependencias, ejecuta pruebas automatizadas con pytest, construye la imagen Docker y la publica en Docker Hub. Después conecta por SSH al VPS, despliega con docker-compose y envía una notificación por correo al finalizar, dejando un proceso reproducible de integración y entrega continua.",
+  "highlights": [
+    "Pipeline CI/CD con Jenkins para una aplicación Flask contenida en Docker.",
+    "Pruebas con pytest, build de imagen y publicación automática en Docker Hub.",
+    "Despliegue remoto por SSH en VPS Linux con docker-compose y notificación por correo."
+  ]
 }

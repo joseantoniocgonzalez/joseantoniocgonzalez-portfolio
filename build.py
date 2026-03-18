@@ -58,11 +58,10 @@ def load_projects() -> list[dict]:
     return projects
 
 
-def build_home(env: Environment) -> None:
+def build_home(env: Environment, projects: list[dict]) -> None:
     template = env.get_template("index.html")
 
     home_data = load_home_data()
-    projects = load_projects()
     latest_project = projects[0] if projects else None
 
     output = template.render(
@@ -73,11 +72,68 @@ def build_home(env: Environment) -> None:
     (DIST_DIR / "index.html").write_text(output, encoding="utf-8")
 
 
+def build_projects(env: Environment, projects: list[dict]) -> None:
+    template = env.get_template("proyectos.html")
+
+    output = template.render(
+        page_title="Proyectos | José Antonio Canalo González",
+        site_title="José Antonio Canalo González",
+        tagline="QA Automation, DevOps y Administración de Sistemas",
+        projects=projects
+    )
+
+    projects_dist_dir = DIST_DIR / "proyectos"
+    projects_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (projects_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_project_pages(env: Environment, projects: list[dict]) -> None:
+    template = env.get_template("proyecto.html")
+
+    for project in projects:
+        output = template.render(
+            page_title=f'{project["title"]} | José Antonio Canalo González',
+            site_title="José Antonio Canalo González",
+            tagline="QA Automation, DevOps y Administración de Sistemas",
+            project=project
+        )
+
+        project_dist_dir = DIST_DIR / "proyectos" / project["slug"]
+        project_dist_dir.mkdir(parents=True, exist_ok=True)
+
+        (project_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_contact(env: Environment) -> None:
+    template = env.get_template("contacto.html")
+    home_data = load_home_data()
+
+    output = template.render(
+        page_title="Contacto | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        contact=home_data["contact"]
+    )
+
+    contact_dist_dir = DIST_DIR / "contacto"
+    contact_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (contact_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def main() -> None:
     env = create_environment()
     prepare_dist()
-    build_home(env)
-    print("Sitio generado en dist/index.html")
+
+    projects = load_projects()
+
+    build_home(env, projects)
+    build_projects(env, projects)
+    build_project_pages(env, projects)
+    build_contact(env)
+
+    print("Sitio generado en dist/")
 
 
 if __name__ == "__main__":

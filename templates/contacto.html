@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Contacto</p>
+  <h2>{{ contact.title }}</h2>
+  <p class="hero-summary">{{ contact.intro }}</p>
+</section>
+
+<section class="home-block">
+  <h3>Correo electrónico</h3>
+  <p class="project-summary">
+    <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+  </p>
+</section>
+
+<section class="home-block">
+  <h3>Canales profesionales</h3>
+  <div class="hero-actions">
+    {% for link in contact.links %}
+      <a
+        href="{{ link.url }}"
+        class="button button-secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ link.label }}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-block">
+  <h3>Formulario</h3>
+
+  <form class="contact-form" action="#" method="post">
+    <div class="form-row">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+    </div>
+
+    <div class="form-row">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tu@email.com">
+    </div>
+
+    <div class="form-row">
+      <label for="asunto">Asunto</label>
+      <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje">
+    </div>
+
+    <div class="form-row">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí"></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="button">Enviar mensaje</button>
+    </div>
+  </form>
+
+  <p class="form-note">
+    Formulario en preparación. El envío real se activará en una siguiente fase.
+  </p>
+</section>
+{% endblock %}

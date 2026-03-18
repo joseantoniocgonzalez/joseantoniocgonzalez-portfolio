@@ -1,11 +1,20 @@
 {
   "slug": "qa-java-automation-starter",
   "title": "Java QA automation starter",
-  "summary": "Proyecto de automatización QA en Java con pruebas UI en Selenium/JUnit, escenarios BDD con Cucumber y pruebas API con Postman/Newman, con generación de reportes y ejecución en GitHub Actions.",
+  "summary": "Starter de automatización QA en Java que combina pruebas UI con Selenium/JUnit, escenarios BDD con Cucumber y pruebas API con Postman/Newman sobre objetivos públicos. El proyecto incluye ejecución reproducible en local y CI, generación de reportes y artefactos, y documentación QA para estrategia, riesgos y diseño de pruebas.",
   "date": "2026-02-02",
   "stack": ["Java", "Selenium", "JUnit", "Cucumber", "Postman", "Newman", "GitHub Actions", "Maven"],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-java-automation-starter",
   "live_url": "",
   "featured": false,
-  "draft": false
+  "draft": false,
+  "intro": "Starter de automatización QA en Java pensado como base de trabajo reproducible para combinar pruebas de interfaz, escenarios BDD y pruebas API dentro de un mismo repositorio.",
+  "problem": "El proyecto busca reunir en una sola base varios tipos de automatización frecuentes en QA sin depender de ejemplos aislados o estructuras improvisadas. También cubre la necesidad de ejecutar el mismo conjunto de pruebas en local y en CI, con resultados y evidencias fáciles de revisar.",
+  "build": "La solución está organizada en módulos y carpetas separadas para pruebas UI con Selenium y JUnit, escenarios BDD con Cucumber/Gherkin y colecciones API con Postman/Newman. Incluye configuración reproducible con Maven, objetivos públicos para practicar y documentación QA para estrategia, riesgos y diseño de pruebas.",
+  "automation": "El flujo permite ejecutar pruebas UI, BDD y API tanto en local como en GitHub Actions, con workflows diferenciados para smoke y ejecución completa. Además genera reportes y artefactos como HTML, JUnit XML, resultados de Newman y evidencias útiles para revisar fallos y seguir la ejecución en CI.",
+  "highlights": [
+    "Base unificada para pruebas UI, BDD y API dentro del mismo repositorio.",
+    "Ejecución reproducible en local y CI con workflows de smoke y full run.",
+    "Generación de reportes, artefactos y documentación QA para estrategia y riesgos."
+  ]
 }
