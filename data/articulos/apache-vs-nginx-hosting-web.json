@@ -1,0 +1,15 @@
+{
+  "title": "Apache vs Nginx: dos gigantes del hosting web",
+  "slug": "apache-vs-nginx-hosting-web",
+  "date": "2025-09-20",
+  "category": "Infraestructura y DevOps",
+  "tags": [
+    "Apache",
+    "Nginx",
+    "hosting web",
+    "proxy inverso",
+    "servidores web"
+  ],
+  "summary": "Una comparación clara entre Apache y Nginx, dos servidores web fundamentales que responden a filosofías y necesidades distintas.",
+  "body_file": "body/apache-vs-nginx-hosting-web.html"
+}

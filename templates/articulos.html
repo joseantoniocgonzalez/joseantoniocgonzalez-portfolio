@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Artículos</p>
+  <h1>Artículos técnicos</h1>
+  <p class="page-summary">
+    Archivo de publicaciones técnicas sobre redes, Linux, QA, seguridad, infraestructura y desarrollo.
+  </p>
+</section>
+
+<section class="curriculum-section">
+  {% if articles %}
+    {% for article in articles %}
+      <article>
+        <h2><a href="/articulos/{{ article.slug }}/">{{ article.title }}</a></h2>
+
+        <p>
+          <strong>Categoría:</strong> {{ article.category }}
+          {% if article.date %}
+            · <strong>Fecha:</strong> {{ article.date }}
+          {% endif %}
+        </p>
+
+        {% if article.tags %}
+          <p>
+            <strong>Etiquetas:</strong>
+            {% for tag in article.tags %}
+              {{ tag }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+        {% endif %}
+
+        <p>{{ article.summary }}</p>
+        <p><a href="/articulos/{{ article.slug }}/">Leer artículo</a></p>
+      </article>
+
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>No hay artículos publicados todavía.</p>
+  {% endif %}
+</section>
+{% endblock %}

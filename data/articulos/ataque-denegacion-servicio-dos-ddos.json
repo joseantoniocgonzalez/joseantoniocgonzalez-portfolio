@@ -1,0 +1,15 @@
+{
+  "title": "Qué es un ataque de denegación de servicio (DoS o DDoS)",
+  "slug": "ataque-denegacion-servicio-dos-ddos",
+  "date": "2025-09-04",
+  "category": "Seguridad",
+  "tags": [
+    "DoS",
+    "DDoS",
+    "redes",
+    "seguridad",
+    "disponibilidad"
+  ],
+  "summary": "Una explicación clara de cómo funcionan los ataques de denegación de servicio y por qué pueden inutilizar un sistema aunque no roben datos directamente.",
+  "body_file": "body/ataque-denegacion-servicio-dos-ddos.html"
+}

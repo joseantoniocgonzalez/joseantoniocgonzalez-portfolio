@@ -1,0 +1,15 @@
+{
+  "title": "Qué es el segundo factor de autenticación (2FA) y por qué puede salvarte de un desastre",
+  "slug": "segundo-factor-autenticacion-2fa",
+  "date": "2025-08-14",
+  "category": "Seguridad",
+  "tags": [
+    "2FA",
+    "MFA",
+    "seguridad",
+    "autenticación",
+    "cuentas"
+  ],
+  "summary": "Una explicación clara de por qué una contraseña ya no basta y cómo el segundo factor de autenticación reduce de forma importante el riesgo de acceso no autorizado.",
+  "body_file": "body/segundo-factor-autenticacion-2fa.html"
+}

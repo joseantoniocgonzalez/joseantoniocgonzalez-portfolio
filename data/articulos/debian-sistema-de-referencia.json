@@ -1,0 +1,15 @@
+{
+  "title": "Debian: de odiarlo en clase a hacerlo mi sistema de referencia",
+  "slug": "debian-sistema-de-referencia",
+  "date": "2025-09-09",
+  "category": "Linux y sistemas",
+  "tags": [
+    "Debian",
+    "Linux",
+    "ASIR",
+    "sistemas",
+    "servidores"
+  ],
+  "summary": "Una reflexión técnica y personal sobre cómo Debian pasó de ser una distribución difícil en clase a convertirse en un sistema de referencia para trabajar y aprender.",
+  "body_file": "body/debian-sistema-de-referencia.html"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "SSH: mucho más que acceder a un servidor",
+  "slug": "ssh-mucho-mas-que-acceder-a-un-servidor",
+  "date": "",
+  "category": "Linux y sistemas",
+  "tags": [
+    "SSH",
+    "Linux",
+    "VPS",
+    "hardening",
+    "administración de sistemas"
+  ],
+  "summary": "Una visión práctica de SSH como herramienta de administración, automatización y acceso seguro a sistemas remotos.",
+  "body_file": "body/ssh-mucho-mas-que-acceder-a-un-servidor.html"
+}

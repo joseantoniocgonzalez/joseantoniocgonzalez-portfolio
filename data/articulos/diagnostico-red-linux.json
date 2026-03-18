@@ -1,0 +1,15 @@
+{
+  "title": "Diagnóstico de red en Linux: más allá de ping 8.8.8.8",
+  "slug": "diagnostico-red-linux",
+  "date": "",
+  "category": "Redes",
+  "tags": [
+    "Linux",
+    "redes",
+    "diagnóstico",
+    "DNS",
+    "troubleshooting"
+  ],
+  "summary": "Un enfoque práctico para diagnosticar problemas de red en Linux encadenando herramientas como ping, ip, traceroute y dig.",
+  "body_file": "body/diagnostico-red-linux.html"
+}

@@ -1,0 +1,55 @@
+<p>Cuando un servicio está escuchando en un puerto, ese puerto se convierte en una vía de entrada potencial hacia el sistema. No significa automáticamente que exista una vulnerabilidad, pero sí que hay una superficie expuesta que conviene conocer y controlar.</p>
+
+<p>Por eso me parece útil pensar en los puertos abiertos como puertas: algunas deben estar accesibles porque el servicio lo necesita, pero otras no deberían estar abiertas sin una razón clara.</p>
+
+<h2>Qué es un puerto</h2>
+
+<p>Un puerto es un identificador lógico que permite dirigir el tráfico hacia un servicio concreto dentro de un sistema. La dirección IP te lleva al host; el puerto determina a qué servicio quieres llegar dentro de ese host.</p>
+
+<p>Ejemplos habituales serían:</p>
+
+<ul>
+  <li><strong>22</strong> para SSH;</li>
+  <li><strong>80</strong> para HTTP;</li>
+  <li><strong>443</strong> para HTTPS.</li>
+</ul>
+
+<p>Eso significa que un equipo puede tener varios servicios distintos expuestos al mismo tiempo, cada uno escuchando en su puerto correspondiente.</p>
+
+<h2>Por qué importa revisar los puertos abiertos</h2>
+
+<p>Un puerto abierto que no se usa, que está mal protegido o que expone un servicio innecesario puede convertirse en un punto de entrada muy valioso para un atacante. Muchas veces el problema no es que el puerto exista, sino que nadie haya revisado qué hay detrás y si realmente debería estar accesible.</p>
+
+<p>De ahí salen riesgos como estos:</p>
+
+<ul>
+  <li>servicios olvidados y expuestos;</li>
+  <li>configuraciones por defecto nunca revisadas;</li>
+  <li>dispositivos con interfaces de administración accesibles desde fuera;</li>
+  <li>software escuchando en puertos que nadie recuerda haber abierto.</li>
+</ul>
+
+<h2>Qué suele hacerse para revisarlos</h2>
+
+<p>En sistemas Linux, herramientas como <code>ss -tuln</code> o <code>lsof -i</code> permiten ver qué servicios están escuchando. Desde otro punto de la red, utilidades como <code>nmap</code> ayudan a detectar qué puertos están visibles y respondiendo.</p>
+
+<p>Lo importante no es solo hacer el escaneo, sino interpretar bien lo que aparece:</p>
+
+<ul>
+  <li>qué servicio responde;</li>
+  <li>si ese servicio debería estar expuesto;</li>
+  <li>si el acceso está limitado o no;</li>
+  <li>si forma parte de la arquitectura prevista o es un residuo de configuración.</li>
+</ul>
+
+<h2>No se trata de cerrar todo sin criterio</h2>
+
+<p>La idea no es cerrar puertos de forma indiscriminada, sino mantener abiertos únicamente los que tienen una justificación clara y están razonablemente protegidos. En seguridad, conocer la superficie de exposición es una parte fundamental del trabajo.</p>
+
+<p>Por eso revisar puertos abiertos no es una tarea secundaria: es una forma bastante directa de entender qué servicios está ofreciendo realmente un sistema hacia la red.</p>
+
+<h2>Conclusión</h2>
+
+<p>Tener un puerto abierto no implica por sí mismo un problema, pero sí implica una responsabilidad técnica: saber qué servicio escucha ahí, por qué está expuesto y qué medidas lo protegen.</p>
+
+<p>Controlar eso ayuda mucho a reducir superficie de ataque y a evitar una situación muy común en administración de sistemas: que “todo funcione” sin que nadie tenga claro exactamente qué está quedando expuesto hacia fuera.</p>

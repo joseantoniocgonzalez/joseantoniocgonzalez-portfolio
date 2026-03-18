@@ -1,0 +1,15 @@
+{
+  "title": "Túneles en redes: qué son y por qué se utilizan",
+  "slug": "tuneles-en-redes",
+  "date": "2025-10-03",
+  "category": "Redes",
+  "tags": [
+    "túneles",
+    "VPN",
+    "WireGuard",
+    "OpenVPN",
+    "SSH"
+  ],
+  "summary": "Una explicación clara de qué significa encapsular tráfico en redes y por qué los túneles son tan importantes en VPN, acceso remoto y seguridad.",
+  "body_file": "body/tuneles-en-redes.html"
+}

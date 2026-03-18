@@ -1,0 +1,15 @@
+{
+  "title": "Por qué la monitorización es el corazón del sistema",
+  "slug": "monitorizacion-corazon-del-sistema",
+  "date": "2025-10-22",
+  "category": "Infraestructura y DevOps",
+  "tags": [
+    "monitorización",
+    "Prometheus",
+    "Grafana",
+    "observabilidad",
+    "DevOps"
+  ],
+  "summary": "Una reflexión técnica sobre el valor real de la monitorización y por qué herramientas como Prometheus y Grafana son clave para mantener sistemas fiables.",
+  "body_file": "body/monitorizacion-corazon-del-sistema.html"
+}

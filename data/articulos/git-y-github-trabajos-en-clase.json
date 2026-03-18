@@ -1,0 +1,15 @@
+{
+  "title": "Git y GitHub: como los trabajos en clase",
+  "slug": "git-y-github-trabajos-en-clase",
+  "date": "2025-09-08",
+  "category": "QA y desarrollo",
+  "tags": [
+    "Git",
+    "GitHub",
+    "control de versiones",
+    "colaboración",
+    "desarrollo"
+  ],
+  "summary": "Una forma sencilla de entender la diferencia entre Git y GitHub usando una comparación muy cotidiana: los trabajos en grupo de clase.",
+  "body_file": "body/git-y-github-trabajos-en-clase.html"
+}

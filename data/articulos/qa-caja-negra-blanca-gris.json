@@ -1,0 +1,15 @@
+{
+  "title": "QA: pruebas de caja negra, blanca y gris",
+  "slug": "qa-caja-negra-blanca-gris",
+  "date": "2025-10-05",
+  "category": "QA y desarrollo",
+  "tags": [
+    "QA",
+    "testing",
+    "caja negra",
+    "caja blanca",
+    "caja gris"
+  ],
+  "summary": "Una explicación sencilla de tres enfoques clásicos de testing y de cómo cambia la estrategia según el conocimiento que se tiene del sistema.",
+  "body_file": "body/qa-caja-negra-blanca-gris.html"
+}

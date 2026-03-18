@@ -1,0 +1,73 @@
+<p>Uno de los primeros comandos de red que aprendí en Linux fue <code>ping 8.8.8.8</code>. Es una prueba rápida, simple y muy útil para comprobar si existe conectividad básica. Sin embargo, con el tiempo entendí que quedarse solo en el ping es quedarse muy corto cuando un problema de red empieza a tener varias capas.</p>
+
+<p>Hoy sigo usándolo como punto de partida, pero no como diagnóstico completo. Cuando algo deja de responder como debería, lo que realmente funciona es encadenar varias comprobaciones para ir acotando el origen del fallo.</p>
+
+<h2>Por qué un ping no basta</h2>
+
+<p>Un ping puede decirte si hay respuesta o no, pero no siempre explica por qué. Puede fallar por un problema local, por una mala ruta, por una configuración errónea de la interfaz, por DNS o por un salto intermedio que está rompiendo el tráfico.</p>
+
+<p>Por eso, en lugar de tratar el ping como una respuesta final, prefiero verlo como el inicio de un proceso de diagnóstico más ordenado.</p>
+
+<h2>El orden que suelo seguir en Linux</h2>
+
+<h3>1. Ping</h3>
+
+<p>Lo primero que compruebo es si el equipo puede alcanzar una IP conocida, por ejemplo <code>8.8.8.8</code>, o directamente la puerta de enlace de la red local.</p>
+
+<ul>
+  <li>Si no responde ni el router ni una IP externa, suelo pensar antes en un problema local o de conectividad básica.</li>
+  <li>Si responde a IP pero no a nombres de dominio, la sospecha se desplaza hacia DNS.</li>
+</ul>
+
+<p>Es una prueba sencilla, pero útil para separar muy rápido conectividad básica y resolución de nombres.</p>
+
+<h3>2. <code>ip a</code></h3>
+
+<p>Después reviso el estado de la interfaz. Con <code>ip a</code> puedo comprobar si la tarjeta tiene dirección IP, si la interfaz está en estado <code>UP</code> y si la configuración parece coherente.</p>
+
+<p>Cuando aquí ya se ve algo raro —una interfaz caída, sin IP o con una configuración incompleta— muchas veces ni siquiera hace falta seguir avanzando: el problema ya está bastante acotado.</p>
+
+<h3>3. <code>ip route</code></h3>
+
+<p>Si la interfaz está bien, el siguiente paso es mirar la tabla de rutas. En especial, la puerta de enlace por defecto.</p>
+
+<ul>
+  <li>Si no existe una ruta por defecto, el equipo no sabe por dónde salir.</li>
+  <li>Si la puerta de enlace es incorrecta, la conectividad hacia fuera puede fallar aunque la red local funcione.</li>
+</ul>
+
+<p>Este punto es especialmente útil para distinguir entre un fallo de interfaz y un fallo de enrutamiento.</p>
+
+<h3>4. <code>traceroute</code> o <code>tracepath</code></h3>
+
+<p>Cuando el tráfico sale de la red local pero falla más adelante, me interesa saber en qué salto se interrumpe el camino. Para eso uso <code>traceroute</code> o <code>tracepath</code>.</p>
+
+<p>Si la comunicación se rompe muy pronto, puede indicar un problema en la red del proveedor o en un punto intermedio del trayecto. No siempre da una respuesta definitiva, pero ayuda bastante a localizar el tramo del recorrido donde deja de avanzar el tráfico.</p>
+
+<h3>5. <code>dig</code> o <code>nslookup</code></h3>
+
+<p>Cuando todo apunta a DNS, intento comprobarlo de forma explícita. Una prueba típica es consultar un dominio usando un resolver concreto, por ejemplo:</p>
+
+<pre><code>dig google.com @8.8.8.8</code></pre>
+
+<p>Si la resolución funciona correctamente con un DNS externo, el problema suele estar en el resolver configurado en la máquina, en el router o en la red local. Esto permite separar muy bien un fallo general de conectividad de un fallo concreto de resolución de nombres.</p>
+
+<h2>Lo importante no es el comando, sino el enfoque</h2>
+
+<p>Con el tiempo he visto que lo útil no es memorizar una lista de comandos sin contexto, sino entender qué está comprobando cada uno:</p>
+
+<ul>
+  <li><strong>Ping</strong> me dice si hay respuesta básica.</li>
+  <li><strong>ip a</strong> me confirma si la interfaz está bien configurada.</li>
+  <li><strong>ip route</strong> me dice si el sistema sabe por dónde salir.</li>
+  <li><strong>traceroute</strong> me ayuda a localizar el salto donde se rompe el camino.</li>
+  <li><strong>dig</strong> me permite aislar si el problema está en DNS.</li>
+</ul>
+
+<p>Ese orden me resulta útil porque evita ir a ciegas. En lugar de probar cosas al azar, cada paso reduce el espacio de posibilidades.</p>
+
+<h2>Conclusión</h2>
+
+<p>Diagnosticar red en Linux no consiste en lanzar un ping y esperar que responda. El valor real está en encadenar comprobaciones simples pero bien pensadas para saber si el problema está en el equipo, en la red local, en la ruta de salida o en la resolución DNS.</p>
+
+<p>Ese enfoque me ha resultado mucho más útil que cualquier respuesta rápida. No solo ayuda a resolver incidencias: también obliga a entender mejor qué está haciendo realmente el sistema cuando intenta comunicarse con el exterior.</p>

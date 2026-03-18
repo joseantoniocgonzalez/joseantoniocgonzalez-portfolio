@@ -1,0 +1,15 @@
+{
+  "title": "Qué es GRUB y por qué sin él Linux no arranca",
+  "slug": "grub-linux-no-arranca",
+  "date": "2025-10-15",
+  "category": "Linux y sistemas",
+  "tags": [
+    "GRUB",
+    "Linux",
+    "bootloader",
+    "Debian",
+    "arranque"
+  ],
+  "summary": "Una explicación clara de qué hace GRUB en el proceso de arranque y por qué su ausencia puede hacer que Linux deje de iniciar aunque el sistema siga intacto.",
+  "body_file": "body/grub-linux-no-arranca.html"
+}

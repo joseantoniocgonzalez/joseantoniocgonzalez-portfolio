@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Artículo</p>
+  <h1>{{ article.title }}</h1>
+
+  <p>
+    <strong>Categoría:</strong> {{ article.category }}
+    {% if article.date %}
+      · <strong>Fecha:</strong> {{ article.date }}
+    {% endif %}
+  </p>
+
+  {% if article.tags %}
+    <p>
+      <strong>Etiquetas:</strong>
+      {% for tag in article.tags %}
+        {{ tag }}{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+</section>
+
+<section class="curriculum-section">
+  {{ article.content_html | safe }}
+</section>
+
+<section class="curriculum-section">
+  <p><a href="/articulos/">← Volver a artículos</a></p>
+</section>
+{% endblock %}

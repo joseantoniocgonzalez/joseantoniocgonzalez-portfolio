@@ -1,0 +1,67 @@
+<p>Cuando se habla de seguridad, muchas veces se piensa primero en robo de datos o en accesos no autorizados. Sin embargo, hay ataques cuyo objetivo principal no es entrar en el sistema, sino impedir que los usuarios legítimos puedan utilizarlo. Ahí es donde entran los ataques de denegación de servicio.</p>
+
+<h2>Qué es un DoS o un DDoS</h2>
+
+<p>Un ataque <strong>DoS</strong> (<em>Denial of Service</em>) busca agotar los recursos de un sistema enviándole tráfico o peticiones maliciosas hasta que deja de responder con normalidad.</p>
+
+<p>Cuando ese mismo ataque se lanza desde muchos dispositivos distribuidos, hablamos de <strong>DDoS</strong> (<em>Distributed Denial of Service</em>). Esa diferencia es importante porque multiplica tanto el volumen como la dificultad de mitigación.</p>
+
+<h2>Qué intenta agotar</h2>
+
+<p>El objetivo puede variar según el tipo de ataque, pero normalmente busca consumir alguno de estos recursos:</p>
+
+<ul>
+  <li>ancho de banda;</li>
+  <li>CPU o memoria;</li>
+  <li>tablas de conexión o recursos de red;</li>
+  <li>capacidad de respuesta de la aplicación.</li>
+</ul>
+
+<p>El resultado es el mismo: el servicio se vuelve lento, inestable o directamente inaccesible para quienes sí quieren usarlo de forma legítima.</p>
+
+<h2>Tipos habituales</h2>
+
+<p>De forma simplificada, suelen distinguirse tres grupos bastante comunes:</p>
+
+<ul>
+  <li><strong>ataques volumétricos</strong>, que saturan el ancho de banda;</li>
+  <li><strong>ataques de protocolo</strong>, que fuerzan límites de la infraestructura de red o del estado de conexión;</li>
+  <li><strong>ataques a nivel de aplicación</strong>, más dirigidos contra servicios concretos como HTTP o DNS.</li>
+</ul>
+
+<p>Estos últimos suelen ser especialmente molestos porque pueden parecer tráfico legítimo en apariencia y obligan a un análisis más fino.</p>
+
+<h2>Por qué importan aunque no “roben” datos</h2>
+
+<p>Un DoS o DDoS no necesita comprometer datos para causar un impacto serio. La indisponibilidad de un servicio puede suponer:</p>
+
+<ul>
+  <li>pérdida de actividad;</li>
+  <li>caída de servicios críticos;</li>
+  <li>daño reputacional;</li>
+  <li>interrupción de procesos internos;</li>
+  <li>ventana de distracción para otros ataques simultáneos.</li>
+</ul>
+
+<p>Eso hace que la disponibilidad sea también una dimensión clave de la seguridad, no solo la confidencialidad o la integridad.</p>
+
+<h2>Cómo se mitigan</h2>
+
+<p>No existe una única medida suficiente, pero sí varias defensas bastante habituales:</p>
+
+<ul>
+  <li><strong>rate limiting</strong> para limitar peticiones;</li>
+  <li><strong>WAF</strong> para proteger capas de aplicación;</li>
+  <li><strong>IDS/IPS</strong> para detección y respuesta;</li>
+  <li><strong>CDN y reverse proxies</strong> para absorber y filtrar tráfico;</li>
+  <li><strong>monitorización en tiempo real</strong> para detectar anomalías con rapidez;</li>
+  <li><strong>filtrado y segmentación</strong> en escenarios concretos.</li>
+</ul>
+
+<p>La clave está en combinar visibilidad, filtrado y capacidad de absorción, especialmente cuando el volumen del ataque supera lo que una infraestructura propia puede manejar por sí sola.</p>
+
+<h2>Conclusión</h2>
+
+<p>Los ataques de denegación de servicio muestran muy bien que la seguridad no consiste solo en proteger el acceso a los datos. También consiste en mantener la disponibilidad de los servicios frente a tráfico malicioso o abuso deliberado.</p>
+
+<p>Entender cómo funcionan ayuda a ver mejor por qué herramientas como el rate limiting, la monitorización, los reverse proxies o los servicios de protección perimetral son tan importantes en infraestructuras expuestas a Internet.</p>

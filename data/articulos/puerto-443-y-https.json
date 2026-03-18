@@ -1,0 +1,15 @@
+{
+  "title": "Qué es el puerto 443 y por qué casi todo lo que haces en Internet pasa por ahí",
+  "slug": "puerto-443-y-https",
+  "date": "2025-09-10",
+  "category": "Redes",
+  "tags": [
+    "puerto 443",
+    "HTTPS",
+    "TLS",
+    "redes",
+    "seguridad web"
+  ],
+  "summary": "Una explicación clara de por qué el puerto 443 es tan importante en la navegación segura y qué papel cumple realmente en HTTPS.",
+  "body_file": "body/puerto-443-y-https.html"
+}

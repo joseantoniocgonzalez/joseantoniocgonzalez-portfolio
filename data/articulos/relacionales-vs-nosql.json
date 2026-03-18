@@ -1,0 +1,15 @@
+{
+  "title": "Relacionales vs NoSQL: lo entendí de verdad cuando pasé de PostgreSQL a MongoDB (y luego vi Redis)",
+  "slug": "relacionales-vs-nosql",
+  "date": "2025-09-18",
+  "category": "QA y desarrollo",
+  "tags": [
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "bases de datos",
+    "NoSQL"
+  ],
+  "summary": "Una comparación práctica entre bases de datos relacionales, MongoDB y Redis, centrada en qué problema resuelve cada enfoque y por qué muchas veces conviven.",
+  "body_file": "body/relacionales-vs-nosql.html"
+}

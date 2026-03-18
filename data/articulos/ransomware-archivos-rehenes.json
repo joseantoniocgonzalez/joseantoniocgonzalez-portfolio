@@ -1,0 +1,15 @@
+{
+  "title": "Ransomware: cuando tus archivos se convierten en rehenes",
+  "slug": "ransomware-archivos-rehenes",
+  "date": "2025-08-28",
+  "category": "Seguridad",
+  "tags": [
+    "ransomware",
+    "malware",
+    "copias de seguridad",
+    "seguridad",
+    "WannaCry"
+  ],
+  "summary": "Una introducción clara al ransomware, cómo entra, por qué es tan dañino y qué medidas básicas ayudan a reducir mucho su impacto.",
+  "body_file": "body/ransomware-archivos-rehenes.html"
+}

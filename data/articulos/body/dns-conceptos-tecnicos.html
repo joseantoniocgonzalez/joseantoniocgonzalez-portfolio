@@ -1,0 +1,131 @@
+<p>El DNS es uno de los componentes más importantes de cualquier infraestructura. No solo traduce nombres de dominio en direcciones IP: también afecta a la disponibilidad de los servicios, a la forma en la que se propagan los cambios y a cómo se comportan muchos sistemas en producción.</p>
+
+<p>Cuando empecé a estudiarlo, lo primero que escuché fue la comparación clásica con el “listín telefónico” de Internet. Esa imagen sirve para entender la idea básica, pero se queda corta muy rápido. En cuanto profundizas un poco, aparecen conceptos como resolvers recursivos, cachés, servidores autoritativos, TTL, zonas, transferencias y seguridad. Y ahí es donde DNS deja de parecer una simple traducción de nombres para convertirse en una pieza crítica de infraestructura.</p>
+
+<h2>Qué es DNS y por qué es importante</h2>
+
+<p>DNS, o Domain Name System, es un sistema jerárquico y distribuido cuya función principal es resolver nombres de dominio en direcciones IP. Eso permite que una persona recuerde un nombre como <code>example.com</code> en lugar de memorizar una dirección numérica.</p>
+
+<p>Sin embargo, su papel real va mucho más allá. DNS también interviene en:</p>
+
+<ul>
+  <li>la ubicación de servicios y aplicaciones;</li>
+  <li>la gestión del correo mediante registros como MX, SPF, DKIM o DMARC;</li>
+  <li>la validación de servicios y certificados;</li>
+  <li>la organización de zonas internas y externas;</li>
+  <li>la coherencia entre entornos corporativos, servicios públicos y redes privadas.</li>
+</ul>
+
+<p>En la práctica, muchos problemas que parecen de red, backend o incluso seguridad terminan teniendo su origen en la resolución DNS.</p>
+
+<h2>Cómo funciona una resolución DNS</h2>
+
+<p>Una resolución DNS no consiste en preguntar a “un servidor” y obtener una respuesta sin más. Lo normal es que intervengan varias capas:</p>
+
+<ol>
+  <li><strong>Caché local del sistema:</strong> si la respuesta ya existe y el TTL sigue vigente, se usa directamente.</li>
+  <li><strong>Resolver recursivo:</strong> si no hay caché local, el sistema consulta al resolver configurado.</li>
+  <li><strong>Root servers:</strong> indican qué servidores gestionan el TLD correspondiente.</li>
+  <li><strong>Servidores TLD:</strong> señalan qué servidores son autoritativos para el dominio.</li>
+  <li><strong>Servidores autoritativos:</strong> devuelven la respuesta definitiva con los registros de la zona.</li>
+  <li><strong>Caché del recursor:</strong> la respuesta se almacena según el TTL.</li>
+</ol>
+
+<p>Todo este proceso suele ocurrir en milisegundos, pero basta un fallo en cualquiera de esos puntos para que aparezcan lentitud, respuestas inconsistentes o errores intermitentes difíciles de explicar si no se conoce la cadena completa.</p>
+
+<h2>Zonas, autoridad y sincronización</h2>
+
+<p>Cuando empecé a trabajar con archivos de zona y con la parte más estructural de DNS, entendí mejor por qué es tan importante distinguir entre autoridad, copia y delegación.</p>
+
+<p>Los tipos de zona más habituales son:</p>
+
+<ul>
+  <li><strong>Zona primaria:</strong> donde reside la versión editable y original de los registros.</li>
+  <li><strong>Zona secundaria:</strong> copia de solo lectura sincronizada desde la primaria mediante AXFR o IXFR.</li>
+  <li><strong>Zona stub:</strong> contiene solo la información mínima para localizar la autoridad real.</li>
+  <li><strong>Zona forward:</strong> no almacena registros, sino que reenvía consultas para una zona concreta.</li>
+</ul>
+
+<p>Además, en muchos entornos aparece la separación entre zona interna y externa, o incluso configuraciones de <em>split-horizon DNS</em>, donde el mismo dominio responde de forma distinta según desde dónde se consulte. Es un modelo muy útil, pero también una fuente frecuente de errores si no se documenta bien.</p>
+
+<p>Otro elemento fundamental es el registro <strong>SOA</strong>, que marca la autoridad de la zona y controla la sincronización entre primario y secundarios. Valores como el <strong>serial</strong>, <strong>refresh</strong>, <strong>retry</strong> o <strong>expire</strong> no son detalles decorativos: de ellos depende que los cambios se propaguen correctamente o que los secundarios sigan sirviendo datos antiguos.</p>
+
+<h2>Registros DNS y errores frecuentes</h2>
+
+<p>Los registros son el núcleo del comportamiento de una zona, y muchos fallos aparecen precisamente ahí, en detalles pequeños pero muy fáciles de pasar por alto.</p>
+
+<p>Entre los más importantes están:</p>
+
+<ul>
+  <li><strong>A y AAAA:</strong> asocian un nombre a una dirección IPv4 o IPv6.</li>
+  <li><strong>CNAME:</strong> crea un alias hacia otro nombre.</li>
+  <li><strong>MX:</strong> indica a qué host debe entregarse el correo.</li>
+  <li><strong>TXT:</strong> se usa para validaciones y políticas como SPF, DKIM o DMARC.</li>
+  <li><strong>NS:</strong> define qué servidores son autoritativos para la zona.</li>
+  <li><strong>SOA:</strong> establece la autoridad y los parámetros de sincronización.</li>
+</ul>
+
+<p>Lo importante es que muchos errores reales no vienen de una gran caída de infraestructura, sino de cosas como estas:</p>
+
+<ul>
+  <li>IPs antiguas que nunca se eliminaron;</li>
+  <li>CNAMEs usados donde no debían;</li>
+  <li>MX apuntando a hosts sin registro A o AAAA válido;</li>
+  <li>TXT mal cerrados o mal pegados;</li>
+  <li>seriales de SOA sin actualizar;</li>
+  <li>NS inconsistentes entre el registrador y el proveedor DNS.</li>
+</ul>
+
+<p>Son errores pequeños, pero suficientes para romper una web, un correo o una API completa.</p>
+
+<h2>TTL, caché y la llamada “propagación”</h2>
+
+<p>Uno de los conceptos que más cambia la forma de entender DNS es el TTL. A primera vista parece solo un valor en segundos, pero en realidad define cuánto tiempo puede mantenerse una respuesta en caché antes de volver a consultar a la autoridad.</p>
+
+<p>Eso tiene consecuencias directas:</p>
+
+<ul>
+  <li>un <strong>TTL alto</strong> reduce consultas y mejora rendimiento, pero hace que los cambios tarden más en reflejarse;</li>
+  <li>un <strong>TTL bajo</strong> permite cambios rápidos, pero aumenta la carga y el número de consultas.</li>
+</ul>
+
+<p>Además, la famosa “propagación DNS” no es en realidad una propagación global y mágica. Lo que existe son miles de resolvers manteniendo datos en caché hasta que ese TTL expira. Por eso una persona puede ver un cambio enseguida y otra seguir resolviendo una IP antigua durante horas.</p>
+
+<p>Comprender esto me ayudó a entender muchos comportamientos que, de otra manera, parecían fallos aleatorios de red.</p>
+
+<h2>Seguridad en DNS</h2>
+
+<p>DNS también es una pieza crítica desde el punto de vista de la seguridad. Alterar la resolución significa cambiar el destino del tráfico sin necesidad de comprometer directamente el servidor o la aplicación.</p>
+
+<p>Entre los vectores de ataque más conocidos están:</p>
+
+<ul>
+  <li><strong>DNS spoofing</strong>, para responder con datos falsos;</li>
+  <li><strong>cache poisoning</strong>, para contaminar la caché de un resolver;</li>
+  <li><strong>domain hijacking</strong>, normalmente a través del registrador o de la delegación NS;</li>
+  <li><strong>ausencia o mala configuración de DNSSEC</strong>, que debilita la validación criptográfica de las respuestas;</li>
+  <li><strong>exposición accidental de zonas internas</strong> o de nombres sensibles de infraestructura.</li>
+</ul>
+
+<p>También aprendí que la seguridad de DNS no depende solo del archivo de zona. Depende del conjunto completo: registrador, 2FA, delegaciones, resolvers confiables, DNSSEC y buena gestión de la autoridad.</p>
+
+<h2>Errores que me encontré al estudiarlo y al trabajar con mi dominio</h2>
+
+<p>Al profundizar en DNS y al trabajar con mi propio dominio, me encontré con varios errores muy representativos:</p>
+
+<ul>
+  <li>delegaciones inconsistentes entre el registrador y el proveedor DNS real;</li>
+  <li>seriales de SOA sin actualizar, dejando secundarios desfasados;</li>
+  <li>registros TXT mal formados, sobre todo en validaciones y correo;</li>
+  <li>CNAMEs usados de forma incorrecta;</li>
+  <li>TTLs demasiado altos en momentos donde hacía falta cambiar rápido;</li>
+  <li>mezcla de zonas internas y externas sin una separación clara.</li>
+</ul>
+
+<p>Todos esos fallos me ayudaron a ver que trabajar con DNS no es simplemente “editar registros”, sino entender cómo interactúan autoridad, caché, zonas, sincronización y seguridad.</p>
+
+<h2>Conclusión</h2>
+
+<p>DNS no es una pieza secundaria ni una utilidad de fondo que solo “resuelve nombres”. Es un sistema crítico que afecta al acceso a los servicios, a la propagación de cambios, a la continuidad operativa y a la seguridad de toda la infraestructura.</p>
+
+<p>Entender cómo funciona por dentro —resolución, zonas, registros, TTL, sincronización y autoridad— cambia completamente la manera de diagnosticar problemas y de planificar servicios. No solo ayuda a resolver incidencias: también ayuda a anticiparlas.</p>

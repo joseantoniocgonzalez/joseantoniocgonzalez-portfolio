@@ -1,0 +1,62 @@
+<p>Durante una etapa usé un equipo con Windows y Debian instalados en el mismo ordenador. Todo funcionaba con normalidad hasta que una actualización de Windows cambió por completo el arranque del sistema. Al reiniciar, solo aparecía Windows. Linux seguía ahí, pero había desaparecido la forma de iniciarlo.</p>
+
+<p>Aquello me llevó a entender mejor el papel de <strong>GRUB</strong>, una pieza que muchas veces pasa desapercibida hasta que deja de estar. Fue una forma bastante directa de ver que, en Linux, el arranque no es algo mágico ni automático: depende de una cadena de pasos muy concreta, y GRUB ocupa un lugar central en ella.</p>
+
+<h2>Qué es GRUB</h2>
+
+<p>GRUB, siglas de <em>GRand Unified Bootloader</em>, es uno de los gestores de arranque más utilizados en Linux. Su función es tomar el control después de la BIOS o UEFI y antes de que el kernel empiece a ejecutarse.</p>
+
+<p>Su trabajo incluye:</p>
+
+<ul>
+  <li>detectar los sistemas operativos instalados;</li>
+  <li>mostrar un menú de arranque si hay varias opciones disponibles;</li>
+  <li>localizar el kernel y la imagen initramfs;</li>
+  <li>transferir el control al kernel para que continúe el proceso de arranque.</li>
+</ul>
+
+<p>Sin esa pieza intermedia, el sistema no sabe con claridad desde dónde iniciar Linux ni cómo cargarlo correctamente.</p>
+
+<h2>Qué ocurre cuando el sistema arranca</h2>
+
+<p>Cuando encendemos un equipo, el proceso de arranque ocurre muy rápido, pero sigue una secuencia bastante precisa:</p>
+
+<ol>
+  <li>La <strong>BIOS o UEFI</strong> inicializa el hardware y busca el gestor de arranque.</li>
+  <li><strong>GRUB</strong> se carga desde el MBR en sistemas BIOS o desde la partición EFI en sistemas UEFI.</li>
+  <li>GRUB localiza el <strong>kernel</strong> y la imagen <strong>initramfs</strong>.</li>
+  <li>El <strong>kernel</strong> toma el control, monta el sistema de archivos raíz y lanza los procesos necesarios para poner en marcha el sistema.</li>
+</ol>
+
+<p>Todo sucede en segundos, pero basta con que falle una de esas piezas para que Linux no llegue a arrancar.</p>
+
+<h2>Por qué a veces Windows “borra” GRUB</h2>
+
+<p>En instalaciones con arranque dual, una actualización importante de Windows puede reescribir la parte del arranque o alterar la prioridad de inicio. El resultado típico es que GRUB deja de aparecer y parece que Linux ha desaparecido.</p>
+
+<p>Lo importante es entender que, en esos casos, muchas veces Linux sigue instalado y en buen estado. El problema no está en el sistema en sí, sino en que ha perdido su vía normal de entrada.</p>
+
+<p>Eso cambia bastante la forma de ver la avería: no se trata de que el sistema se haya perdido, sino de que el gestor de arranque ha dejado de estar disponible o ha quedado relegado.</p>
+
+<h2>Cómo puede recuperarse</h2>
+
+<p>En muchos casos, GRUB puede reinstalarse desde un entorno Live. Una secuencia muy conocida para ello sería algo como:</p>
+
+<pre><code>sudo grub-install /dev/sda
+sudo update-grub</code></pre>
+
+<p>Naturalmente, el dispositivo correcto depende de cada sistema y del esquema de particionado, pero la idea general es esa: reinstalar el cargador y regenerar la configuración de arranque.</p>
+
+<p>Lo importante aquí no es solo memorizar comandos, sino entender qué se está reparando: la capa que enlaza el firmware del equipo con el sistema Linux que queremos iniciar.</p>
+
+<h2>Por qué conviene entenderlo</h2>
+
+<p>GRUB no es una pieza especialmente vistosa ni algo en lo que se piense cada día, pero conocer su papel ayuda mucho a comprender mejor Linux y su proceso de arranque. También sirve para perder el miedo cuando aparece un fallo de este tipo: muchas veces el sistema no está roto, solo ha perdido el mecanismo con el que se iniciaba.</p>
+
+<p>Además, estudiar GRUB obliga a mirar con más atención conceptos como BIOS, UEFI, kernel, initramfs, particiones de arranque y relación entre firmware y sistema operativo. Todo eso da bastante más contexto sobre cómo se pone realmente en marcha un equipo Linux.</p>
+
+<h2>Conclusión</h2>
+
+<p>GRUB es una pieza pequeña en apariencia, pero decisiva en la práctica. Sin él, Linux puede seguir instalado, pero no disponer de la ruta necesaria para arrancar. Entender su función ayuda tanto a reparar sistemas como a comprender mejor lo que ocurre entre el encendido del equipo y el momento en que el sistema operativo empieza a funcionar.</p>
+
+<p>Es una de esas partes de Linux que trabajan en silencio. Y precisamente por eso merece la pena conocerla bien.</p>

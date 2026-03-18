@@ -1,0 +1,68 @@
+<p>En entornos técnicos modernos es muy habitual ver Docker y Kubernetes mencionados juntos, y precisamente por eso también es muy común que se confundan. A veces se presentan como si fueran alternativas directas, cuando en realidad cumplen papeles distintos dentro del mismo ecosistema.</p>
+
+<p>Entender bien esa diferencia ayuda bastante a comprender cómo funcionan hoy muchas arquitecturas basadas en contenedores.</p>
+
+<h2>Qué aporta Docker</h2>
+
+<p>Docker permite construir, empaquetar y ejecutar contenedores de forma reproducible. Su valor principal está en facilitar que una aplicación pueda levantarse con el mismo entorno en distintos equipos sin depender tanto del sistema base donde se ejecuta.</p>
+
+<p>Eso lo hace muy útil para:</p>
+
+<ul>
+  <li>crear imágenes de aplicación;</li>
+  <li>aislar dependencias y entornos;</li>
+  <li>probar servicios localmente;</li>
+  <li>mantener mayor coherencia entre desarrollo y despliegue.</li>
+</ul>
+
+<p>En ese sentido, Docker resuelve muy bien el problema del empaquetado y de la ejecución de contenedores en una máquina o en entornos relativamente controlados.</p>
+
+<h2>Qué aporta Kubernetes</h2>
+
+<p>Kubernetes aparece cuando el problema deja de ser “cómo ejecuto este contenedor” y pasa a ser “cómo administro de forma consistente muchos contenedores distribuidos en varios nodos”.</p>
+
+<p>Su papel es el de orquestador: organiza despliegues, controla el estado del clúster, redistribuye cargas, reinicia servicios cuando fallan y facilita trabajar con aplicaciones distribuidas de forma más ordenada.</p>
+
+<p>Entre otras cosas, permite:</p>
+
+<ul>
+  <li>despliegues declarativos;</li>
+  <li>autoescalado;</li>
+  <li>alta disponibilidad;</li>
+  <li>gestión de pods, nodos y servicios;</li>
+  <li>integración con red, almacenamiento y métricas.</li>
+</ul>
+
+<h2>No hacen lo mismo</h2>
+
+<p>La diferencia importante es que Docker y Kubernetes no resuelven el mismo nivel del problema.</p>
+
+<ul>
+  <li><strong>Docker</strong> empaqueta y ejecuta contenedores.</li>
+  <li><strong>Kubernetes</strong> organiza, distribuye y mantiene aplicaciones compuestas por contenedores dentro de un clúster.</li>
+</ul>
+
+<p>Por eso no tiene mucho sentido plantearlos como una oposición directa. Lo normal es entenderlos como piezas complementarias dentro del mismo enfoque técnico.</p>
+
+<h2>Por qué se suelen mencionar juntos</h2>
+
+<p>Se mencionan juntos porque forman parte del mismo ecosistema de trabajo con contenedores. En una arquitectura moderna, una aplicación puede construirse como imagen de contenedor y después desplegarse dentro de un clúster gestionado por Kubernetes.</p>
+
+<p>Eso no significa que uno sustituya al otro en todo. Significa que trabajan en capas diferentes del mismo problema.</p>
+
+<h2>Qué me parece importante entender</h2>
+
+<p>Lo interesante de esta diferencia es que ayuda a ver mejor cómo se organiza la infraestructura moderna:</p>
+
+<ul>
+  <li>una cosa es construir y empaquetar la aplicación;</li>
+  <li>otra distinta es coordinar su ejecución a gran escala, mantenerla disponible y hacer que se recupere si algo falla.</li>
+</ul>
+
+<p>Entender Docker sin Kubernetes deja incompleta la visión de producción. Entender Kubernetes sin comprender bien los contenedores también deja huecos importantes. Por eso me parece útil verlos siempre como partes relacionadas, no como herramientas enfrentadas.</p>
+
+<h2>Conclusión</h2>
+
+<p>Docker y Kubernetes no compiten directamente. Docker resuelve muy bien el empaquetado y la ejecución de contenedores. Kubernetes resuelve la orquestación, la escalabilidad y la operación de aplicaciones distribuidas a mayor escala.</p>
+
+<p>Comprender esa diferencia ayuda mucho a interpretar mejor cómo funcionan hoy los despliegues modernos y por qué ambas tecnologías siguen siendo tan relevantes en entornos de infraestructura y DevOps.</p>

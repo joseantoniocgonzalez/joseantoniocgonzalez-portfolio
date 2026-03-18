@@ -1,0 +1,15 @@
+{
+  "title": "Front-end y Back-end: las dos caras de cualquier aplicación",
+  "slug": "front-end-y-back-end",
+  "date": "2025-09-14",
+  "category": "QA y desarrollo",
+  "tags": [
+    "front-end",
+    "back-end",
+    "software",
+    "aplicaciones",
+    "arquitectura"
+  ],
+  "summary": "Una explicación clara de la diferencia entre front-end y back-end y de por qué ambas capas son inseparables en cualquier aplicación moderna.",
+  "body_file": "body/front-end-y-back-end.html"
+}

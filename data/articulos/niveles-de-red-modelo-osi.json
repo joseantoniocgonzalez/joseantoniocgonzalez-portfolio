@@ -1,0 +1,15 @@
+{
+  "title": "Qué son los niveles de red: versión técnica explicada paso a paso",
+  "slug": "niveles-de-red-modelo-osi",
+  "date": "2025-06-06",
+  "category": "Redes",
+  "tags": [
+    "OSI",
+    "redes",
+    "capas",
+    "TCP/IP",
+    "diagnóstico"
+  ],
+  "summary": "Una explicación técnica y ordenada del modelo OSI, capa por capa, y de por qué sigue siendo tan útil para entender y diagnosticar problemas de red.",
+  "body_file": "body/niveles-de-red-modelo-osi.html"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Mi experiencia práctica con iptables y nftables en Linux",
+  "slug": "iptables-vs-nftables-linux",
+  "date": "2025-11-01",
+  "category": "Linux y sistemas",
+  "tags": [
+    "iptables",
+    "nftables",
+    "Linux",
+    "firewall",
+    "seguridad"
+  ],
+  "summary": "Una comparación práctica entre iptables y nftables, centrada en su estructura, diferencias reales y por qué nftables ofrece un enfoque más claro y moderno.",
+  "body_file": "body/iptables-vs-nftables-linux.html"
+}

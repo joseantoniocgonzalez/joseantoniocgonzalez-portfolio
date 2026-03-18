@@ -1,0 +1,15 @@
+{
+  "title": "507 ataques bloqueados en mi servidor personal: lo que aprendí sobre seguridad en la red",
+  "slug": "507-ataques-bloqueados-servidor-personal",
+  "date": "2025-09-22",
+  "category": "Seguridad",
+  "tags": [
+    "Fail2Ban",
+    "SSH",
+    "servidor personal",
+    "hardening",
+    "Linux"
+  ],
+  "summary": "Una experiencia práctica gestionando un servidor personal y observando cómo herramientas como Fail2Ban revelan la presión constante que recibe cualquier servicio expuesto a Internet.",
+  "body_file": "body/507-ataques-bloqueados-servidor-personal.html"
+}

@@ -8,6 +8,7 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 PROJECTS_DIR = DATA_DIR / "proyectos"
+ARTICLES_DIR = DATA_DIR / "articulos"
 DIST_DIR = BASE_DIR / "dist"
 
 
@@ -58,6 +59,31 @@ def load_projects() -> list[dict]:
     return projects
 
 
+def load_articles() -> list[dict]:
+    articles = []
+
+    for article_file in ARTICLES_DIR.glob("*.json"):
+        if article_file.name.startswith("_"):
+            continue
+
+        article_data = load_json(article_file)
+
+        body_file = article_data.get("body_file")
+        if body_file:
+            body_path = ARTICLES_DIR / body_file
+            if body_path.exists():
+                article_data["content_html"] = body_path.read_text(encoding="utf-8")
+            else:
+                article_data["content_html"] = "<p>Contenido no disponible.</p>"
+        else:
+            article_data["content_html"] = "<p>Contenido no disponible.</p>"
+
+        articles.append(article_data)
+
+    articles.sort(key=lambda article: article.get("date", ""), reverse=True)
+    return articles
+
+
 def build_home(env: Environment, projects: list[dict]) -> None:
     template = env.get_template("index.html")
 
@@ -105,6 +131,39 @@ def build_project_pages(env: Environment, projects: list[dict]) -> None:
         (project_dist_dir / "index.html").write_text(output, encoding="utf-8")
 
 
+def build_articles(env: Environment, articles: list[dict]) -> None:
+    template = env.get_template("articulos.html")
+
+    output = template.render(
+        page_title="Artículos | José Antonio Canalo González",
+        site_title="José Antonio Canalo González",
+        tagline="QA Automation, DevOps y Administración de Sistemas",
+        articles=articles
+    )
+
+    articles_dist_dir = DIST_DIR / "articulos"
+    articles_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (articles_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_article_pages(env: Environment, articles: list[dict]) -> None:
+    template = env.get_template("articulo.html")
+
+    for article in articles:
+        output = template.render(
+            page_title=f'{article["title"]} | José Antonio Canalo González',
+            site_title="José Antonio Canalo González",
+            tagline="QA Automation, DevOps y Administración de Sistemas",
+            article=article
+        )
+
+        article_dist_dir = DIST_DIR / "articulos" / article["slug"]
+        article_dist_dir.mkdir(parents=True, exist_ok=True)
+
+        (article_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def build_contact(env: Environment) -> None:
     template = env.get_template("contacto.html")
     home_data = load_home_data()
@@ -122,16 +181,37 @@ def build_contact(env: Environment) -> None:
     (contact_dist_dir / "index.html").write_text(output, encoding="utf-8")
 
 
+def build_curriculum(env: Environment) -> None:
+    template = env.get_template("curriculum.html")
+    home_data = load_home_data()
+
+    output = template.render(
+        page_title="Currículum | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        contact=home_data["contact"]
+    )
+
+    curriculum_dist_dir = DIST_DIR / "curriculum"
+    curriculum_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (curriculum_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def main() -> None:
     env = create_environment()
     prepare_dist()
 
     projects = load_projects()
+    articles = load_articles()
 
     build_home(env, projects)
     build_projects(env, projects)
     build_project_pages(env, projects)
+    build_articles(env, articles)
+    build_article_pages(env, articles)
     build_contact(env)
+    build_curriculum(env)
 
     print("Sitio generado en dist/")
 

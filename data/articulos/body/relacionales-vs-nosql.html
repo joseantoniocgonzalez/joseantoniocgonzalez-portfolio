@@ -1,0 +1,53 @@
+<p>Durante mi formación, el primer contacto serio con bases de datos fue con sistemas relacionales como PostgreSQL, MariaDB u Oracle. Ahí todo encaja dentro de una lógica bastante clara: tablas, columnas, claves, relaciones e integridad. Es un modelo muy sólido cuando importa la consistencia y cuando las entidades del sistema tienen vínculos bien definidos.</p>
+
+<p>Más adelante llegó MongoDB, y ahí el enfoque cambió bastante. En lugar de pensar en tablas y relaciones estrictas, el modelo se desplazaba hacia documentos más flexibles. Eso me ayudó a entender que la diferencia entre relacional y NoSQL no es una cuestión de “qué tecnología es mejor”, sino de qué problema intenta resolver cada una.</p>
+
+<h2>Qué aporta un modelo relacional</h2>
+
+<p>Las bases de datos relacionales tienen una estructura muy clara y muy útil cuando el sistema necesita orden, consistencia y relaciones bien definidas entre entidades.</p>
+
+<p>Su fortaleza está en aspectos como estos:</p>
+
+<ul>
+  <li>esquemas definidos y estables;</li>
+  <li>integridad referencial;</li>
+  <li>consultas complejas con SQL;</li>
+  <li>coherencia cuando los datos dependen unos de otros.</li>
+</ul>
+
+<p>Por eso me parecen especialmente adecuadas en contextos donde importa mucho que la información mantenga relaciones claras y fiables a lo largo del tiempo.</p>
+
+<h2>Qué cambia con MongoDB</h2>
+
+<p>MongoDB me hizo ver otro enfoque. En vez de trabajar con filas y tablas relacionadas, el modelo gira alrededor de documentos, normalmente cercanos a estructuras tipo JSON. Eso aporta una flexibilidad interesante cuando los datos no siempre encajan en un esquema rígido o cuando interesa representar objetos completos de forma más directa.</p>
+
+<p>La ventaja más evidente es la elasticidad del modelo. No todos los registros tienen por qué cumplir exactamente la misma estructura, y en ciertos escenarios eso simplifica bastante el diseño.</p>
+
+<p>Eso no significa que sea una “evolución natural” de lo relacional ni que deba sustituirlo. Significa que responde mejor a otros tipos de necesidad.</p>
+
+<h2>Y dónde encaja Redis</h2>
+
+<p>Cuando más adelante me encontré con Redis, la imagen se amplió todavía más. Redis no lo veo tanto como una base de datos para almacenar toda la información principal del sistema, sino como una herramienta muy útil cuando lo que importa es la velocidad de acceso a ciertos datos temporales o muy consultados.</p>
+
+<p>Su papel tiene mucho sentido en tareas como:</p>
+
+<ul>
+  <li>cachear resultados de consultas;</li>
+  <li>guardar sesiones o tokens;</li>
+  <li>mantener contadores;</li>
+  <li>gestionar colas simples o datos efímeros.</li>
+</ul>
+
+<p>Ahí el objetivo no es sustituir a PostgreSQL o MongoDB, sino complementar el sistema con una capa rápida en memoria.</p>
+
+<h2>No es una pelea entre tecnologías</h2>
+
+<p>Una de las ideas más útiles que saqué de comparar estos sistemas es que no tiene mucho sentido plantearlo como una oposición absoluta entre SQL y NoSQL. En muchos proyectos reales conviven precisamente porque cada tecnología responde mejor a una necesidad concreta.</p>
+
+<p>Un sistema puede apoyarse en una base relacional para el núcleo transaccional, usar MongoDB para almacenar documentos flexibles y utilizar Redis como caché o apoyo de rendimiento. Esa combinación tiene mucho más sentido que intentar convertir el debate en una especie de competición cerrada.</p>
+
+<h2>Conclusión</h2>
+
+<p>Trabajar con PostgreSQL, conocer MongoDB y entender mejor para qué sirve Redis me ayudó a ver que el valor real de una base de datos no está solo en su popularidad, sino en el tipo de problema que resuelve bien.</p>
+
+<p>Las relacionales aportan estructura, integridad y relaciones claras. MongoDB aporta flexibilidad documental. Redis aporta velocidad y utilidad como capa complementaria. Entender esa diferencia me parece mucho más importante que quedarse solo con la etiqueta de SQL o NoSQL.</p>

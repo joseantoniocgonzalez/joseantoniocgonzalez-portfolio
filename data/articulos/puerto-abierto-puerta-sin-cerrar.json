@@ -1,0 +1,15 @@
+{
+  "title": "Tener un puerto abierto es como dejar una puerta sin cerrar con llave",
+  "slug": "puerto-abierto-puerta-sin-cerrar",
+  "date": "2025-09-06",
+  "category": "Seguridad",
+  "tags": [
+    "puertos",
+    "nmap",
+    "redes",
+    "seguridad",
+    "servicios"
+  ],
+  "summary": "Una explicación sencilla de por qué los puertos abiertos son una parte crítica de la exposición de un sistema y por qué conviene revisar qué servicios están escuchando.",
+  "body_file": "body/puerto-abierto-puerta-sin-cerrar.html"
+}

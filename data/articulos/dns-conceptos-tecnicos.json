@@ -1,0 +1,15 @@
+{
+  "title": "DNS: conceptos técnicos que comprendí al trabajar con él",
+  "slug": "dns-conceptos-tecnicos",
+  "date": "",
+  "category": "Redes",
+  "tags": [
+    "DNS",
+    "TTL",
+    "caché",
+    "zonas",
+    "redes"
+  ],
+  "summary": "Un repaso técnico y práctico a cómo funciona DNS por dentro: resolución, zonas, registros, TTL, seguridad y errores reales al trabajar con dominios y servidores.",
+  "body_file": "body/dns-conceptos-tecnicos.html"
+}

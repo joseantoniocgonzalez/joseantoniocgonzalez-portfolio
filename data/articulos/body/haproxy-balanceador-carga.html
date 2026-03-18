@@ -1,0 +1,75 @@
+<p>Cuando una aplicación empieza a recibir más tráfico, una de las primeras necesidades reales es dejar de depender de un único servidor. Ahí es donde entra en juego el balanceo de carga: una técnica que permite repartir las peticiones entre varios backends para mejorar la disponibilidad, el rendimiento y la capacidad de crecimiento de un servicio.</p>
+
+<p>Dentro de ese contexto, HAProxy es una de las herramientas más conocidas y utilizadas. Su papel no se limita a “repartir tráfico”: también permite supervisar el estado de los servidores, retirar nodos con problemas y aplicar reglas que ayudan a mantener la infraestructura más estable y predecible.</p>
+
+<h2>Qué problemas resuelve un balanceador de carga</h2>
+
+<p>Colocar un balanceador delante de varios servidores resuelve varios problemas habituales:</p>
+
+<ul>
+  <li><strong>Alta disponibilidad:</strong> si uno de los servidores deja de responder, el tráfico puede seguir yendo al resto.</li>
+  <li><strong>Reparto de carga:</strong> evita que una sola máquina asuma todas las peticiones.</li>
+  <li><strong>Mantenimiento sin interrupción visible:</strong> permite sacar temporalmente un backend, actualizarlo y volver a incorporarlo sin afectar del mismo modo al usuario final.</li>
+  <li><strong>Escalabilidad:</strong> facilita añadir nuevos nodos cuando la carga aumenta.</li>
+</ul>
+
+<p>En otras palabras, el balanceador se convierte en el punto de entrada que ordena el tráfico y reduce la dependencia de un único servidor.</p>
+
+<h2>Qué es HAProxy</h2>
+
+<p>HAProxy es un balanceador de carga por software y un proxy inverso. Se sitúa delante de uno o varios servicios y decide a qué backend enviar cada conexión o petición, en función de reglas, algoritmos de reparto y comprobaciones de salud.</p>
+
+<p>Es una herramienta especialmente valorada por su rendimiento, su estabilidad y su flexibilidad. Puede trabajar tanto con tráfico HTTP/HTTPS como con otros servicios a nivel TCP, lo que hace que encaje en muchos escenarios distintos.</p>
+
+<h2>Cómo reparte el tráfico</h2>
+
+<p>HAProxy puede distribuir el tráfico de varias formas. Entre las más habituales están:</p>
+
+<ul>
+  <li><strong>Round-robin:</strong> reparte las peticiones de forma rotatoria entre los servidores disponibles.</li>
+  <li><strong>Least connections:</strong> prioriza el backend con menos conexiones activas en ese momento.</li>
+  <li><strong>Health checks:</strong> supervisa el estado de los nodos y deja de enviar tráfico a los que no responden correctamente.</li>
+</ul>
+
+<p>Este último punto es especialmente importante. Un balanceador de carga no solo reparte trabajo: también ayuda a mantener fuera del circuito a los servidores que están fallando, evitando que el usuario reciba errores innecesarios.</p>
+
+<h2>Escenarios habituales de uso</h2>
+
+<p>HAProxy aparece con frecuencia en situaciones como estas:</p>
+
+<ul>
+  <li><strong>Aplicaciones web o APIs con varios servidores detrás</strong>, todos accesibles desde una única URL pública.</li>
+  <li><strong>Separación por rutas</strong>, enviando por ejemplo <code>/api</code> a un grupo de backends y <code>/</code> a otro distinto.</li>
+  <li><strong>Balanceo a nivel TCP</strong> para servicios que no trabajan directamente con HTTP.</li>
+  <li><strong>Terminación TLS o gestión del tráfico HTTPS</strong> delante de los servidores internos.</li>
+  <li><strong>Supervisión operativa</strong> mediante una página de estadísticas para revisar carga, conexiones y estado de los nodos.</li>
+</ul>
+
+<p>Por eso es frecuente verlo en arquitecturas donde importa tanto el rendimiento como la continuidad del servicio.</p>
+
+<h2>Tipos de balanceadores de carga</h2>
+
+<p>HAProxy es una solución por software, pero no es la única forma de balancear tráfico. En la práctica suelen encontrarse tres grandes enfoques:</p>
+
+<ul>
+  <li><strong>Balanceadores por software</strong>, instalados y administrados por el propio equipo técnico, como HAProxy, Nginx o Envoy.</li>
+  <li><strong>Appliances o soluciones hardware</strong>, más frecuentes en entornos enterprise, como F5 o Citrix ADC.</li>
+  <li><strong>Balanceadores gestionados en la nube</strong>, donde el proveedor se encarga de la infraestructura y el usuario solo configura el servicio, como AWS ELB/ALB/NLB, Azure Load Balancer o GCP Load Balancing.</li>
+</ul>
+
+<p>Además, suelen clasificarse también por la capa en la que trabajan:</p>
+
+<ul>
+  <li><strong>L4 (TCP/UDP):</strong> operan a nivel de transporte y reparten conexiones.</li>
+  <li><strong>L7 (HTTP/HTTPS):</strong> entienden mejor el tráfico de aplicación y permiten enrutar por host, rutas o cabeceras.</li>
+</ul>
+
+<h2>Por qué sigue siendo una herramienta importante</h2>
+
+<p>Lo interesante de HAProxy es que ayuda a entender varios conceptos clave de infraestructura: proxy inverso, health checks, alta disponibilidad, tolerancia a fallos y escalado horizontal. No es solo una herramienta concreta, sino una forma práctica de ver cómo se organiza el tráfico cuando una aplicación deja de depender de una única máquina.</p>
+
+<p>En ese sentido, aprender HAProxy no sirve únicamente para “configurar un balanceador”, sino para comprender mejor cómo se construyen servicios más robustos y preparados para crecer.</p>
+
+<h2>Conclusión</h2>
+
+<p>HAProxy es una pieza muy útil cuando se necesita repartir tráfico, mejorar la disponibilidad y ganar flexibilidad en la infraestructura. Entender cómo funciona permite ver con más claridad qué hace realmente un balanceador de carga y por qué se vuelve tan importante en cuanto un servicio empieza a crecer o necesita reducir puntos únicos de fallo.</p>

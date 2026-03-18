@@ -1,0 +1,46 @@
+<p>En el mundo de la administración de sistemas y del alojamiento web, hay dos nombres que llevan años apareciendo una y otra vez: <strong>Apache</strong> y <strong>Nginx</strong>. Ambos son servidores web muy importantes, pero no responden exactamente a la misma filosofía ni destacan por las mismas cosas.</p>
+
+<p>Conocer sus diferencias ayuda bastante a entender mejor cómo se sirven aplicaciones web, cómo se gestionan las conexiones y por qué una infraestructura puede elegir uno, otro o incluso los dos a la vez.</p>
+
+<h2>Apache: flexibilidad y trayectoria</h2>
+
+<p>Apache fue durante mucho tiempo el servidor web más utilizado del mundo. Su recorrido histórico, su enorme ecosistema de módulos y su compatibilidad con aplicaciones clásicas lo convirtieron en una pieza fundamental de Internet durante muchos años.</p>
+
+<p>Uno de sus puntos fuertes ha sido siempre la flexibilidad. Encaja muy bien en entornos donde interesa una configuración modular o donde siguen siendo comunes aplicaciones tradicionales en PHP, como WordPress o Drupal. También ha tenido mucho peso en escenarios de hosting compartido gracias al uso de <code>.htaccess</code> y a su forma de gestionar configuraciones por directorio.</p>
+
+<p>Por eso Apache sigue siendo una herramienta muy relevante, sobre todo en entornos heredados o donde la compatibilidad y la flexibilidad pesan más que otras consideraciones.</p>
+
+<h2>Nginx: eficiencia y papel de proxy inverso</h2>
+
+<p>Nginx nació con un enfoque muy marcado hacia el rendimiento y la gestión eficiente de un gran número de conexiones concurrentes. Su arquitectura asíncrona y basada en eventos le permite manejar tráfico elevado con un consumo de recursos contenido, algo que lo hizo especialmente atractivo para proyectos modernos y entornos de alta carga.</p>
+
+<p>Además de actuar como servidor web, Nginx destaca mucho como <strong>proxy inverso</strong>, terminador TLS y balanceador de carga ligero. Esa versatilidad explica por qué aparece tan a menudo delante de aplicaciones, APIs o servicios que necesitan una capa de entrada clara y eficiente.</p>
+
+<p>En la práctica, es muy habitual verlo en despliegues donde interesa separar la exposición pública del servicio y delegar en él parte del trabajo de enrutado, terminación HTTPS o entrega de contenido estático.</p>
+
+<h2>No siempre compiten</h2>
+
+<p>Aunque a veces se presentan como rivales, la realidad es que Apache y Nginx muchas veces se utilizan juntos. Un esquema bastante conocido consiste en colocar Nginx delante como proxy inverso y dejar Apache detrás gestionando la parte dinámica de la aplicación.</p>
+
+<p>Ese tipo de combinación tiene sentido porque cada uno aporta fortalezas distintas:</p>
+
+<ul>
+  <li><strong>Nginx</strong> puede encargarse de la entrada de tráfico, del contenido estático o del proxy inverso.</li>
+  <li><strong>Apache</strong> puede seguir gestionando aplicaciones que dependen de su ecosistema o de ciertas formas de configuración más tradicionales.</li>
+</ul>
+
+<p>Así que no siempre se trata de elegir un único ganador, sino de entender qué papel cumple mejor cada uno dentro de la arquitectura.</p>
+
+<h2>Qué me parece más interesante de cada uno</h2>
+
+<p>Apache me parece especialmente valioso por su recorrido, su capacidad de adaptación y su presencia constante en muchos entornos reales. Sigue siendo una herramienta importante y conviene conocerlo bien porque continúa apareciendo en multitud de servidores y aplicaciones.</p>
+
+<p>Nginx, por otro lado, me parece especialmente fuerte en escenarios modernos por su eficiencia, por su papel como proxy inverso y por lo bien que encaja en despliegues donde interesa una capa frontal clara, ligera y orientada al rendimiento.</p>
+
+<p>Por eso, si tengo que inclinarme por uno en proyectos actuales, suelo ver más atractivo Nginx. Aun así, eso no resta importancia a Apache, que sigue siendo fundamental para entender buena parte del ecosistema web.</p>
+
+<h2>Conclusión</h2>
+
+<p>Apache y Nginx son dos servidores web muy importantes, pero responden a necesidades y enfoques algo distintos. Apache aporta una gran trayectoria y mucha flexibilidad. Nginx destaca por eficiencia, simplicidad operativa y un papel muy sólido como proxy inverso.</p>
+
+<p>Más que plantearlos como una oposición absoluta, me parece más útil verlos como dos herramientas que todo perfil técnico de sistemas o infraestructura web debería conocer. Entender cómo trabajan y en qué contextos encajan mejor ayuda mucho a diseñar servicios más razonables y a comprender mejor cómo funciona la capa web de una infraestructura real.</p>

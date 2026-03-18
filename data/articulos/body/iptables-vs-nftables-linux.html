@@ -1,0 +1,80 @@
+<p>Mientras terminaba mi formación en ASIR, uno de los últimos temas que tuve que trabajar fue <strong>nftables</strong>. Hasta entonces había usado sobre todo <strong>iptables</strong>, así que compararlos me ayudó a entender bastante mejor cómo ha evolucionado el filtrado de red en Linux.</p>
+
+<p>Las dos herramientas sirven para definir reglas de firewall, filtrar tráfico y controlar qué entra y qué sale del sistema. La diferencia está en cómo lo hacen, en cómo se organizan y en lo fácil o difícil que resulta mantener una configuración cuando empieza a crecer.</p>
+
+<h2>iptables: el estándar clásico durante años</h2>
+
+<p>Durante mucho tiempo, iptables fue la referencia habitual en sistemas Linux. Su modelo se basa en <strong>tablas, cadenas y reglas</strong> que se procesan en orden secuencial. Es una herramienta potente, muy conocida y con muchísima documentación, algo que sigue siendo valioso hoy en día.</p>
+
+<p>Para configuraciones sencillas funciona bien, y además sigue presente en muchos entornos legacy o en documentación técnica más antigua. El problema aparece cuando el número de reglas crece y la política se vuelve más compleja: el conjunto empieza a ser más difícil de leer, mantener y depurar.</p>
+
+<h2>nftables: una evolución más clara y compacta</h2>
+
+<p>nftables representa un enfoque más moderno. Su estructura es distinta, y su sintaxis permite construir reglas más compactas y ordenadas. En lugar de apoyarse tanto en secuencias largas de reglas independientes, facilita una visión más unificada del firewall.</p>
+
+<p>Una de las diferencias que más se nota es la posibilidad de trabajar con <strong>sets</strong> y agrupaciones de puertos o direcciones de forma nativa, algo que simplifica mucho configuraciones que en iptables acaban siendo más repetitivas.</p>
+
+<p>Además, nftables unifica mejor la gestión de IPv4 e IPv6 dentro de una misma familia, lo que ayuda bastante cuando el objetivo es mantener una política coherente y más fácil de administrar.</p>
+
+<h2>Un ejemplo sencillo</h2>
+
+<p>Si el objetivo es permitir SSH, HTTP y HTTPS, y bloquear el resto, una configuración con iptables suele expresarse como varias reglas separadas:</p>
+
+<pre><code>iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -j DROP</code></pre>
+
+<p>En nftables, esa misma intención puede expresarse de forma más compacta:</p>
+
+<pre><code>nft add table inet filtro
+nft add chain inet filtro input { type filter hook input priority 0; policy drop; }
+
+nft add rule inet filtro input tcp dport {22, 80, 443} accept</code></pre>
+
+<p>La diferencia no está solo en el número de líneas, sino en la claridad con la que se ve la política que se quiere aplicar.</p>
+
+<h2>Ventajas y límites de cada enfoque</h2>
+
+<h3>iptables</h3>
+
+<p><strong>Lo que sigue teniendo a favor:</strong></p>
+
+<ul>
+  <li>lleva muchos años siendo conocido y utilizado;</li>
+  <li>hay gran cantidad de ejemplos, documentación y referencias;</li>
+  <li>es habitual encontrarlo todavía en servidores y entornos antiguos.</li>
+</ul>
+
+<p><strong>Sus límites aparecen sobre todo cuando la configuración crece:</strong></p>
+
+<ul>
+  <li>las reglas dependen mucho del orden en el que se insertan;</li>
+  <li>la visión global del firewall se vuelve menos clara;</li>
+  <li>las configuraciones largas se hacen más pesadas de mantener.</li>
+</ul>
+
+<h3>nftables</h3>
+
+<p><strong>Lo que más me parece valioso en nftables:</strong></p>
+
+<ul>
+  <li>una sintaxis más compacta y estructurada;</li>
+  <li>soporte nativo para sets y agrupaciones;</li>
+  <li>mejor organización general de las reglas;</li>
+  <li>un enfoque más coherente para trabajar con IPv4 e IPv6.</li>
+</ul>
+
+<p><strong>Su principal barrera</strong> no es tanto técnica como de costumbre: si vienes de iptables, exige cambiar la forma de pensar el firewall. Y eso, al principio, puede dar cierta sensación de ruptura.</p>
+
+<h2>Una impresión práctica</h2>
+
+<p>En una práctica de OpenStack tuve que montar reglas para permitir que una máquina actuara como punto de paso hacia otra interna. Acabé encadenando varias reglas de iptables y la configuración se volvió bastante más difícil de seguir de lo que parecía al principio.</p>
+
+<p>Cuando más adelante trabajé con nftables, la sensación fue distinta: me resultó un sistema más ordenado, más compacto y mejor pensado para evitar precisamente ese tipo de caos cuando la política empieza a crecer.</p>
+
+<h2>Conclusión</h2>
+
+<p>iptables sigue siendo una herramienta importante y todavía conviene conocerla, sobre todo porque sigue apareciendo en muchos sistemas y materiales técnicos. Sin embargo, nftables me parece una evolución clara hacia un modelo de firewall más limpio, más mantenible y mejor adaptado a configuraciones modernas.</p>
+
+<p>Aprender ambos tiene sentido, pero entender nftables ayuda a ver hacia dónde ha ido Linux en la gestión del filtrado de red: menos repetición, más estructura y una administración mucho más razonable a largo plazo.</p>

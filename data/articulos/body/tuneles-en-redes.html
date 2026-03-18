@@ -1,0 +1,61 @@
+<p>En redes, un túnel es una técnica que permite encapsular un tipo de tráfico dentro de otro para que pueda viajar por un camino distinto o más seguro. Es un concepto que aparece constantemente al hablar de VPN, acceso remoto, segmentación y protección de servicios internos.</p>
+
+<p>Lo importante es que un túnel no es un “canal mágico”, sino una forma concreta de transportar tráfico con otra envoltura para que llegue a su destino bajo unas condiciones determinadas.</p>
+
+<h2>Para qué sirven los túneles</h2>
+
+<p>Su utilidad práctica es bastante amplia. Entre los usos más habituales están:</p>
+
+<ul>
+  <li>crear VPN entre equipos o redes remotas;</li>
+  <li>conectar redes privadas a través de Internet;</li>
+  <li>proteger tráfico que, de otro modo, viajaría sin cifrar;</li>
+  <li>permitir acceso remoto controlado a servicios internos;</li>
+  <li>transportar un protocolo sobre otro medio distinto.</li>
+</ul>
+
+<p>En todos esos casos, la idea de fondo es la misma: encapsular, transportar y desencapsular.</p>
+
+<h2>Cómo funciona, a nivel conceptual</h2>
+
+<p>Un túnel suele seguir tres pasos básicos:</p>
+
+<ol>
+  <li><strong>Encapsular:</strong> el tráfico original se mete dentro de otro protocolo o envoltura.</li>
+  <li><strong>Transportar:</strong> esa nueva unidad viaja por la red hasta el extremo remoto.</li>
+  <li><strong>Desencapsular:</strong> en el destino se extrae el tráfico original y se entrega al sistema correspondiente.</li>
+</ol>
+
+<p>Ese mecanismo permite que un servicio interno, por ejemplo, pueda atravesar una red pública sin exponerse del mismo modo que lo haría si estuviera publicado directamente.</p>
+
+<h2>Ejemplos habituales</h2>
+
+<p>Hay muchos tipos de túneles, pero algunos aparecen con más frecuencia:</p>
+
+<ul>
+  <li><strong>VPN como OpenVPN, WireGuard o IPSec</strong>, para enlazar redes o clientes remotos.</li>
+  <li><strong>SSH tunneling</strong>, útil para redirección de puertos y acceso puntual a servicios internos.</li>
+  <li><strong>GRE o SIT</strong>, más orientados a encapsulación de tráfico a nivel de red.</li>
+  <li><strong>Túneles sobre HTTPS</strong>, como algunas soluciones de publicación segura de servicios.</li>
+</ul>
+
+<p>Cada uno responde a necesidades distintas, pero todos comparten la misma lógica de encapsulación y transporte.</p>
+
+<h2>Por qué son importantes</h2>
+
+<p>Los túneles me parecen especialmente importantes porque ayudan a resolver varios problemas a la vez:</p>
+
+<ul>
+  <li>reducen la necesidad de exponer servicios sensibles directamente a Internet;</li>
+  <li>permiten unir sedes, redes o máquinas separadas geográficamente;</li>
+  <li>añaden una capa de seguridad sobre tráfico que no debería circular en claro;</li>
+  <li>facilitan acceso remoto más controlado y más razonable.</li>
+</ul>
+
+<p>En otras palabras, son una herramienta muy práctica para equilibrar conectividad y protección.</p>
+
+<h2>Conclusión</h2>
+
+<p>Entender los túneles ayuda mucho a comprender mejor cómo funcionan las VPN, el acceso remoto y la publicación segura de servicios. No se trata solo de “abrir un camino”, sino de controlar cómo viaja el tráfico, por dónde lo hace y qué grado de exposición tiene.</p>
+
+<p>Por eso me parecen un concepto básico dentro de redes y seguridad: aparecen una y otra vez en problemas reales, y entenderlos cambia bastante la forma de pensar la conectividad entre sistemas.</p>

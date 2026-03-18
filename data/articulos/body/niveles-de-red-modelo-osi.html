@@ -1,0 +1,56 @@
+<p>En redes, la comunicación entre dos sistemas no ocurre de forma directa y uniforme. Lo que para una persona usuaria parece una simple conexión entre un equipo y un servidor, en realidad está dividido en varias funciones distintas: señal física, direccionamiento, transporte, sesiones, presentación de datos y servicios de aplicación.</p>
+
+<p>Esa división se entiende muy bien a través del <strong>modelo OSI</strong>, que sigue siendo una herramienta muy útil para pensar cómo viaja la información y, sobre todo, para diagnosticar problemas de forma más ordenada.</p>
+
+<h2>Por qué importa pensar en capas</h2>
+
+<p>La gran utilidad del modelo OSI está en que separa responsabilidades. Cada capa cumple una función concreta y eso ayuda a entender mejor qué parte del proceso está fallando cuando una comunicación no funciona como debería.</p>
+
+<p>También permite razonar con más claridad sobre protocolos, dispositivos y puntos de fallo, en lugar de tratar la red como un bloque único y confuso.</p>
+
+<h2>Las siete capas del modelo OSI</h2>
+
+<h3>1. Capa física</h3>
+<p>Se ocupa de la transmisión material de la señal: cableado, conectores, medios físicos y señales eléctricas, ópticas o de radio. Si aquí falla algo, directamente no hay comunicación posible.</p>
+
+<h3>2. Capa de enlace de datos</h3>
+<p>Trabaja con tramas y direcciones MAC dentro de la red local. Es donde aparecen elementos como switches, VLAN o control de acceso al medio.</p>
+
+<h3>3. Capa de red</h3>
+<p>Gestiona direccionamiento lógico y enrutamiento entre redes. Aquí entran IP, routers y la decisión de por dónde deben viajar los paquetes.</p>
+
+<h3>4. Capa de transporte</h3>
+<p>Se encarga de la comunicación extremo a extremo. Aquí se sitúan protocolos como TCP y UDP, junto con la idea de puertos, fiabilidad y entrega.</p>
+
+<h3>5. Capa de sesión</h3>
+<p>Gestiona el establecimiento, mantenimiento y cierre de sesiones entre sistemas que necesitan mantener un diálogo activo.</p>
+
+<h3>6. Capa de presentación</h3>
+<p>Se ocupa del formato de los datos, codificaciones, compresión y cifrado. Su objetivo es que la información pueda interpretarse correctamente al llegar al otro extremo.</p>
+
+<h3>7. Capa de aplicación</h3>
+<p>Es la más cercana al usuario. Aquí viven protocolos y servicios como HTTP, DNS, FTP o SMTP, es decir, la capa donde la aplicación utiliza realmente la red.</p>
+
+<h2>Por qué sigue siendo tan útil</h2>
+
+<p>Me parece especialmente útil porque ofrece una forma muy práctica de pensar incidencias:</p>
+
+<ul>
+  <li>si no hay enlace físico, el problema está muy abajo;</li>
+  <li>si la IP o la puerta de enlace están mal, el problema está en red;</li>
+  <li>si el servicio web devuelve error, el problema está mucho más arriba.</li>
+</ul>
+
+<p>Esa forma de razonar ayuda bastante a no diagnosticar a ciegas.</p>
+
+<h2>Un modelo para entender mejor, no para memorizar sin contexto</h2>
+
+<p>El valor del modelo OSI no está solo en aprenderse sus siete capas de memoria, sino en usarlo para pensar mejor cómo funciona la comunicación y dónde tiene sentido buscar el problema en cada caso.</p>
+
+<p>Por eso, aunque en la práctica muchas redes se describan con el modelo TCP/IP, OSI sigue siendo una herramienta muy buena para ordenar ideas y estructurar diagnósticos.</p>
+
+<h2>Conclusión</h2>
+
+<p>El modelo OSI sigue siendo una referencia muy útil porque permite dividir la comunicación en capas comprensibles y localizar fallos con más claridad. Más que una lista teórica, me parece una forma de pensar redes con orden.</p>
+
+<p>Y precisamente por eso sigue siendo tan valioso para cualquiera que quiera entender mejor cómo viajan los datos y cómo se diagnostican problemas reales de conectividad y servicios.</p>

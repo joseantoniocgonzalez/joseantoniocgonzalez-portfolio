@@ -1,0 +1,15 @@
+{
+  "title": "Kubernetes vs Docker: ¿conflicto o complemento?",
+  "slug": "kubernetes-vs-docker",
+  "date": "2025-10-10",
+  "category": "Infraestructura y DevOps",
+  "tags": [
+    "Kubernetes",
+    "Docker",
+    "contenedores",
+    "orquestación",
+    "cloud-native"
+  ],
+  "summary": "Una explicación clara de por qué Docker y Kubernetes no compiten directamente, sino que cumplen funciones distintas dentro del ecosistema de contenedores.",
+  "body_file": "body/kubernetes-vs-docker.html"
+}

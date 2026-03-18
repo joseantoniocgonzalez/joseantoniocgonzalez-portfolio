@@ -1,0 +1,47 @@
+<p>Escribir una URL en el navegador parece un gesto casi trivial. Sin embargo, detrás de esa acción se activa una cadena de procesos técnicos que ocurre en muy poco tiempo y que involucra resolución de nombres, conexión de red, negociación segura, petición de recursos y renderizado en el cliente.</p>
+
+<p>Entender ese recorrido ayuda bastante a ver la web de una forma menos “mágica” y más técnica.</p>
+
+<h2>1. Resolución DNS</h2>
+
+<p>El navegador necesita saber a qué dirección IP corresponde el nombre de dominio solicitado. Para eso entra en juego la resolución DNS. El sistema consulta su caché, su resolver configurado y, si hace falta, la cadena DNS hasta obtener la respuesta correspondiente.</p>
+
+<p>Sin esa resolución inicial, el navegador no sabría a qué host conectarse.</p>
+
+<h2>2. Establecimiento de la conexión</h2>
+
+<p>Una vez conocida la IP, el navegador inicia una conexión de red, normalmente sobre TCP. Si la URL usa HTTPS, a continuación se negocia también una capa TLS para cifrar la comunicación y validar la identidad del sitio mediante su certificado.</p>
+
+<p>Este paso es fundamental porque prepara la base sobre la que viajarán las peticiones y respuestas posteriores.</p>
+
+<h2>3. Petición del recurso</h2>
+
+<p>Después de establecer la conexión, el navegador envía una petición HTTP, normalmente para solicitar el documento principal de la página. El servidor responde con el HTML y con referencias a otros recursos necesarios para completar la carga.</p>
+
+<p>Esos recursos pueden incluir:</p>
+
+<ul>
+  <li>hojas de estilo CSS;</li>
+  <li>scripts JavaScript;</li>
+  <li>imágenes;</li>
+  <li>fuentes;</li>
+  <li>peticiones adicionales a APIs o servicios externos.</li>
+</ul>
+
+<h2>4. Renderizado en el navegador</h2>
+
+<p>El navegador interpreta el HTML, aplica estilos, ejecuta scripts y construye lo que finalmente aparece en pantalla. Este proceso puede seguir evolucionando incluso después de la primera carga, especialmente en aplicaciones modernas que hacen nuevas peticiones según la interacción del usuario.</p>
+
+<p>Es decir, la página visible es el resultado de varias capas coordinadas, no solo de “descargar un archivo”.</p>
+
+<h2>5. Caché y almacenamiento</h2>
+
+<p>Para optimizar futuras visitas, el navegador puede guardar parte de los recursos en caché. También puede almacenar cookies y otros datos que permiten recordar sesiones, preferencias o estado de la navegación.</p>
+
+<p>Eso ayuda a acelerar cargas posteriores y a mantener continuidad en la experiencia del usuario.</p>
+
+<h2>Conclusión</h2>
+
+<p>Escribir una URL activa un proceso bastante más complejo de lo que parece a simple vista. DNS, TCP, TLS, HTTP, recursos auxiliares, renderizado y almacenamiento trabajan juntos en cuestión de segundos para que la página llegue a mostrarse.</p>
+
+<p>Comprender ese recorrido me parece útil porque cambia la manera de pensar la web: deja de verse como algo inmediato y abstracto, y empieza a entenderse como una secuencia técnica muy concreta de pasos coordinados.</p>

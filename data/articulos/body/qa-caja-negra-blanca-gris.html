@@ -1,0 +1,35 @@
+<p>En testing no siempre se prueba con el mismo nivel de conocimiento sobre el sistema. Una de las clasificaciones más conocidas distingue entre <strong>caja negra</strong>, <strong>caja blanca</strong> y <strong>caja gris</strong>. Aunque es una división básica, me parece útil porque ayuda a entender desde qué punto de vista se está validando el software.</p>
+
+<h2>Caja negra</h2>
+
+<p>En las pruebas de caja negra, quien prueba no necesita conocer la lógica interna ni el código del sistema. La atención se centra en las entradas, en el comportamiento observable y en si las salidas cumplen lo esperado según los requisitos.</p>
+
+<p>Este enfoque se parece mucho a la visión de una persona usuaria o a la validación funcional de una característica concreta.</p>
+
+<h2>Caja blanca</h2>
+
+<p>En las pruebas de caja blanca sí existe conocimiento sobre la lógica interna, las rutas de ejecución, las condiciones y la estructura del código. Aquí el interés no está solo en lo que el sistema devuelve, sino también en cómo está recorriendo internamente sus caminos de ejecución.</p>
+
+<p>Es un enfoque muy asociado a pruebas unitarias, cobertura y validación de lógica interna.</p>
+
+<h2>Caja gris</h2>
+
+<p>La caja gris ocupa un punto intermedio. No trabaja con desconocimiento total, pero tampoco con un acceso completo y exhaustivo a toda la implementación. Se apoya en conocer ciertos aspectos internos relevantes para orientar mejor las pruebas funcionales.</p>
+
+<p>Me parece un enfoque especialmente útil cuando se prueba una API, una integración o un componente sabiendo algo de su estructura, de su modelo de datos o de ciertos comportamientos internos, sin convertir la prueba en una revisión completa del código.</p>
+
+<h2>Por qué esta diferencia importa</h2>
+
+<p>La utilidad de esta clasificación está en que ayuda a entender que no todas las pruebas persiguen lo mismo. Según el nivel de conocimiento disponible, cambia tanto la estrategia como el tipo de defecto que resulta más fácil detectar.</p>
+
+<ul>
+  <li><strong>Caja negra</strong> se acerca más al comportamiento visible y a los requisitos.</li>
+  <li><strong>Caja blanca</strong> profundiza más en la lógica y en los caminos internos.</li>
+  <li><strong>Caja gris</strong> combina visión funcional con contexto técnico parcial.</li>
+</ul>
+
+<h2>Conclusión</h2>
+
+<p>Las pruebas de caja negra, blanca y gris no son enfoques enfrentados, sino formas distintas de aproximarse al mismo sistema según el conocimiento disponible y el objetivo de la validación.</p>
+
+<p>Entender bien esa diferencia me parece útil porque ayuda a elegir mejor cómo probar y qué tipo de visión se está aplicando en cada caso.</p>

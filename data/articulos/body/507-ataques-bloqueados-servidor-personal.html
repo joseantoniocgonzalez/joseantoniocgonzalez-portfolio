@@ -1,0 +1,56 @@
+<p>Gestionar un servidor personal es una buena forma de aprender administración de sistemas, despliegue y seguridad en un entorno real. También es una forma bastante rápida de descubrir que Internet está lleno de escaneos automáticos, intentos de acceso y ruido constante contra cualquier servicio expuesto.</p>
+
+<p>Una de las herramientas que más me ayudó a ver eso con claridad fue <strong>Fail2Ban</strong>. Su valor no está solo en bloquear ataques, sino también en ofrecer visibilidad sobre lo que realmente está ocurriendo en segundo plano.</p>
+
+<h2>Qué hace Fail2Ban</h2>
+
+<p>Fail2Ban analiza logs del sistema y aplica bloqueos temporales o permanentes cuando detecta patrones repetidos de autenticación fallida u otros comportamientos sospechosos. En el caso de SSH, eso significa que una IP que insiste varias veces con credenciales incorrectas puede quedar fuera automáticamente.</p>
+
+<p>Eso convierte una tarea manual y reactiva en una defensa automatizada mucho más razonable.</p>
+
+<h2>Qué me encontré al revisarlo</h2>
+
+<p>Al revisar el comportamiento de mi servidor, encontré algo que resulta bastante revelador cuando uno lo ve por primera vez con números reales:</p>
+
+<ul>
+  <li>cientos de direcciones IP bloqueadas en pocos meses;</li>
+  <li>miles de intentos fallidos de autenticación sobre SSH;</li>
+  <li>orígenes repartidos por distintos países y redes.</li>
+</ul>
+
+<p>Lo más importante no fue el número exacto, sino la conclusión que sale de él: no hace falta gestionar una gran empresa ni un servicio muy conocido para recibir tráfico malicioso automatizado. Basta con exponer un servicio a Internet.</p>
+
+<h2>Qué aprendí de esta experiencia</h2>
+
+<p>La primera lección es bastante clara: <strong>no hace falta ser un objetivo “importante” para ser atacado</strong>. Mucha de esta actividad no es personal ni dirigida. Son bots buscando puertos expuestos, contraseñas débiles y configuraciones descuidadas.</p>
+
+<p>La segunda lección es que <strong>la seguridad por defecto rara vez es suficiente</strong>. Un sistema recién instalado puede quedar demasiado expuesto si no se revisan servicios, accesos y políticas mínimas de endurecimiento.</p>
+
+<p>La tercera es que <strong>monitorizar cambia la percepción del problema</strong>. Ver ataques reflejados en logs y bloqueos ayuda mucho más a tomar conciencia que asumir de forma abstracta que “Internet es inseguro”.</p>
+
+<h2>Por qué automatizar la defensa importa</h2>
+
+<p>Sin una herramienta como Fail2Ban, gran parte de esta protección exigiría vigilancia manual constante y la aplicación manual de reglas de bloqueo. Eso es poco realista y poco escalable incluso en un entorno pequeño.</p>
+
+<p>Automatizar la respuesta no elimina la necesidad de revisar el sistema, pero reduce mucho la exposición y permite reaccionar con más rapidez frente a comportamientos repetitivos y evidentes.</p>
+
+<h2>Capas que considero importantes</h2>
+
+<p>Esta experiencia también me reforzó varias ideas sobre protección básica de un servidor:</p>
+
+<ul>
+  <li>usar autenticación por clave pública en SSH;</li>
+  <li>desactivar o limitar accesos innecesarios;</li>
+  <li>evitar el acceso directo de root;</li>
+  <li>mantener firewall y políticas restrictivas;</li>
+  <li>vigilar logs y comportamiento del sistema;</li>
+  <li>renovar y cuidar la configuración de los servicios expuestos.</li>
+</ul>
+
+<p>No hay una única medida que resuelva todo. Lo que funciona es la combinación de varias capas razonables de prevención, detección y respuesta.</p>
+
+<h2>Conclusión</h2>
+
+<p>Ver cientos de intentos bloqueados en un servidor personal es una buena lección de realidad: cualquier servicio expuesto a Internet entra automáticamente en el radar de bots y escaneos. No hace falta gestionar una gran infraestructura para que eso ocurra.</p>
+
+<p>Por eso me parece tan importante no tratar la seguridad como un añadido opcional. Incluso en proyectos personales, merece la pena aplicar buenas prácticas, observar el comportamiento real del sistema y asumir que la protección debe ser parte del trabajo desde el principio.</p>

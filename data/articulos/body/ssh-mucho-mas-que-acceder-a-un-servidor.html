@@ -1,0 +1,74 @@
+<p>SSH es una de esas herramientas que muchas veces se resumen de forma demasiado simple: “sirve para conectarte a un servidor”. Eso es cierto, pero se queda muy corto. En la práctica, SSH es una pieza central para administrar sistemas remotos de forma segura y para trabajar con más control, más automatización y menos dependencia de interfaces gráficas.</p>
+
+<p>En mi caso lo utilizo de forma habitual para acceder a mi VPS personal y gestionar distintos aspectos del sistema y de los servicios desplegados. Con el tiempo he visto que aprender SSH no solo permite abrir una sesión remota: obliga a entender mejor cómo se administran servidores Linux en entornos reales.</p>
+
+<h2>Qué permite hacer SSH en la práctica</h2>
+
+<p>La función más conocida de SSH es abrir una sesión remota cifrada sobre otro equipo, pero su utilidad va mucho más allá. Entre otras cosas, permite:</p>
+
+<ul>
+  <li>administrar servidores desde terminal de forma segura;</li>
+  <li>ejecutar comandos remotos;</li>
+  <li>transferir archivos con herramientas como <code>scp</code> o <code>rsync</code>;</li>
+  <li>crear túneles y redirecciones de puertos;</li>
+  <li>automatizar tareas mediante scripts;</li>
+  <li>trabajar con repositorios Git mediante autenticación por clave.</li>
+</ul>
+
+<p>Por eso SSH no es solo una puerta de entrada a un sistema, sino una base muy útil para mantenerlo, protegerlo y operarlo con más eficiencia.</p>
+
+<h2>Cómo lo uso en mi entorno</h2>
+
+<p>En mi VPS personal, SSH me sirve para tareas de administración bastante habituales:</p>
+
+<ul>
+  <li>actualización de paquetes y mantenimiento general del sistema;</li>
+  <li>gestión de servicios con <code>systemctl</code>;</li>
+  <li>supervisión de logs y revisión de incidencias;</li>
+  <li>mantenimiento de la configuración del servidor web;</li>
+  <li>despliegues y transferencias de archivos;</li>
+  <li>revisión de bloqueos e intentos de acceso sospechosos.</li>
+</ul>
+
+<p>Durante ASIR también lo utilicé para conectarme a máquinas virtuales locales y a instancias en entornos de laboratorio, donde era necesario configurar servicios, revisar red o administrar sistemas enteramente desde consola. Esa parte fue especialmente útil para entender que, en muchos entornos técnicos, la terminal no es una alternativa: es la forma normal de trabajar.</p>
+
+<h2>Por qué es más importante de lo que parece</h2>
+
+<p>Trabajar con SSH obliga a entender varios conceptos importantes al mismo tiempo:</p>
+
+<ul>
+  <li><strong>cifrado asimétrico</strong>, cuando se usa autenticación por clave pública y privada;</li>
+  <li><strong>control de acceso</strong>, al definir quién puede entrar y cómo;</li>
+  <li><strong>trazabilidad</strong>, al revisar logs y sesiones;</li>
+  <li><strong>automatización</strong>, al integrarlo con scripts y tareas repetitivas;</li>
+  <li><strong>hardening</strong>, cuando se limita la superficie de exposición del servicio.</li>
+</ul>
+
+<p>Por eso, aunque muchas veces se use como una herramienta “normal” del día a día, SSH está muy relacionado con buenas prácticas reales de administración de sistemas.</p>
+
+<h2>Medidas que considero especialmente útiles</h2>
+
+<p>Con el tiempo he ido valorando más algunas medidas básicas de endurecimiento para SSH:</p>
+
+<ul>
+  <li>usar <strong>autenticación por clave pública</strong> en lugar de depender solo de contraseñas;</li>
+  <li>desactivar el acceso con contraseña cuando ya no es necesario;</li>
+  <li>evitar el acceso directo de <code>root</code>;</li>
+  <li>vigilar intentos fallidos con herramientas como <strong>Fail2Ban</strong>;</li>
+  <li>limitar exposición mediante firewall;</li>
+  <li>organizar conexiones con <code>~/.ssh/config</code> para trabajar de forma más ordenada.</li>
+</ul>
+
+<p>No hay una única medida mágica, pero el conjunto de varias decisiones sencillas mejora bastante la seguridad y la gestión diaria del servicio.</p>
+
+<h2>SSH como herramienta de trabajo real</h2>
+
+<p>Una de las cosas que más valoro de SSH es que no te esconde el sistema. Al contrario: te obliga a entender qué servicio estás tocando, qué archivo configuras, qué permisos usas y qué está ocurriendo realmente en el servidor. Esa forma de trabajar enseña más que muchas capas de interfaz.</p>
+
+<p>Además, su integración con otras herramientas lo convierte en una base muy sólida para administración remota. No se queda en abrir una sesión: se conecta con despliegues, automatización, sincronización de archivos, revisión de incidencias y operación diaria del sistema.</p>
+
+<h2>Conclusión</h2>
+
+<p>SSH es mucho más que un método para “entrar en un servidor”. Es una herramienta central para administrar sistemas Linux de forma segura, trabajar con mayor control y aplicar buenas prácticas reales de operación.</p>
+
+<p>Entenderlo bien ayuda no solo a conectarse a una máquina remota, sino a comprender mejor conceptos como autenticación, cifrado, trazabilidad, automatización y hardening. Y en entornos de sistemas, eso marca una diferencia importante.</p>

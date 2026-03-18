@@ -1,0 +1,15 @@
+{
+  "title": "Aprendiendo sobre paradigmas en informática",
+  "slug": "paradigmas-en-informatica",
+  "date": "2025-09-30",
+  "category": "QA y desarrollo",
+  "tags": [
+    "paradigmas",
+    "programación",
+    "BDD",
+    "POO",
+    "desarrollo"
+  ],
+  "summary": "Una reflexión sobre qué significa realmente un paradigma en informática y por qué cambia la forma de pensar y escribir software.",
+  "body_file": "body/paradigmas-en-informatica.html"
+}

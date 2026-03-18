@@ -1,0 +1,15 @@
+{
+  "title": "Qué pasa cuando escribes una URL en el navegador",
+  "slug": "que-pasa-cuando-escribes-una-url",
+  "date": "2025-09-16",
+  "category": "Redes",
+  "tags": [
+    "URL",
+    "DNS",
+    "TCP",
+    "TLS",
+    "HTTP"
+  ],
+  "summary": "Un recorrido paso a paso por el proceso técnico que se pone en marcha cuando se escribe una URL en el navegador.",
+  "body_file": "body/que-pasa-cuando-escribes-una-url.html"
+}

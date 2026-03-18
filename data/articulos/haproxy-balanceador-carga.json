@@ -1,0 +1,15 @@
+{
+  "title": "HAProxy: qué es un balanceador de carga y por qué se usa",
+  "slug": "haproxy-balanceador-carga",
+  "date": "",
+  "category": "Infraestructura y DevOps",
+  "tags": [
+    "HAProxy",
+    "balanceo de carga",
+    "proxy inverso",
+    "alta disponibilidad",
+    "redes"
+  ],
+  "summary": "Introducción práctica a HAProxy, el balanceo de carga y los problemas que resuelve en infraestructuras modernas.",
+  "body_file": "body/haproxy-balanceador-carga.html"
+}
