@@ -1,0 +1,25 @@
+{
+  "slug": "introduccion-a-docker",
+  "titulo": "Introducción a Docker",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/5R2w",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación de base en Docker centrada en contenedores, imágenes, almacenamiento persistente, redes y despliegues multicontenedor con Docker Compose, además de la creación y distribución de imágenes mediante Dockerfile y el uso de Docker Desktop.",
+  "aptitudes": [
+    "Docker"
+  ],
+  "etiquetas": [
+    "docker",
+    "contenedores",
+    "docker compose",
+    "dockerfile",
+    "imagenes",
+    "volumenes",
+    "redes",
+    "despliegues",
+    "devops"
+  ]
+}

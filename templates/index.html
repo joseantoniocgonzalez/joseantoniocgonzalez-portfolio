@@ -44,7 +44,19 @@
 
 <section class="home-block">
   <h3>Últimos artículos</h3>
-  <p>Próximamente.</p>
+
+  {% if latest_articles %}
+    {% for article in latest_articles %}
+      <p>
+        <a href="/articulos/{{ article.slug }}/">
+          <strong>{{ article.title }}</strong>
+        </a>
+      </p>
+      <p class="project-summary">{{ article.summary }}</p>
+    {% endfor %}
+  {% else %}
+    <p>Próximamente.</p>
+  {% endif %}
 </section>
 
 <section class="home-block">

@@ -1,0 +1,29 @@
+{
+  "slug": "automatizacion-pruebas-ui-angular-protractor",
+  "titulo": "Curso de Automatización de pruebas de una UI en Angular con Protractor",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-10",
+  "fecha_texto": "oct. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/2v29",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en la automatización de pruebas de interfaz en aplicaciones Angular con Protractor, con enfoque BDD mediante Cucumber y trabajo práctico sobre diseño de escenarios, definición de pasos, ejecución, depuración y reporte de resultados.",
+  "aptitudes": [
+    "Testing de aplicaciones",
+    "Integración continua y entrega continua (CI/CD)",
+    "Automatización"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "automatizacion",
+    "pruebas automatizadas",
+    "ui testing",
+    "protractor",
+    "angular",
+    "bdd",
+    "cucumber",
+    "javascript",
+    "e2e"
+  ]
+}

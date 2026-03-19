@@ -1,0 +1,28 @@
+{
+  "slug": "ciberseguridad-avanzada-entornos-tecnologias-operacion-ot",
+  "titulo": "Ciberseguridad avanzada en entornos de las Tecnologías de la Operación (OT)",
+  "entidad": "Aprendea",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": "u5DAnhPAd4",
+  "enlace_credencial": null,
+  "bloque": "Sistemas / redes / seguridad",
+  "aptitudes": [
+    "Ciberseguridad industrial (OT)",
+    "Seguridad en redes industriales",
+    "Segmentación de redes",
+    "Buenas prácticas de seguridad",
+    "Gestión de riesgos cibernéticos"
+  ],
+  "etiquetas": [
+    "ciberseguridad",
+    "seguridad",
+    "ot",
+    "ics",
+    "infraestructura critica",
+    "redes industriales",
+    "segmentacion de redes",
+    "gestion de riesgos",
+    "seguridad industrial"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "despliegues-con-ansible",
+  "titulo": "Curso de Despliegues con Ansible",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-10",
+  "fecha_texto": "oct. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/6anu",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en automatización de despliegues con Ansible, trabajando comandos ad-hoc, playbooks, inventarios, variables, roles, módulos y un caso práctico de despliegue de un servidor web con condiciones, registros, plantillas y bucles.",
+  "aptitudes": [
+    "Ansible"
+  ],
+  "etiquetas": [
+    "ansible",
+    "automatizacion",
+    "despliegues",
+    "devops",
+    "playbooks",
+    "inventarios",
+    "roles",
+    "modulos",
+    "infraestructura",
+    "configuracion",
+    "servidor web"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "curso-de-ipv6",
+  "titulo": "Curso de IPv6",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-10",
+  "fecha_texto": "oct. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/2jYi",
+  "bloque": "Sistemas / redes / seguridad",
+  "resumen": "Formación centrada en fundamentos y configuración de IPv6, trabajando representación y tipos de direcciones, configuración en Windows y GNU/Linux, ICMPv6, descubrimiento de vecinos, asignación estática y automática de direcciones, y coexistencia con IPv4 mediante mecanismos de transición.",
+  "aptitudes": [
+    "Administración de sistemas"
+  ],
+  "etiquetas": [
+    "ipv6",
+    "redes",
+    "networking",
+    "direccionamiento",
+    "icmpv6",
+    "descubrimiento de vecinos",
+    "slaac",
+    "dhcpv6",
+    "windows",
+    "linux",
+    "transicion ipv4 ipv6"
+  ]
+}

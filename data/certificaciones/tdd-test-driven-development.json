@@ -1,0 +1,27 @@
+{
+  "slug": "tdd-test-driven-development",
+  "titulo": "Curso de TDD: Test-driven development",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/DM9R",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en desarrollo guiado por pruebas, trabajando el flujo de trabajo TDD, su algoritmo, frameworks de testeo, ATDD, captura de requisitos, desarrollo práctico paso a paso con refactorización, patrón AAA, cobertura de código y corrección de errores guiada por tests.",
+  "aptitudes": [
+    "TDD",
+    "Desarrollo guiado por pruebas"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "tdd",
+    "test driven development",
+    "atdd",
+    "refactorizacion",
+    "patron aaa",
+    "cobertura de codigo",
+    "frameworks de testeo",
+    "calidad de software"
+  ]
+}

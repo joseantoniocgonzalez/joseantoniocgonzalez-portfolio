@@ -1,0 +1,29 @@
+{
+  "slug": "curso-de-git",
+  "titulo": "Curso de Git",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-08",
+  "fecha_texto": "ago. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/ZekQ",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en Git como herramienta de control de versiones, trabajando repositorios locales y remotos, resolución de conflictos, estrategias de merge y rebase, Git Flow, stash, blame y colaboración con etiquetas, releases, issues, pull requests e integración continua.",
+  "aptitudes": [
+    "Git",
+    "Control de versiones",
+    "Trabajo colaborativo"
+  ],
+  "etiquetas": [
+    "git",
+    "git flow",
+    "github",
+    "gitlab",
+    "ssh",
+    "control de versiones",
+    "merge",
+    "rebase",
+    "stash",
+    "pull requests",
+    "integracion continua"
+  ]
+}

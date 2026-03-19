@@ -1,0 +1,30 @@
+{
+  "slug": "ssh-imprescindible-en-tiempos-modernos",
+  "titulo": "SSH: imprescindible en tiempos modernos",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2023-12",
+  "fecha_texto": "dic. 2023",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/uRuE",
+  "bloque": "Sistemas / redes / seguridad",
+  "resumen": "Formación centrada en SSH para acceso seguro y administración remota, trabajando autenticación por contraseña y claves, SSH Agent, gestión de authorized_keys y known_hosts, configuración de cliente y servidor, transferencia de ficheros con SCP y SFTP, túneles SSH y uso en Windows.",
+  "aptitudes": [
+    "SSH",
+    "Administración remota segura",
+    "Transferencia segura de archivos"
+  ],
+  "etiquetas": [
+    "ssh",
+    "scp",
+    "sftp",
+    "ssh agent",
+    "authorized_keys",
+    "known_hosts",
+    "claves publicas",
+    "tuneles ssh",
+    "forwarding",
+    "linux",
+    "windows",
+    "seguridad"
+  ]
+}

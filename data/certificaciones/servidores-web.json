@@ -1,0 +1,28 @@
+{
+  "slug": "servidores-web",
+  "titulo": "Servidores Web",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/kKYg",
+  "bloque": "Sistemas / redes / seguridad",
+  "resumen": "Formación centrada en fundamentos de la web y administración de servidores web, con trabajo sobre hosting, DNS e IPs, configuración de Apache, Virtual Hosts, cifrado HTTPS, despliegue de aplicaciones PHP y uso de un entorno LAMP con WordPress.",
+  "aptitudes": [
+    "Apache",
+    "Servidores web"
+  ],
+  "etiquetas": [
+    "apache",
+    "servidores web",
+    "hosting",
+    "dns",
+    "ips",
+    "virtual hosts",
+    "https",
+    "letsencrypt",
+    "lamp",
+    "php",
+    "wordpress"
+  ]
+}

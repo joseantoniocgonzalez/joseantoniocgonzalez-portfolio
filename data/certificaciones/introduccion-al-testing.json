@@ -1,0 +1,29 @@
+{
+  "slug": "introduccion-al-testing",
+  "titulo": "Curso de introducción al testing",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-08",
+  "fecha_texto": "ago. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/qgnF",
+  "bloque": "QA y testing",
+  "resumen": "Formación introductoria sobre testing de software, centrada en conceptos base, principios ISTQB, niveles y tipos de prueba, técnicas de caja blanca y caja negra, regresión, gestión de casos de prueba, reportes y una primera aproximación a la automatización.",
+  "aptitudes": [
+    "Testing de software",
+    "Fundamentos de QA"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "fundamentos testing",
+    "istqb",
+    "test unitarios",
+    "integracion",
+    "pruebas de sistema",
+    "pruebas de aceptacion",
+    "caja blanca",
+    "caja negra",
+    "regresion",
+    "automatizacion"
+  ]
+}

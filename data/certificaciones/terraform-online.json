@@ -1,0 +1,31 @@
+{
+  "slug": "terraform-online",
+  "titulo": "Curso de Terraform Online",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-08",
+  "fecha_texto": "ago. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/RQnA",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en Terraform para infraestructura como código, trabajando providers, creación de recursos, states, variables, outputs, data sources, reutilización de plantillas, importación de recursos existentes, backends, módulos y uso de Terraform con AWS, MySQL y Google Cloud, junto con una introducción a Packer.",
+  "aptitudes": [
+    "Terraform",
+    "Infraestructura como código"
+  ],
+  "etiquetas": [
+    "terraform",
+    "iac",
+    "infraestructura como codigo",
+    "providers",
+    "aws",
+    "google cloud",
+    "mysql",
+    "states",
+    "outputs",
+    "data sources",
+    "backends",
+    "modulos",
+    "packer",
+    "devops"
+  ]
+}

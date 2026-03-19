@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+  <p class="eyebrow">Certificaciones</p>
+  <h1>Certificaciones técnicas</h1>
+  <p class="page-summary">
+    Formación organizada por áreas técnicas, con cursos y credenciales relacionados con QA y testing, DevOps, cloud, automatización, sistemas, redes y seguridad.
+  </p>
+</section>
+
+<section class="curriculum-section">
+  {% if certification_groups %}
+    {% for group in certification_groups %}
+      <details {% if loop.first %}open{% endif %}>
+        <summary><strong>{{ group.title }}</strong> ({{ group["items"] | length }})</summary>
+
+        <div class="certifications-group">
+          {% for cert in group["items"] %}
+            <article>
+              <h2>{{ cert.titulo }}</h2>
+
+              <p>
+                <strong>Entidad:</strong> {{ cert.entidad }}
+                {% if cert.fecha_texto %}
+                  · <strong>Expedición:</strong> {{ cert.fecha_texto }}
+                {% endif %}
+              </p>
+
+              {% if cert.resumen %}
+                <p>{{ cert.resumen }}</p>
+              {% endif %}
+
+              {% if cert.aptitudes %}
+                <p>
+                  <strong>Aptitudes:</strong>
+                  {% for aptitud in cert.aptitudes %}
+                    {{ aptitud }}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </p>
+              {% endif %}
+
+              {% if cert.id_credencial %}
+                <p><strong>ID de credencial:</strong> {{ cert.id_credencial }}</p>
+              {% endif %}
+
+              {% if cert.enlace_credencial %}
+                <p><a href="{{ cert.enlace_credencial }}" target="_blank" rel="noopener noreferrer">Ver credencial</a></p>
+              {% endif %}
+            </article>
+
+            {% if not loop.last %}
+              <hr>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </details>
+
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>No hay certificaciones publicadas todavía.</p>
+  {% endif %}
+</section>
+{% endblock %}

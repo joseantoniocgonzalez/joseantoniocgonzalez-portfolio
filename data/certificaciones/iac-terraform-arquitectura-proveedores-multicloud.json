@@ -1,0 +1,27 @@
+{
+  "slug": "iac-terraform-arquitectura-proveedores-multicloud",
+  "titulo": "IaC con Terraform: Arquitectura y definición de proveedores multicloud",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-10",
+  "fecha_texto": "oct. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/nkU7",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en infraestructura como código con Terraform, trabajando su arquitectura, definición de proveedores multicloud, uso de variables y preparación de credenciales y conexiones para operar con AWS, Azure y Google Cloud.",
+  "aptitudes": [
+    "Terraform"
+  ],
+  "etiquetas": [
+    "terraform",
+    "iac",
+    "infraestructura como codigo",
+    "multicloud",
+    "aws",
+    "azure",
+    "gcp",
+    "cloud",
+    "proveedores",
+    "variables",
+    "devops"
+  ]
+}

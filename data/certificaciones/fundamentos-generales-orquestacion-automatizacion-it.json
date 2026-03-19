@@ -1,0 +1,25 @@
+{
+  "slug": "fundamentos-generales-orquestacion-automatizacion-it",
+  "titulo": "Fundamentos Generales: Orquestación y Automatización IT",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/LM79",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación introductoria sobre automatización y orquestación IT, enfocada en sus definiciones, beneficios, elementos principales y tipos de orquestación como base conceptual para entornos de infraestructura y operaciones.",
+  "aptitudes": [
+    "Automatización",
+    "Orquestación IT"
+  ],
+  "etiquetas": [
+    "automatizacion",
+    "orquestacion",
+    "it",
+    "infraestructura",
+    "operaciones",
+    "devops",
+    "procesos",
+    "fundamentos"
+  ]
+}

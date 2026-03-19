@@ -1,0 +1,27 @@
+{
+  "slug": "jenkins-pipelines-y-herramientas",
+  "titulo": "Curso de Jenkins: Pipelines y herramientas",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/mCSk",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en Jenkins para automatización de despliegues y construcción de pipelines, trabajando ejecución local, despliegue con Jenkins, creación de pipelines con Maven y uso de herramientas complementarias como notificaciones por correo y copias de seguridad.",
+  "aptitudes": [
+    "Jenkins",
+    "Pipelines CI/CD"
+  ],
+  "etiquetas": [
+    "jenkins",
+    "pipelines",
+    "ci cd",
+    "automatizacion",
+    "despliegues",
+    "maven",
+    "build automation",
+    "notificaciones",
+    "backup",
+    "devops"
+  ]
+}

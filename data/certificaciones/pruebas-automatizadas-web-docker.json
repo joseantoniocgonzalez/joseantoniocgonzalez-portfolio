@@ -1,0 +1,31 @@
+{
+  "slug": "pruebas-automatizadas-web-docker",
+  "titulo": "Curso de pruebas automatizadas en una Web con Docker",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/EVH0",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en la automatización de pruebas web apoyada en Docker, combinando conceptos de Protractor, BDD y Gherkin con la creación y ejecución de entornos de pruebas mediante Docker Compose, incluyendo visualización y depuración.",
+  "aptitudes": [
+    "Desarrollo de software",
+    "Docker",
+    "Automatización de pruebas",
+    "Automatización QA"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "automatizacion",
+    "automatizacion qa",
+    "pruebas automatizadas",
+    "docker",
+    "docker compose",
+    "web testing",
+    "protractor",
+    "bdd",
+    "gherkin",
+    "depuracion"
+  ]
+}

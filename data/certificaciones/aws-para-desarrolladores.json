@@ -1,0 +1,30 @@
+{
+  "slug": "aws-para-desarrolladores",
+  "titulo": "Curso de Amazon Web Services para desarrolladores",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/R0BI",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en AWS para desarrollo y despliegue de aplicaciones, trabajando IAM, EC2, almacenamiento y balanceo, S3 y CloudFront, servicios serverless con Lambda y Step Functions, bases de datos, mensajería, contenedores, CloudFormation y monitorización con CloudWatch y X-Ray.",
+  "aptitudes": [
+    "Computación en la nube",
+    "Amazon Web Services (AWS)"
+  ],
+  "etiquetas": [
+    "aws",
+    "cloud",
+    "computacion en la nube",
+    "ec2",
+    "iam",
+    "s3",
+    "cloudfront",
+    "lambda",
+    "serverless",
+    "dynamodb",
+    "cloudformation",
+    "cloudwatch",
+    "contenedores"
+  ]
+}

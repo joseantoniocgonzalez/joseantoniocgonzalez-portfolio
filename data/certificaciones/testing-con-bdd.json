@@ -1,0 +1,29 @@
+{
+  "slug": "testing-con-bdd",
+  "titulo": "Curso de testing con BDD",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-08",
+  "fecha_texto": "ago. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/eFtM",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en BDD como enfoque de colaboración y calidad, trabajando Gherkin como lenguaje común, aterrizaje de requisitos a historias de usuario, pirámide de pruebas, ATDD, Three Amigos y automatización con herramientas como Cucumber, JBehave y Cypress.",
+  "aptitudes": [
+    "BDD",
+    "Gherkin",
+    "Cucumber"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "bdd",
+    "gherkin",
+    "atdd",
+    "historias de usuario",
+    "piramide de pruebas",
+    "three amigos",
+    "cucumber",
+    "jbehave",
+    "cypress"
+  ]
+}

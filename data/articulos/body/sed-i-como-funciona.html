@@ -1,0 +1,54 @@
+<p>Últimamente, cuando estoy trabajando con mis páginas web o con algún repositorio de Java, suelo usar bastante <code>sed -i</code> para hacer cambios rápidos en archivos desde terminal. Es un comando muy útil cuando quieres sustituir texto, ajustar rutas, modificar configuraciones o automatizar pequeñas tareas sin abrir el editor manualmente cada vez. Aun así, un día me dio por investigar qué hace realmente, cómo funciona por dentro y qué implica usarlo directamente sobre un archivo.</p>
+
+<h2>Qué es <code>sed</code> y qué cambia con <code>-i</code></h2>
+
+<p><code>sed</code> es un editor de flujo. Por defecto, procesa el texto y escribe el resultado en la salida estándar, es decir, muestra el contenido transformado por pantalla sin modificar el archivo original. Cuando añadimos <code>-i</code>, le estamos pidiendo que aplique el resultado directamente sobre el fichero en lugar de limitarse a imprimirlo.</p>
+
+<p>Eso es precisamente lo que lo hace tan cómodo en tareas repetitivas: permite cambiar texto dentro de un archivo de forma rápida y sin pasos intermedios visibles.</p>
+
+<h2>Cómo funciona realmente <code>sed -i</code></h2>
+
+<p>Lo interesante es que esa edición “directa” no suele consistir en sobreescribir el archivo original carácter por carácter. En GNU <code>sed</code>, lo habitual es que se genere primero un archivo temporal con el contenido transformado y, al terminar, ese archivo pase a ocupar el lugar del original.</p>
+
+<p>Eso explica por qué <code>sed -i</code> es tan útil, pero también por qué conviene usarlo con cuidado: aunque parezca una modificación pequeña y simple, en realidad está reemplazando el fichero de forma efectiva.</p>
+
+<h2>Por qué resulta tan útil en el trabajo diario</h2>
+
+<p>En proyectos web o en repositorios de Java, comandos así ahorran bastante tiempo. Sirven para cambiar rutas, sustituir dominios, ajustar nombres de variables o aplicar modificaciones repetidas en archivos de configuración y código sin tener que abrirlos uno por uno.</p>
+
+<p>Un ejemplo muy típico sería algo como este:</p>
+
+<pre><code>sed -i 's/localhost/127.0.0.1/g' archivo.conf</code></pre>
+
+<p>La idea es simple: buscar una cadena concreta y reemplazarla dentro del archivo. Precisamente por esa facilidad, es uno de esos comandos que conviene entender bien antes de lanzarlo sobre varios ficheros a la vez.</p>
+
+<h2>La importancia de la copia de seguridad</h2>
+
+<p>Una de las cosas más útiles de <code>sed -i</code> es que puede trabajar con una extensión de respaldo, por ejemplo <code>-i.bak</code>. Eso permite conservar una copia del archivo anterior antes de aplicar el reemplazo.</p>
+
+<p>Cuando se están haciendo pruebas o cambios masivos, esa precaución tiene bastante sentido. La comodidad de editar directamente es grande, pero lo es todavía más cuando puedes volver atrás si algo no sale como esperabas.</p>
+
+<h2>Detalles que conviene conocer</h2>
+
+<p>Hay varios matices que me parecen importantes:</p>
+
+<ul>
+  <li>si lo usas sin copia de seguridad, el archivo original se reemplaza directamente;</li>
+  <li>el orden de algunas opciones puede cambiar el comportamiento esperado;</li>
+  <li>mezclar <code>-n</code> con <code>-i</code> sin imprimir nada explícitamente puede dejar el archivo vacío;</li>
+  <li>en algunos sistemas, como macOS o BSD, la sintaxis de <code>-i</code> no es exactamente igual que en GNU/Linux.</li>
+</ul>
+
+<p>Ese último punto me parece especialmente importante porque muchos ejemplos en Internet asumen GNU <code>sed</code>, y no siempre funcionan igual fuera de ese entorno.</p>
+
+<h2>Por qué me parece útil entenderlo</h2>
+
+<p>Investigar cómo funciona un comando así cambia bastante la forma de usarlo. Deja de ser un truco rápido de terminal y pasa a convertirse en una herramienta que entiendes mejor: sabes qué hace, qué riesgos tiene y en qué momento conviene añadir una copia de respaldo antes de modificar algo importante.</p>
+
+<p>En mi caso, eso me ayudó a verlo no solo como una forma cómoda de sustituir texto, sino como una herramienta potente para automatizar cambios sobre archivos reales con algo más de criterio.</p>
+
+<h2>Conclusión</h2>
+
+<p><code>sed -i</code> es uno de esos comandos pequeños que acaban teniendo mucho peso en el trabajo diario. Precisamente por eso conviene entenderlo antes de usarlo de forma automática o masiva. Saber que modifica el archivo directamente, que puede trabajar con copias de seguridad y que tiene ciertos matices según el sistema ayuda bastante a usarlo mejor.</p>
+
+<p>Al final, no es solo un comando práctico: también es un buen ejemplo de cómo una herramienta aparentemente simple puede esconder bastante más de lo que parece a primera vista.</p>

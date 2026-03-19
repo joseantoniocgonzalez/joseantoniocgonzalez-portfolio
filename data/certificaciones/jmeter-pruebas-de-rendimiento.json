@@ -1,0 +1,27 @@
+{
+  "slug": "jmeter-pruebas-de-rendimiento",
+  "titulo": "Curso de JMeter para la implementación de pruebas de rendimiento",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/cc68",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en pruebas de rendimiento con JMeter, trabajando tipos de pruebas, grabación y verificación de tests, correlación, eliminación de requests innecesarias, parametrización, aserciones, configuración del thread group y análisis de resultados.",
+  "aptitudes": [
+    "JMeter",
+    "Pruebas de rendimiento"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "jmeter",
+    "pruebas de rendimiento",
+    "performance testing",
+    "thread group",
+    "parametrizacion",
+    "aserciones",
+    "analisis de resultados",
+    "carga"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "testing-con-vitest",
+  "titulo": "Testing con Vitest",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-09",
+  "fecha_texto": "sept. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/Kexj",
+  "bloque": "QA y testing",
+  "resumen": "Formación centrada en testing con Vitest en entornos JavaScript, trabajando configuración básica, pruebas unitarias, casos extremos, testing de componentes en React y Vue, pruebas de integración, nociones end-to-end y aplicación de TDD con una introducción a BDD.",
+  "aptitudes": [
+    "Vitest",
+    "Testing con JavaScript"
+  ],
+  "etiquetas": [
+    "qa",
+    "testing",
+    "vitest",
+    "javascript",
+    "testing unitario",
+    "pruebas de integracion",
+    "end to end",
+    "react",
+    "vue",
+    "tdd",
+    "bdd"
+  ]
+}

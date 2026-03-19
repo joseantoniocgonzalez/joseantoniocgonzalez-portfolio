@@ -1,0 +1,30 @@
+{
+  "slug": "docker-para-desarrolladores",
+  "titulo": "Docker para desarrolladores",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-08",
+  "fecha_texto": "ago. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/3rTj",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación centrada en Docker aplicado al desarrollo, trabajando dockerización de aplicaciones, creación de imágenes y Dockerfile, ejecución local de contenedores, uso de Docker en arquitecturas de microservicios y despliegue de pipelines CI/CD con Azure DevOps y Azure.",
+  "aptitudes": [
+    "Docker",
+    "CI/CD con Docker",
+    "Azure DevOps"
+  ],
+  "etiquetas": [
+    "docker",
+    "contenedores",
+    "dockerfile",
+    "microservicios",
+    "ci cd",
+    "azure devops",
+    "azure",
+    "acr",
+    "app services",
+    "dotnet",
+    "despliegues",
+    "devops"
+  ]
+}

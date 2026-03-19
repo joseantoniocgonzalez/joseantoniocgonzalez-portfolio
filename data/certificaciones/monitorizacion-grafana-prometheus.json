@@ -1,0 +1,26 @@
+{
+  "slug": "monitorizacion-grafana-prometheus",
+  "titulo": "Curso de Monitorización con Grafana y Prometheus",
+  "entidad": "OpenWebinars",
+  "fecha_expedicion": "2025-10",
+  "fecha_texto": "oct. 2025",
+  "id_credencial": null,
+  "enlace_credencial": "https://openwebinars.net/cert/3pzU",
+  "bloque": "DevOps / cloud / automatización",
+  "resumen": "Formación orientada a la monitorización con Prometheus y Grafana, cubriendo instalación, recogida de métricas mediante exporters, conexión entre ambas herramientas, uso e importación de dashboards y configuración de alertas por correo.",
+  "aptitudes": [
+    "Grafana"
+  ],
+  "etiquetas": [
+    "monitorizacion",
+    "observabilidad",
+    "grafana",
+    "prometheus",
+    "metricas",
+    "exporters",
+    "dashboards",
+    "alertas",
+    "alerting",
+    "devops"
+  ]
+}

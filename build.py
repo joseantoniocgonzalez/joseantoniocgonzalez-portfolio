@@ -9,6 +9,7 @@ STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 PROJECTS_DIR = DATA_DIR / "proyectos"
 ARTICLES_DIR = DATA_DIR / "articulos"
+CERTIFICATIONS_DIR = DATA_DIR / "certificaciones"
 DIST_DIR = BASE_DIR / "dist"
 
 
@@ -84,15 +85,34 @@ def load_articles() -> list[dict]:
     return articles
 
 
-def build_home(env: Environment, projects: list[dict]) -> None:
+def load_certifications() -> list[dict]:
+    certifications = []
+
+    for certification_file in CERTIFICATIONS_DIR.glob("*.json"):
+        if certification_file.name.startswith("_"):
+            continue
+
+        certification_data = load_json(certification_file)
+        certifications.append(certification_data)
+
+    certifications.sort(
+        key=lambda certification: certification.get("fecha_expedicion", ""),
+        reverse=True
+    )
+    return certifications
+
+
+def build_home(env: Environment, projects: list[dict], articles: list[dict]) -> None:
     template = env.get_template("index.html")
 
     home_data = load_home_data()
     latest_project = projects[0] if projects else None
+    latest_articles = articles[:3]
 
     output = template.render(
         **home_data,
-        latest_project=latest_project
+        latest_project=latest_project,
+        latest_articles=latest_articles
     )
 
     (DIST_DIR / "index.html").write_text(output, encoding="utf-8")
@@ -164,6 +184,50 @@ def build_article_pages(env: Environment, articles: list[dict]) -> None:
         (article_dist_dir / "index.html").write_text(output, encoding="utf-8")
 
 
+def build_certifications(env: Environment, certifications: list[dict]) -> None:
+    template = env.get_template("certificaciones.html")
+
+    block_order = [
+        "QA y testing",
+        "DevOps / cloud / automatización",
+        "Sistemas / redes / seguridad",
+    ]
+
+    grouped = {block: [] for block in block_order}
+
+    for certification in certifications:
+        block = certification.get("bloque", "Otros")
+        grouped.setdefault(block, []).append(certification)
+
+    certification_groups = [
+        {"title": block, "items": grouped[block]}
+        for block in block_order
+        if grouped.get(block)
+    ]
+
+    extra_groups = [
+        {"title": block, "items": items}
+        for block, items in grouped.items()
+        if block not in block_order and items
+    ]
+
+    certification_groups.extend(extra_groups)
+
+    home_data = load_home_data()
+
+    output = template.render(
+        page_title="Certificaciones | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        certification_groups=certification_groups
+    )
+
+    certifications_dist_dir = DIST_DIR / "certificaciones"
+    certifications_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (certifications_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
 def build_contact(env: Environment) -> None:
     template = env.get_template("contacto.html")
     home_data = load_home_data()
@@ -204,12 +268,14 @@ def main() -> None:
 
     projects = load_projects()
     articles = load_articles()
+    certifications = load_certifications()
 
-    build_home(env, projects)
+    build_home(env, projects, articles)
     build_projects(env, projects)
     build_project_pages(env, projects)
     build_articles(env, articles)
     build_article_pages(env, articles)
+    build_certifications(env, certifications)
     build_contact(env)
     build_curriculum(env)
 

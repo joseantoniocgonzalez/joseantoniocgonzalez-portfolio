@@ -1,0 +1,15 @@
+{
+  "title": "sed -i: qué hace realmente y por qué conviene entenderlo antes de usarlo",
+  "slug": "sed-i-como-funciona",
+  "date": "2026-03-19",
+  "category": "Linux y sistemas",
+  "tags": [
+    "sed",
+    "Linux",
+    "terminal",
+    "automatización",
+    "texto"
+  ],
+  "summary": "Una explicación práctica de qué hace sed -i, cómo modifica archivos realmente y qué detalles conviene conocer antes de usarlo en cambios masivos.",
+  "body_file": "body/sed-i-como-funciona.html"
+}
