@@ -2,11 +2,11 @@
   "page_title": "José Antonio Canalo González",
   "site_title": "José Antonio Canalo González",
   "tagline": "QA Automation, DevOps y Administración de Sistemas",
-  "summary": "Portfolio personal en construcción con proyectos, artículos técnicos y certificaciones.",
+  "summary": "Portfolio personal con proyectos, artículos técnicos y certificaciones.",
   "hero_links": [
     {
       "label": "CV",
-      "url": "#",
+      "url": "/curriculum/",
       "class_name": "button"
     },
     {
@@ -56,7 +56,7 @@
   ],
   "contact": {
     "title": "Contacto",
-    "intro": "Puedes encontrarme en estos canales profesionales o escribirme directamente por correo:",
+    "intro": "Puedes escribirme por correo o encontrarme aquí.",
     "email": "joseantoniocgonzalez83@gmail.com",
     "links": [
       {

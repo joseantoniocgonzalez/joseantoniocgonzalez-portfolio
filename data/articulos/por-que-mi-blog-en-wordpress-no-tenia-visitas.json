@@ -1,0 +1,15 @@
+{
+  "title": "Por qué mi blog en WordPress no tenía visitas",
+  "slug": "por-que-mi-blog-en-wordpress-no-tenia-visitas",
+  "date": "2026-04-12",
+  "category": "Infraestructura y DevOps",
+  "tags": [
+    "WordPress",
+    "Google Search Console",
+    "SEO",
+    "Indexación",
+    "Sitemap"
+  ],
+  "summary": "Un diagnóstico real de un blog en WordPress con poco tráfico, revisando indexación, sitemap, robots.txt y visibilidad en Google.",
+  "body_file": "body/por-que-mi-blog-en-wordpress-no-tenia-visitas.html"
+}

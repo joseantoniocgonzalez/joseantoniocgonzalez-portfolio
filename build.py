@@ -39,6 +39,10 @@ def load_home_data() -> dict:
     return load_json(DATA_DIR / "home.json")
 
 
+def load_home_data_en() -> dict:
+    return load_json(DATA_DIR / "home_en.json")
+
+
 def load_projects() -> list[dict]:
     projects = []
 
@@ -58,6 +62,24 @@ def load_projects() -> list[dict]:
 
     projects.sort(key=lambda project: project["date"], reverse=True)
     return projects
+
+
+def localize_project_en(project: dict) -> dict:
+    localized = dict(project)
+
+    for field in ("title", "summary", "intro", "problem", "build", "automation"):
+        en_key = f"{field}_en"
+        if project.get(en_key):
+            localized[field] = project[en_key]
+
+    if project.get("highlights_en"):
+        localized["highlights"] = project["highlights_en"]
+
+    return localized
+
+
+def localize_projects_en(projects: list[dict]) -> list[dict]:
+    return [localize_project_en(project) for project in projects]
 
 
 def load_articles() -> list[dict]:
@@ -112,7 +134,11 @@ def build_home(env: Environment, projects: list[dict], articles: list[dict]) -> 
     output = template.render(
         **home_data,
         latest_project=latest_project,
-        latest_articles=latest_articles
+        latest_articles=latest_articles,
+        search_projects=projects,
+        search_articles=articles,
+        search_certifications=load_certifications(),
+        lang_switch_url="/en/"
     )
 
     (DIST_DIR / "index.html").write_text(output, encoding="utf-8")
@@ -125,7 +151,8 @@ def build_projects(env: Environment, projects: list[dict]) -> None:
         page_title="Proyectos | José Antonio Canalo González",
         site_title="José Antonio Canalo González",
         tagline="QA Automation, DevOps y Administración de Sistemas",
-        projects=projects
+        projects=projects,
+        lang_switch_url="/en/projects/"
     )
 
     projects_dist_dir = DIST_DIR / "proyectos"
@@ -142,7 +169,8 @@ def build_project_pages(env: Environment, projects: list[dict]) -> None:
             page_title=f'{project["title"]} | José Antonio Canalo González',
             site_title="José Antonio Canalo González",
             tagline="QA Automation, DevOps y Administración de Sistemas",
-            project=project
+            project=project,
+            lang_switch_url=f'/en/projects/{project["slug"]}/'
         )
 
         project_dist_dir = DIST_DIR / "proyectos" / project["slug"]
@@ -236,7 +264,8 @@ def build_contact(env: Environment) -> None:
         page_title="Contacto | José Antonio Canalo González",
         site_title=home_data["site_title"],
         tagline=home_data["tagline"],
-        contact=home_data["contact"]
+        contact=home_data["contact"],
+        lang_switch_url="/en/contact/"
     )
 
     contact_dist_dir = DIST_DIR / "contacto"
@@ -253,11 +282,108 @@ def build_curriculum(env: Environment) -> None:
         page_title="Currículum | José Antonio Canalo González",
         site_title=home_data["site_title"],
         tagline=home_data["tagline"],
-        contact=home_data["contact"]
+        contact=home_data["contact"],
+        lang_switch_url="/en/curriculum/"
     )
 
     curriculum_dist_dir = DIST_DIR / "curriculum"
     curriculum_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    (curriculum_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_home_en(env: Environment, projects: list[dict]) -> None:
+    template = env.get_template("index_en.html")
+
+    home_data = load_home_data_en()
+    latest_project = projects[0] if projects else None
+
+    en_dist_dir = DIST_DIR / "en"
+    en_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    output = template.render(
+        page_title=home_data["page_title"],
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        summary=home_data["summary"],
+        hero_links=home_data["hero_links"],
+        latest_project=latest_project,
+        contact=home_data["contact"],
+        lang_switch_url="/"
+    )
+
+    (en_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_projects_en(env: Environment, projects: list[dict]) -> None:
+    template = env.get_template("projects_en.html")
+    home_data = load_home_data_en()
+
+    projects_dist_dir = DIST_DIR / "en" / "projects"
+    projects_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    output = template.render(
+        page_title="Projects | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        projects=projects,
+        lang_switch_url="/proyectos/"
+    )
+
+    (projects_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_project_pages_en(env: Environment, projects: list[dict]) -> None:
+    template = env.get_template("project_en.html")
+    home_data = load_home_data_en()
+
+    for project in projects:
+        output = template.render(
+            page_title=f'{project["title"]} | José Antonio Canalo González',
+            site_title=home_data["site_title"],
+            tagline=home_data["tagline"],
+            project=project,
+            lang_switch_url=f'/proyectos/{project["slug"]}/'
+        )
+
+        project_dist_dir = DIST_DIR / "en" / "projects" / project["slug"]
+        project_dist_dir.mkdir(parents=True, exist_ok=True)
+
+        (project_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_contact_en(env: Environment) -> None:
+    template = env.get_template("contact_en.html")
+    home_data = load_home_data_en()
+
+    contact_dist_dir = DIST_DIR / "en" / "contact"
+    contact_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    output = template.render(
+        page_title="Contact | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        contact=home_data["contact"],
+        lang_switch_url="/contacto/"
+    )
+
+    (contact_dist_dir / "index.html").write_text(output, encoding="utf-8")
+
+
+def build_curriculum_en(env: Environment) -> None:
+    template = env.get_template("curriculum_en.html")
+    home_data = load_home_data_en()
+
+    curriculum_dist_dir = DIST_DIR / "en" / "curriculum"
+    curriculum_dist_dir.mkdir(parents=True, exist_ok=True)
+
+    output = template.render(
+        page_title="CV | José Antonio Canalo González",
+        site_title=home_data["site_title"],
+        tagline=home_data["tagline"],
+        contact=home_data["contact"],
+        lang_switch_url="/curriculum/"
+    )
 
     (curriculum_dist_dir / "index.html").write_text(output, encoding="utf-8")
 
@@ -267,6 +393,7 @@ def main() -> None:
     prepare_dist()
 
     projects = load_projects()
+    en_projects = localize_projects_en(projects)
     articles = load_articles()
     certifications = load_certifications()
 
@@ -278,6 +405,12 @@ def main() -> None:
     build_certifications(env, certifications)
     build_contact(env)
     build_curriculum(env)
+
+    build_home_en(env, en_projects)
+    build_projects_en(env, en_projects)
+    build_project_pages_en(env, en_projects)
+    build_contact_en(env)
+    build_curriculum_en(env)
 
     print("Sitio generado en dist/")
 

@@ -1,0 +1,83 @@
+{% extends "base_en.html" %}
+
+{% block content %}
+<p class="back-link-wrap">
+  <a href="/en/projects/" class="back-link">← Back to projects</a>
+</p>
+
+<section class="hero">
+  <p class="eyebrow">Project</p>
+  <h2>{{ project.title }}</h2>
+
+  {% if project.intro %}
+    <p class="hero-summary">{{ project.intro }}</p>
+  {% endif %}
+
+  <div class="hero-actions">
+    {% if project.repo_url %}
+      <a
+        href="{{ project.repo_url }}"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View repository
+      </a>
+    {% endif %}
+
+    {% if project.live_url %}
+      <a
+        href="{{ project.live_url }}"
+        class="button button-secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View live site
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<section class="home-block">
+  <h3>Overview</h3>
+  <p class="project-summary">{{ project.summary }}</p>
+
+  {% if project.stack %}
+    <p class="project-stack">
+      <strong>Stack:</strong> {{ project.stack | join(", ") }}
+    </p>
+  {% endif %}
+</section>
+
+{% if project.problem %}
+  <section class="home-block">
+    <h3>What it does</h3>
+    <p class="project-summary">{{ project.problem }}</p>
+  </section>
+{% endif %}
+
+{% if project.build %}
+  <section class="home-block">
+    <h3>How it is built</h3>
+    <p class="project-summary">{{ project.build }}</p>
+  </section>
+{% endif %}
+
+{% if project.automation %}
+  <section class="home-block">
+    <h3>What it validates or automates</h3>
+    <p class="project-summary">{{ project.automation }}</p>
+  </section>
+{% endif %}
+
+{% if project.highlights %}
+  <section class="home-block">
+    <h3>Key points</h3>
+    <ul>
+      {% for item in project.highlights %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+{% endblock %}

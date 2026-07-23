@@ -1,0 +1,55 @@
+<p>Hace poco descubrí JaCoCo en un proyecto para mi portafolio en el que estoy trabajando durante mayo. Me ayudó a entender qué es la cobertura de tests, cómo funcionan los reportes HTML y qué partes de mi código estaban verificadas.</p>
+
+<p>Hasta ese momento, a la cobertura apenas le prestaba atención. Si los tests pasaban, pensaba: bueno, seguimos adelante. Pero al verla dentro del flujo de pruebas empecé a entender que no se trata solo de sacar un porcentaje, sino de revisar qué partes del código han pasado realmente por las pruebas.</p>
+
+<h2>Qué entendí por cobertura de tests</h2>
+
+<p>La cobertura de tests sirve para ver qué partes del código se han ejecutado cuando lanzas las pruebas. No significa que todo esté bien probado, pero sí te enseña qué zonas han pasado por los tests y cuáles ni siquiera se han tocado.</p>
+
+<p>Eso me cambió un poco la forma de mirarlo. Antes veía los tests en verde y pensaba que la parte importante ya estaba hecha. Con JaCoCo empecé a ver que podía tener tests pasando y, aun así, dejar métodos, condiciones o ramas del código sin comprobar.</p>
+
+<p>La cobertura no me parece algo para obsesionarse con el porcentaje, sino una ayuda para ver mejor el proyecto. Si una parte importante del código no aparece cubierta, ya sabes dónde tienes que mirar.</p>
+
+<h2>Por qué hay código que no aparece cubierto</h2>
+
+<p>La primera vez que ves un reporte de cobertura puede llamar la atención que haya partes del código en rojo o sin cubrir. Eso no significa siempre que el código esté mal. Muchas veces simplemente significa que los tests que has escrito no han pasado por ese camino.</p>
+
+<p>Por ejemplo, puede haber una condición <code>if</code> que solo se ejecuta cuando el dato de entrada es incorrecto, una excepción que aparece en un caso concreto o un método que todavía no tiene ningún test asociado. Si los tests no provocan esas situaciones, JaCoCo no puede marcarlas como cubiertas.</p>
+
+<p>Ahí entendí algo importante: un test en verde no tiene por qué recorrer el código de pe a pa. Puede comprobar el caso principal y dejar fuera condiciones, validaciones o errores que también forman parte del comportamiento real del proyecto.</p>
+
+<h2>Cómo entra JaCoCo en un proyecto Maven</h2>
+
+<p>En Maven, JaCoCo se puede configurar como parte del propio proceso de pruebas. No hace falta tratarlo como algo separado: ejecutas los tests y después puedes generar un informe de cobertura.</p>
+
+<p>La idea es bastante sencilla. Maven lanza las pruebas, JaCoCo registra qué partes del código se han ejecutado y luego genera un reporte HTML que se puede abrir en el navegador.</p>
+
+<p>Ese reporte no muestra solo un porcentaje general. También permite revisar clases, métodos, líneas y ramas del código. Ahí se ve mejor qué partes han pasado por los tests y cuáles se han quedado fuera.</p>
+
+<p>La verdad es que esa parte me llamó bastante la atención. Poder mirar la cobertura dentro del propio proyecto, junto con los tests, me hizo ver algo que antes pasaba más por alto: no solo si las pruebas estaban en verde, sino qué parte del código estaba siendo revisada y cuál seguía sin tocarse.</p>
+
+<h2>Qué me aportó el reporte HTML</h2>
+
+<p>El reporte HTML fue lo que más me ayudó a ver de forma clara qué significaba la cobertura. Ver un porcentaje está bien, pero abrir el informe y poder entrar por paquetes, clases y métodos lo hace mucho más claro.</p>
+
+<p>Ahí puedes ver qué líneas han pasado por los tests y cuáles no. También se entiende mejor que no todo se reduce a una línea verde o roja: en algunas condiciones puede haber varios caminos posibles y quizá solo has probado uno.</p>
+
+<p>Eso me pareció útil porque te obliga a mirar el código con más detalle. No se trata de perseguir el 100% porque sí, sino de detectar zonas que pensabas que estaban probadas y realmente no lo estaban.</p>
+
+<p>Con ese informe delante es más fácil decidir dónde añadir nuevos tests o qué casos revisar mejor.</p>
+
+<h2>Lo que JaCoCo no te dice</h2>
+
+<p>JaCoCo te enseña qué partes del código se han ejecutado durante los tests, pero no puede decirte si esos tests son buenos. Una línea puede aparecer como cubierta y, aun así, el test puede no estar comprobando bien el resultado.</p>
+
+<p>Por ejemplo, puedes tener un test que ejecuta un método, pero que apenas valida nada. En ese caso, JaCoCo marcará esa parte como cubierta, aunque la prueba no aporte demasiada seguridad.</p>
+
+<p>Es importante saberlo porque la cobertura ayuda, pero no sustituye al criterio. Sirve para detectar huecos, pero no podemos dejar de pensar o razonar si el proyecto está bien probado.</p>
+
+<h2>Conclusión</h2>
+
+<p>JaCoCo me ha servido para dejar de mirar los tests solo como algo que pasa o falla. Con la cobertura pude ver qué partes del código estaban pasando realmente por las pruebas y cuáles se quedaban fuera.</p>
+
+<p>También me ayudó a entender que un porcentaje alto no significa automáticamente que el proyecto esté bien probado. La cobertura da información, pero luego hay que mirar si los tests prueban casos importantes o solo ejecutan código.</p>
+
+<p>En este tipo de proyecto me parece útil precisamente por eso: porque te da una imagen más clara de lo que están haciendo tus tests, sin convertir el porcentaje en lo único importante.</p>

@@ -1,0 +1,38 @@
+{
+  "page_title": "José Antonio Canalo González",
+  "site_title": "José Antonio Canalo González",
+  "tagline": "QA Automation, DevOps and Systems Administration",
+  "summary": "Personal portfolio with projects, technical articles and certifications.",
+  "hero_links": [
+    {
+      "label": "CV",
+      "url": "/en/curriculum/",
+      "class_name": "button"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/joseantoniocgonzalez",
+      "class_name": "button button-secondary"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/joseantoniocgonzalez/",
+      "class_name": "button button-secondary"
+    }
+  ],
+  "contact": {
+    "title": "Contact",
+    "intro": "You can email me or find me here.",
+    "email": "joseantoniocgonzalez83@gmail.com",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/joseantoniocgonzalez/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/joseantoniocgonzalez"
+      }
+    ]
+  }
+}

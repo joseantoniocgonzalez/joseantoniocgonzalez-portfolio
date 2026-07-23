@@ -3,7 +3,19 @@
   "title": "Java microservice test harness",
   "summary": "Microservicio Java con API REST y persistencia real sobre PostgreSQL, diseñado para validar corrección, reproducibilidad y pruebas end-to-end en condiciones cercanas a producción. El proyecto gestiona el esquema exclusivamente con Flyway, ejecuta pruebas de integración con RestAssured y Testcontainers, verifica idempotencia y casos de error, y aplica quality gates en GitHub Actions con Spotless y JaCoCo.",
   "date": "2026-02-18",
-  "stack": ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JPA", "JUnit 5", "RestAssured", "Testcontainers", "Maven", "JaCoCo", "GitHub Actions"],
+  "stack": [
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Flyway",
+    "JPA",
+    "JUnit 5",
+    "RestAssured",
+    "Testcontainers",
+    "Maven",
+    "JaCoCo",
+    "GitHub Actions"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-microservice-test-harness",
   "live_url": "",
   "featured": false,
@@ -16,5 +28,16 @@
     "API REST en Spring Boot con PostgreSQL real y esquema gestionado solo con Flyway.",
     "Pruebas end-to-end con RestAssured y Testcontainers sobre una base de datos levantada en tiempo de ejecución.",
     "Validación de idempotencia, casos de error y quality gates en CI con Spotless y JaCoCo."
+  ],
+  "title_en": "Java microservice test harness",
+  "summary_en": "Java microservice with a REST API and real PostgreSQL persistence, designed to validate correctness, reproducibility and end-to-end testing under production-like conditions. The project manages the schema exclusively with Flyway, runs integration tests with RestAssured and Testcontainers, verifies idempotency and error cases, and applies quality gates in GitHub Actions with Spotless and JaCoCo.",
+  "intro_en": "Java microservice with a REST API and a real PostgreSQL database, designed as a reproducible testing environment to validate functional behaviour, integration and quality in a production-like context.",
+  "problem_en": "The project aims to avoid overly simplified or unreliable tests on backend services. To achieve this, it works with real persistence, a versioned schema and a workflow that makes it possible to verify responses, errors and idempotency without relying on test doubles or artificial configurations.",
+  "build_en": "The solution is built with Spring Boot and JPA on PostgreSQL, with the schema managed exclusively through Flyway. The API exposes REST operations and the project relies on Maven, JaCoCo and a structure designed to run repeatable tests with a real database started on demand.",
+  "automation_en": "Integration tests use RestAssured and Testcontainers to start PostgreSQL at runtime and validate end-to-end scenarios against the service. The workflow checks correct responses, error cases and persistent idempotency, and in CI applies quality gates with Spotless, automated tests and JaCoCo coverage in GitHub Actions.",
+  "highlights_en": [
+    "Spring Boot REST API with real PostgreSQL persistence and a schema managed only with Flyway.",
+    "End-to-end tests with RestAssured and Testcontainers against a database started at runtime.",
+    "Validation of idempotency, error cases and CI quality gates with Spotless and JaCoCo."
   ]
 }

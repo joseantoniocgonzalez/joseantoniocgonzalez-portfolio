@@ -3,7 +3,13 @@
   "title": "Playwright + TypeScript E2E automation",
   "summary": "Proyecto de automatización E2E con Playwright y TypeScript que aplica Page Object Model sobre Sauce Demo, separa suites smoke y regression mediante tags, y conserva evidencia en fallo con screenshot y trace. El proyecto incluye ejecución reproducible en local y en CI, con workflow de PR para smoke y publicación nightly del informe HTML en GitHub Pages.",
   "date": "2026-02-26",
-  "stack": ["Playwright", "TypeScript", "GitHub Actions", "GitHub Pages", "Node.js"],
+  "stack": [
+    "Playwright",
+    "TypeScript",
+    "GitHub Actions",
+    "GitHub Pages",
+    "Node.js"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/playwright-ts-e2e",
   "live_url": "https://joseantoniocgonzalez.github.io/playwright-ts-e2e/",
   "featured": false,
@@ -16,5 +22,16 @@
     "Page Object Model sobre Sauce Demo con flujos de login, inventario, carrito y checkout.",
     "Separación clara entre smoke y regression mediante tags y ejecución filtrada en Playwright.",
     "Evidencia en fallo y publicación automática del informe HTML en GitHub Pages desde CI."
+  ],
+  "title_en": "Playwright + TypeScript E2E automation",
+  "summary_en": "End-to-end automation project with Playwright and TypeScript that applies the Page Object Model on Sauce Demo, separates smoke and regression suites through tags, and keeps failure evidence with screenshots and traces. The project includes reproducible local and CI execution, a pull request workflow for smoke tests, and nightly publication of the HTML report on GitHub Pages.",
+  "intro_en": "End-to-end automation repository with Playwright and TypeScript, designed to show a solid working base for UI testing, Page Object Model organisation and continuous execution in GitHub Actions.",
+  "problem_en": "The project aims to provide a maintainable base for end-to-end tests against a public web application, separating quick smoke checks from broader regression scenarios. It also covers the need to keep useful evidence when a test fails and to publish results automatically.",
+  "build_en": "The solution is built with Playwright and TypeScript and uses a Page Object Model structure for Sauce Demo, with pages and flows for login, inventory, cart and checkout. The configuration uses BASE_URL from .env, test title tags to filter suites, and an HTML report available both locally and through GitHub Pages.",
+  "automation_en": "The workflow runs smoke and regression suites with tag-based filtering, saves screenshots only on failure and keeps traces for debugging. In CI, the pull request workflow runs the smoke suite and uploads artifacts, while the nightly workflow runs regression, publishes artifacts and deploys the HTML report to GitHub Pages.",
+  "highlights_en": [
+    "Page Object Model on Sauce Demo with login, inventory, cart and checkout flows.",
+    "Clear separation between smoke and regression through tags and filtered execution in Playwright.",
+    "Failure evidence and automatic publication of the HTML report on GitHub Pages from CI."
   ]
 }

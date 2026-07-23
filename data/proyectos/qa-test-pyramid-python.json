@@ -3,7 +3,14 @@
   "title": "Python testing pyramid lab",
   "summary": "Proyecto de testing en Python centrado en la testing pyramid sobre una FastAPI SUT mínima, con tests unitarios para lógica de negocio, pruebas de integración API con FastAPI TestClient y validación de entrada con Pydantic. El proyecto incluye además una implementación con persistencia SQLite para contrastar pruebas rápidas y pruebas con almacenamiento real, y aplica quality gates en CI con ruff, pytest y coverage.",
   "date": "2026-02-10",
-  "stack": ["Python", "FastAPI", "Pytest", "SQLite", "Ruff", "GitHub Actions"],
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Pytest",
+    "SQLite",
+    "Ruff",
+    "GitHub Actions"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-test-pyramid-python",
   "live_url": "",
   "featured": false,
@@ -16,5 +23,16 @@
     "Aplicación mínima con FastAPI diseñada para trabajar la testing pyramid de forma práctica.",
     "Combinación de tests unitarios, integración API y variante con persistencia SQLite.",
     "Quality gates en CI con ruff, pytest y coverage para asegurar reproducibilidad y control."
+  ],
+  "title_en": "Python testing pyramid lab",
+  "summary_en": "Python testing project focused on the testing pyramid around a minimal FastAPI SUT, with unit tests for business logic, API integration tests with FastAPI TestClient and input validation with Pydantic. The project also includes an implementation with SQLite persistence to compare fast tests and tests with real storage, and applies CI quality gates with ruff, pytest and coverage.",
+  "intro_en": "Python testing project built around a minimal FastAPI SUT to show how to apply the testing pyramid with a clear, reproducible and easy-to-extend base.",
+  "problem_en": "The project aims to show how to distribute tests according to their cost and scope, avoiding dependence only on slow or overly coupled tests. To do this, it combines quick business-logic validation, API integration checks and a variant with real persistence.",
+  "build_en": "The solution is based on a minimal FastAPI application with input validation through Pydantic, organised to test business rules, endpoints and persistence behaviour. In addition to the lighter version, it includes an implementation with SQLite to compare scenarios without real storage and scenarios with a real database.",
+  "automation_en": "The workflow runs unit and integration tests with pytest and FastAPI TestClient, and applies CI quality gates with ruff, pytest and coverage. This makes it possible to quickly check the main logic, validate API responses and measure coverage with reproducible execution locally and in GitHub Actions.",
+  "highlights_en": [
+    "Minimal FastAPI application designed to work on the testing pyramid in a practical way.",
+    "Combination of unit tests, API integration tests and a variant with SQLite persistence.",
+    "CI quality gates with ruff, pytest and coverage to ensure reproducibility and control."
   ]
 }

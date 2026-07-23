@@ -1,0 +1,17 @@
+{
+  "slug": "de-pruebas-manuales-a-automatizacion-qa",
+  "title": "De pruebas manuales a automatización QA: qué cambia realmente",
+  "summary": "Durante mucho tiempo pensaba que el testing era comprobar si algo funcionaba o no: abrir una aplicación, probar un formulario, revisar un resultado, repetir lo mismo mil veces y confirmar que hacía lo que tenía que hacer.",
+  "date": "2026-05-18",
+  "category": "QA y desarrollo",
+  "tags": [
+    "QA",
+    "testing",
+    "automatización",
+    "pruebas manuales",
+    "tests",
+    "Playwright",
+    "JUnit"
+  ],
+  "body_file": "body/de-pruebas-manuales-a-automatizacion-qa.html"
+}

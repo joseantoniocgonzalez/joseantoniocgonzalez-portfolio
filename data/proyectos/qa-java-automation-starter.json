@@ -3,7 +3,16 @@
   "title": "Java QA automation starter",
   "summary": "Starter de automatización QA en Java que combina pruebas UI con Selenium/JUnit, escenarios BDD con Cucumber y pruebas API con Postman/Newman sobre objetivos públicos. El proyecto incluye ejecución reproducible en local y CI, generación de reportes y artefactos, y documentación QA para estrategia, riesgos y diseño de pruebas.",
   "date": "2026-02-02",
-  "stack": ["Java", "Selenium", "JUnit", "Cucumber", "Postman", "Newman", "GitHub Actions", "Maven"],
+  "stack": [
+    "Java",
+    "Selenium",
+    "JUnit",
+    "Cucumber",
+    "Postman",
+    "Newman",
+    "GitHub Actions",
+    "Maven"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/qa-java-automation-starter",
   "live_url": "",
   "featured": false,
@@ -16,5 +25,16 @@
     "Base unificada para pruebas UI, BDD y API dentro del mismo repositorio.",
     "Ejecución reproducible en local y CI con workflows de smoke y full run.",
     "Generación de reportes, artefactos y documentación QA para estrategia y riesgos."
+  ],
+  "title_en": "Java QA automation starter",
+  "summary_en": "Java QA automation starter that combines UI tests with Selenium/JUnit, BDD scenarios with Cucumber and API tests with Postman/Newman against public targets. The project includes reproducible local and CI execution, report and artifact generation, and QA documentation for strategy, risks and test design.",
+  "intro_en": "Java QA automation starter designed as a reproducible base to combine UI testing, BDD scenarios and API testing within the same repository.",
+  "problem_en": "The project aims to bring together several common QA automation approaches in a single base without relying on isolated examples or improvised structures. It also addresses the need to run the same test set both locally and in CI, with results and evidence that are easy to review.",
+  "build_en": "The solution is organised into separate modules and folders for UI tests with Selenium and JUnit, BDD scenarios with Cucumber/Gherkin and API collections with Postman/Newman. It includes reproducible Maven configuration, public targets for practice and QA documentation for strategy, risks and test design.",
+  "automation_en": "The workflow allows UI, BDD and API tests to run both locally and in GitHub Actions, with separate workflows for smoke and full execution. It also generates reports and artifacts such as HTML, JUnit XML, Newman results and useful evidence for reviewing failures and tracking CI execution.",
+  "highlights_en": [
+    "Unified base for UI, BDD and API testing within the same repository.",
+    "Reproducible local and CI execution with smoke and full run workflows.",
+    "Generation of reports, artifacts and QA documentation for strategy and risks."
   ]
 }

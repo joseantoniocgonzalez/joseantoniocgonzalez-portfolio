@@ -1,0 +1,38 @@
+{
+  "slug": "english-practice-hub",
+  "title": "English Practice Hub",
+  "summary": "Web interactiva para practicar inglés con ejercicios por unidades, niveles y tipos de examen, pensada para estudiar de forma autónoma durante todo el año.",
+  "date": "2026-06-01",
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "GitHub",
+    "GitHub Pages"
+  ],
+  "repo_url": "",
+  "live_url": "https://englishpracticehub.joseantoniocgonzalez.org/",
+  "featured": true,
+  "draft": false,
+  "intro": "Aplicación web orientada a la práctica autónoma de inglés, con foco en ejercicios interactivos, organización por unidades y niveles, y una base frontend sencilla pero útil para estudio real.",
+  "problem": "El proyecto nace de una necesidad práctica: seguir repasando inglés de forma constante sin depender siempre de material externo disperso. La idea es reunir en una misma herramienta contenidos de nivel A2/B1, ejercicios autocorregibles y actividades de repaso que permitan estudiar con continuidad y de manera más ordenada.",
+  "build": "La solución está desarrollada con HTML, CSS y JavaScript y organiza los ejercicios por unidades, niveles y tipos de actividad. Incluye contenidos de gramática, vocabulario, comprensión lectora, signs and notices, open cloze, multiple choice cloze, true/false y ejercicios tipo examen. La aplicación trabaja con datos estructurados en JavaScript y renderizado dinámico de ejercicios para mostrar contenidos, corregir respuestas y mantener una navegación clara entre secciones.",
+  "automation": "La web automatiza la presentación y corrección de ejercicios interactivos, permitiendo practicar de forma repetible sin depender de una corrección manual. Los contenidos se muestran dinámicamente a partir de datos estructurados en JavaScript, lo que facilita ampliar unidades, lecturas, bloques tipo examen y actividades acumulativas dentro de una aplicación frontend mantenible.",
+  "highlights": [
+    "Web interactiva de práctica de inglés con ejercicios organizados por unidades, niveles y tipos de actividad.",
+    "Renderizado dinámico de contenidos y corrección de respuestas con JavaScript sobre una base frontend sencilla y clara.",
+    "Proyecto útil como herramienta real de estudio y como práctica técnica de organización de datos y evolución progresiva de una aplicación web."
+  ],
+  "title_en": "English Practice Hub",
+  "summary_en": "Interactive web app to practise English through units, levels and exam-style activities, designed for autonomous study throughout the year.",
+  "intro_en": "Web application focused on autonomous English practice, with emphasis on interactive exercises, unit and level organisation, and a simple but useful frontend base for real study.",
+  "problem_en": "The project was created from a practical need: to keep revising English consistently without always depending on scattered external material. The goal is to gather A2/B1-level content, self-correcting exercises and revision activities in a single tool that supports more structured and continuous study.",
+  "build_en": "The solution is built with HTML, CSS and JavaScript and organises exercises by units, levels and activity types. It includes grammar, vocabulary, reading comprehension, signs and notices, open cloze, multiple choice cloze, true/false and exam-style exercises. The application works with structured JavaScript data and dynamic exercise rendering to display content, correct answers and keep navigation clear across sections.",
+  "automation_en": "The site automates the presentation and correction of interactive exercises, allowing repeated practice without depending on manual correction. Content is rendered dynamically from structured JavaScript data, which makes it easier to expand units, readings, exam-style blocks and cumulative activities within a maintainable frontend application.",
+  "highlights_en": [
+    "Interactive English practice web app with exercises organised by units, levels and activity types.",
+    "Dynamic content rendering and answer correction with JavaScript on top of a simple and clear frontend base.",
+    "Project useful both as a real study tool and as frontend practice for structured data organisation and progressive application growth."
+  ]
+}

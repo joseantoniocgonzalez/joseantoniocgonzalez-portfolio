@@ -1,21 +1,21 @@
-{% extends "base.html" %}
+{% extends "base_en.html" %}
 
 {% block content %}
 <section class="hero">
-  <p class="eyebrow">Contacto</p>
-  <h2>Escríbeme</h2>
-  <p class="hero-summary">Puedes escribirme por correo o encontrarme aquí.</p>
+  <p class="eyebrow">Contact</p>
+  <h2>Get in touch</h2>
+  <p class="hero-summary">You can email me or find me here.</p>
 </section>
 
 <section class="home-block">
-  <h3>Correo electrónico</h3>
+  <h3>Email</h3>
   <p class="project-summary">
     <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
   </p>
 </section>
 
 <section class="home-block">
-  <h3>También puedes encontrarme aquí</h3>
+  <h3>You can also find me here</h3>
   <div class="hero-actions">
     {% for link in contact.links %}
       <a

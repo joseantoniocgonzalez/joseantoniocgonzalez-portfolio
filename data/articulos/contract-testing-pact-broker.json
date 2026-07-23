@@ -1,0 +1,18 @@
+{
+  "title": "Contract testing: por qué no basta con probar que una API responda",
+  "slug": "contract-testing-pact-broker",
+  "date": "2026-05-04",
+  "category": "QA y desarrollo",
+  "tags": [
+    "Contract testing",
+    "Pact",
+    "Pact Broker",
+    "API",
+    "QA",
+    "Python",
+    "Spring Boot",
+    "GitHub Actions"
+  ],
+  "summary": "Lo que entendí montando un proyecto de contract testing: una API puede responder bien y aun así romper a la aplicación que depende de ella.",
+  "body_file": "body/contract-testing-pact-broker.html"
+}

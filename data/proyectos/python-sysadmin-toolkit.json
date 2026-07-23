@@ -3,7 +3,13 @@
   "title": "Python sysadmin toolkit",
   "summary": "CLI en Python con Typer para comprobaciones de disco y red, y análisis de logs con exportación de resultados en JSON y CSV. El proyecto organiza comandos específicos para monitorización básica y validación de servicios, e incluye tests automatizados y CI con ruff y pytest para asegurar calidad y reproducibilidad.",
   "date": "2026-01-29",
-  "stack": ["Python", "Typer", "Pytest", "Ruff", "GitHub Actions"],
+  "stack": [
+    "Python",
+    "Typer",
+    "Pytest",
+    "Ruff",
+    "GitHub Actions"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/python-sysadmin-toolkit",
   "live_url": "",
   "featured": false,
@@ -16,5 +22,16 @@
     "CLI en Python con Typer para disco, red y análisis de logs en una sola herramienta.",
     "Exportación de resultados en JSON y CSV para reutilizar datos de los chequeos.",
     "Tests y CI con pytest y ruff para asegurar calidad y reproducibilidad."
+  ],
+  "title_en": "Python sysadmin toolkit",
+  "summary_en": "Python CLI built with Typer for disk and network checks, and log analysis with JSON and CSV export. The project organises specific commands for basic monitoring and service validation, and includes automated tests and CI with ruff and pytest to ensure quality and reproducibility.",
+  "intro_en": "Python CLI focused on basic systems tasks, designed to group useful disk, network and log checks into a lightweight, reproducible and easy-to-extend tool.",
+  "problem_en": "The project aims to avoid scattered scripts or repetitive manual checks in basic systems administration tasks. It brings together commands to review disk space, validate ports and analyse logs, with structured output to make review and reuse easier.",
+  "build_en": "The solution is built with Python and Typer to provide a clear command-line interface, organised into specific commands for disk, network and logs. In the log analysis part, it also allows exporting results in JSON and CSV so the information can be reused in other workflows or reviews.",
+  "automation_en": "The project includes automated tests with pytest and style checks with ruff, run reproducibly both locally and in CI. This workflow makes it possible to validate the behaviour of the main commands and maintain a more reliable base for future extensions.",
+  "highlights_en": [
+    "Python CLI with Typer for disk, network and log analysis in a single tool.",
+    "JSON and CSV export to reuse data from checks.",
+    "Tests and CI with pytest and ruff to ensure quality and reproducibility."
   ]
 }

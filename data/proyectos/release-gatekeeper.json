@@ -1,0 +1,43 @@
+{
+  "slug": "release-gatekeeper",
+  "title": "Release Gatekeeper",
+  "summary": "Aplicación web en PHP para gestionar solicitudes de despliegue mediante controles técnicos, reglas de negocio, API JSON, SQLite, Docker y tests automatizados.",
+  "date": "2026-06-03",
+  "stack": [
+    "PHP 8.3",
+    "Slim Framework",
+    "Composer",
+    "SQLite",
+    "PDO",
+    "PHPUnit",
+    "Docker Compose",
+    "GitHub Actions",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/release-gatekeeper",
+  "live_url": "",
+  "featured": true,
+  "draft": false,
+  "intro": "Aplicación web en PHP orientada a modelar un flujo técnico de control previo a despliegues, con foco en reglas de negocio, validación de checklist, API JSON, persistencia ligera y ejecución reproducible.",
+  "problem": "El proyecto busca representar un proceso de validación previo a despliegues más allá de un CRUD genérico, aplicando controles técnicos y restricciones funcionales sobre cada solicitud. La idea es mostrar cómo bloquear transiciones inválidas y cómo exigir condiciones reales de calidad antes de permitir que un despliegue avance dentro del flujo.",
+  "build": "La solución está desarrollada en PHP 8.3 sobre Slim Framework y combina interfaz web, API JSON y persistencia con SQLite mediante PDO. El sistema permite crear solicitudes de despliegue, revisar su checklist técnico y cambiar su estado según reglas de negocio ligadas a tests, plan de rollback, migraciones, cambios de configuración y comprobaciones de monitorización. El proyecto se ejecuta de forma reproducible con Docker Compose, incluye tests automatizados con PHPUnit y añade integración continua con GitHub Actions.",
+  "automation": "La aplicación valida que una solicitud no pueda aprobarse sin controles críticos cumplidos, no pueda desplegarse si no está en estado READY y no pueda hacer rollback si antes no fue desplegada. Este comportamiento se concentra en servicios propios para separar la lógica de negocio de la capa de presentación y convertir el proyecto en una base técnica verificable, con pruebas automatizadas y documentación reproducible desde el propio repositorio.",
+  "highlights": [
+    "Aplicación web en PHP centrada en reglas de negocio para controlar solicitudes de despliegue y bloquear transiciones inválidas.",
+    "Interfaz web y API JSON con persistencia en SQLite, ejecución reproducible con Docker y estructura separada en servicios.",
+    "Base de calidad con PHPUnit, GitHub Actions y documentación del proyecto con capturas reales y arranque local sencillo."
+  ],
+  "title_en": "Release Gatekeeper",
+  "summary_en": "PHP web application to manage deployment requests through technical checks, business rules, JSON API, SQLite, Docker and automated tests.",
+  "intro_en": "PHP web application designed to model a technical pre-deployment control flow, focused on business rules, checklist validation, JSON API, lightweight persistence and reproducible execution.",
+  "problem_en": "The project aims to represent a pre-deployment validation process beyond a generic CRUD application by applying technical checks and functional constraints to each request. The goal is to show how invalid transitions can be blocked and how real quality conditions can be enforced before a deployment is allowed to move forward.",
+  "build_en": "The solution is built in PHP 8.3 on top of Slim Framework and combines a web interface, JSON API and SQLite persistence through PDO. The system allows deployment requests to be created, their technical checklist to be reviewed and their status to change according to business rules linked to tests, rollback plan, migrations, configuration changes and monitoring checks. The project runs reproducibly with Docker Compose, includes automated tests with PHPUnit and adds continuous integration through GitHub Actions.",
+  "automation_en": "The application enforces that a request cannot be approved without critical checks completed, cannot be deployed unless it is in READY state and cannot be rolled back unless it was previously deployed. This behaviour is concentrated in dedicated services to separate business logic from the presentation layer and turn the project into a verifiable technical base with automated tests and reproducible documentation from the repository itself.",
+  "highlights_en": [
+    "PHP web application focused on business rules to control deployment requests and block invalid transitions.",
+    "Web interface and JSON API with SQLite persistence, reproducible Docker execution and service-based logic separation.",
+    "Quality base with PHPUnit, GitHub Actions and project documentation with real screenshots and simple local startup."
+  ]
+}

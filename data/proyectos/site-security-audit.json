@@ -1,0 +1,44 @@
+{
+  "slug": "site-security-audit",
+  "title": "Site Security Audit",
+  "summary": "Herramienta en Bash para realizar auditorías pasivas de seguridad sobre sitios web propios o autorizados, generando informes técnicos con hallazgos, evidencias y recomendaciones.",
+  "date": "2026-04-30",
+  "stack": [
+    "Bash",
+    "Linux",
+    "curl",
+    "Nginx",
+    "HTTP",
+    "HTTPS",
+    "TLS",
+    "WordPress",
+    "Git",
+    "GitHub",
+    "Administración de sistemas",
+    "Seguridad web"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/site-security-audit",
+  "live_url": "",
+  "featured": true,
+  "draft": false,
+  "intro": "Herramienta defensiva desarrollada en Bash para revisar la exposición pública y la configuración básica de seguridad de sitios web propios o autorizados, con generación de informes técnicos claros y reutilizables.",
+  "problem": "El proyecto nace de una necesidad real: revisar de forma pasiva la seguridad básica de mis propias webs alojadas en un servidor IONOS sin recurrir a técnicas ofensivas ni a explotación de vulnerabilidades. La idea era disponer de una base práctica para comprobar comportamiento HTTP/HTTPS, cabeceras, certificados, archivos expuestos y ciertos indicadores visibles que pueden afectar al hardening de un sitio web.",
+  "build": "La herramienta está desarrollada en Bash y se apoya en utilidades estándar de Linux como curl para recopilar información sobre redirecciones, certificados TLS, cabeceras de seguridad, cookies y posibles archivos sensibles expuestos. Cuando detecta WordPress, amplía la revisión con comprobaciones específicas sobre REST API, XML-RPC, versión visible, tema, plugins y archivos públicos como readme.html o license.txt. Todo ello se orienta a generar informes técnicos estructurados con hallazgos, evidencias y recomendaciones.",
+  "automation": "El script automatiza una revisión pasiva y repetible sobre sitios web propios o autorizados, lo que facilita detectar configuraciones mejorables sin depender de una comprobación manual cada vez. Durante las pruebas me permitió identificar y corregir ajustes reales relacionados con HTTPS, cabeceras de seguridad, exposición de archivos públicos y datos visibles del entorno WordPress, reforzando así el enfoque de hardening y administración defensiva.",
+  "highlights": [
+    "Herramienta en Bash orientada a auditorías pasivas de seguridad sobre sitios web propios o autorizados.",
+    "Revisión automática de HTTP/HTTPS, redirecciones, certificados TLS, cabeceras, cookies y archivos expuestos.",
+    "Comprobaciones específicas para WordPress con generación de informes técnicos útiles para hardening."
+  ],
+  "title_en": "Site Security Audit",
+  "summary_en": "Bash-based tool for passive security audits on owned or authorised websites, generating technical reports with findings, evidence and recommendations.",
+  "intro_en": "Defensive Bash-based tool designed to review the public exposure and basic security configuration of owned or authorised websites, with clear and reusable technical report generation.",
+  "problem_en": "The project was born from a real need: to passively review the basic security of my own websites hosted on an IONOS server without relying on offensive techniques or vulnerability exploitation. The goal was to have a practical base to check HTTP/HTTPS behaviour, headers, certificates, exposed files and visible indicators that can affect website hardening.",
+  "build_en": "The tool is developed in Bash and relies on standard Linux utilities such as curl to gather information about redirects, TLS certificates, security headers, cookies and potentially exposed sensitive files. When it detects WordPress, it extends the review with specific checks for the REST API, XML-RPC, visible version, theme, plugins and public files such as readme.html or license.txt. The whole process is aimed at generating structured technical reports with findings, evidence and recommendations.",
+  "automation_en": "The script automates a passive and repeatable review of owned or authorised websites, making it easier to detect weak configurations without depending on a manual check every time. During testing it helped me identify and correct real settings related to HTTPS, security headers, exposed public files and visible WordPress data, reinforcing its hardening and defensive administration focus.",
+  "highlights_en": [
+    "Bash-based tool focused on passive security audits for owned or authorised websites.",
+    "Automatic review of HTTP/HTTPS, redirects, TLS certificates, headers, cookies and exposed files.",
+    "WordPress-specific checks with technical report generation useful for hardening."
+  ]
+}

@@ -1,0 +1,105 @@
+<p>Durante mucho tiempo pensaba que el testing era comprobar si algo funcionaba o no: abrir una aplicación, probar un formulario, revisar un resultado, repetir lo mismo mil veces y confirmar que hacía lo que tenía que hacer.</p>
+
+<p>Ese tipo de prueba manual sigue siendo importante, porque muchas veces ayuda a encontrar detalles que un test automático no buscaría por sí solo.</p>
+
+<p>Pero cuando empecé a acercarme más a la automatización QA, entendí que el cambio no estaba solo en usar una herramienta nueva, sino en convertir una prueba que antes hacía a mano en algo que pudiera repetir sin depender siempre de mí.</p>
+
+<p>Automatizar no es pulsar los mismos botones con código. Es decidir qué tiene sentido probar, qué datos necesitas, qué esperas que pase y cómo te enteras de que algo se ha roto.</p>
+
+<h2>Qué aportan las pruebas manuales</h2>
+
+<p>Para mí, las pruebas manuales siguen teniendo mucho sentido porque te obligan a mirar la aplicación como usuario, no solo como código. Puedes seguir un flujo normal, equivocarte al introducir un dato, probar algo en otro orden o darte cuenta de que una pantalla carga, pero a la hora de la verdad no tiene sentido por mucho test que pase.</p>
+
+<p>Eso es difícil de sustituir por completo con automatización. Un test automático comprueba lo que le has dicho que compruebe. Si el escenario está mal pensado o se queda corto, el test puede pasar aunque la aplicación siga siendo confusa o falle en situaciones que no habías tenido en cuenta.</p>
+
+<p>Me pasó algo parecido en el proyecto de reglas de membresía del club de fútbol ficticio. Al principio puedes pensar que basta con probar que una petición correcta devuelve una entrada confirmada. Pero cuando pruebas el flujo con más calma aparecen más casos: qué pasa si el socio ya tiene esa entrada incluida, si la venta todavía no está abierta, si intenta pedir la misma entrada dos veces o si ya no quedan plazas y debe entrar en lista de espera.</p>
+
+<p>Ahí se ve mejor la diferencia. Un test puede validar un caso concreto y pasar, pero si no has entendido bien el recorrido completo, puedes dejar fuera casos importantes del flujo.</p>
+
+<p>También creo que probar a mano ayuda a hacerte mejores preguntas antes de automatizar. La lógica de un test no debería ser poner comprobaciones porque sí, sino seguir un camino claro: entender el flujo, ver dónde puede fallar y comprobar que lo importante sigue funcionando.</p>
+
+<p>Por eso no veo las pruebas manuales como algo menor. Me parecen una base necesaria para entender qué se está probando antes de decidir qué merece la pena automatizar.</p>
+
+<h2>Qué cambia al automatizar</h2>
+
+<p>Cuando pasas a automatizar, la prueba deja de ser algo que haces una vez delante de la pantalla y empieza a convertirse en una comprobación que el proyecto puede repetir muchas veces.</p>
+
+<p>Ahí cambia bastante la forma de pensar. Ya no vale solo con decir “he probado esto y funciona”. Tienes que definir qué entrada vas a usar, qué resultado esperas, qué parte del sistema estás validando y qué tendría que pasar para considerar que algo se ha roto.</p>
+
+<p>Uno de los errores que cometía al principio era intentar hacer un test enorme que comprobara todo de golpe. Quería que el test hiciera A, B, C y D en una sola prueba, como si así estuviera cubriendo mejor el flujo. Pero normalmente eso terminaba siendo más difícil de entender, más frágil y más frustrante cuando algo fallaba.</p>
+
+<p>Con el tiempo fui entendiendo que tenía más sentido construir el camino poco a poco. Primero comprobar A. Después A y B. Luego añadir C. Y así hasta llegar a D. Parece más lento al principio, pero ayuda a saber qué estás probando realmente y en qué punto exacto se rompe el comportamiento.</p>
+
+<p>También empiezas a darte cuenta de que un test necesita orden. No puedes meter comprobaciones al azar ni intentar cubrirlo todo en una sola prueba. Cada test debería tener una intención clara: comprobar una cosa concreta y hacerlo de una forma que después puedas entender cuando falle.</p>
+
+<p>Al final, automatizar me obligó a ordenar mejor las pruebas. No se trata de que un test haga muchas cosas, sino de que esté claro qué camino sigue y qué está comprobando. Si falla, tienes que poder entender dónde se ha roto el flujo, no quedarte mirando un test enorme sin saber por dónde empezar.</p>
+
+<h2>Qué automatizar primero</h2>
+
+<p>Una cosa que también me costó entender es que no todo merece ser automatizado desde el primer momento. Al principio es fácil pensar que cuantos más tests tengas, mejor. Pero si automatizas sin criterio, puedes acabar manteniendo pruebas que aportan poco o que se rompen cada dos por tres.</p>
+
+<p>Para mí tiene más sentido empezar por los flujos importantes. Los que, si fallan, el problema se nota de verdad. Por ejemplo: un login, un formulario principal, una petición importante de una API, una regla de negocio o una operación que se repite muchas veces.</p>
+
+<p>En el proyecto de membresía, por ejemplo, tenía más sentido probar primero los casos principales: que un socio válido pudiera reservar una entrada cuando cumplía las condiciones, que no pudiera pedirla antes de tiempo, que no pudiera duplicar una solicitud o que entrara en lista de espera si ya no quedaban plazas.</p>
+
+<p>Ese tipo de pruebas ayudan más que automatizar detalles pequeños solo por tener más tests. Al principio puede impresionar ver la terminal llena de pruebas pasando y pensar que has construido algo enorme, pero eso no significa necesariamente que el proyecto esté mejor protegido.</p>
+
+<p>Lo importante no es llenar el proyecto de comprobaciones, sino asegurarte de que lo básico y lo importante no se rompe.</p>
+
+<h2>Errores típicos al empezar</h2>
+
+<p>Cuando empiezas a automatizar, es fácil cometer errores que al principio parecen normales. A mí me pasó con la idea de querer cubrir demasiado rápido. Pensaba que si añadía más pruebas, el proyecto estaría mejor, pero luego veía que algunas no estaban comprobando nada importante o eran difíciles de mantener.</p>
+
+<p>Uno de los errores más comunes es escribir tests sin tener claro qué problema están resolviendo. Un test no debería estar ahí solo para que el número suba o para ver más líneas verdes en la terminal. Tiene que comprobar algo que realmente te importe del comportamiento de la aplicación.</p>
+
+<p>También está el problema de hacer pruebas demasiado frágiles. Si un test falla por cualquier cambio pequeño que no afecta al funcionamiento real, al final deja de ayudarte. En vez de darte confianza, te obliga a revisar fallos que muchas veces no son fallos de verdad.</p>
+
+<p>Otro error es pensar que un test en verde significa que todo está bien. Me ha pasado muchas veces: lanzar un test, verlo pasar y quedarme tranquilo, pero al revisarlo después o preguntarle a la IA, darme cuenta de que en realidad no estaba validando casi nada.</p>
+
+<p>El test ejecutaba código, sí. Salía en verde y no aparecía ninguna de esas temidas letras rojas en la terminal. Pero el problema era que el test no estaba comprobando nada importante. Pasaba porque no fallaba, no porque estuviera validando bien el comportamiento de la aplicación.</p>
+
+<p>Al final, automatizar también consiste en aprender a escribir mejores tests con el tiempo. No solo más tests, sino pruebas que tengan sentido, que sean claras y que ayuden a detectar errores reales.</p>
+
+<h2>La herramienta no es lo primero</h2>
+
+<p>Con la herramienta me ha pasado algo parecido: ayuda, pero no hace el trabajo por ti. Puedes usar JUnit, Playwright, Selenium, Postman o cualquier otra, pero si no sabes qué quieres comprobar, el test va a ser flojo igualmente.</p>
+
+<p>Al principio es normal fijarse mucho en la herramienta: cómo se escribe el test, qué método se usa, cómo se lanza, cómo se ve el resultado en la terminal o en el reporte. Todo eso importa, pero llega un punto en el que la pregunta principal no es “qué herramienta uso”, sino “qué comportamiento quiero validar”.</p>
+
+<p>También me pasa a veces que, por usar más herramientas o añadir más cosas al proyecto, puedo llegar a pensar que eso automáticamente lo hace mejor o le da más valor. Y sé que eso es un error. Una herramienta más no arregla un test mal planteado, igual que tener más dependencias, más reportes o más comandos no significa que estés probando mejor.</p>
+
+<p>Por eso creo que automatizar pruebas no empieza solo escribiendo código. Empieza entendiendo bien el flujo, los datos que entran, las condiciones que cambian el resultado y los errores que pueden aparecer.</p>
+
+<p>La herramienta viene después. Primero tiene que estar claro el camino que quieres probar.</p>
+
+<h2>Manual y automático no son enemigos</h2>
+
+<p>Otra cosa que me parece importante es no enfrentar las pruebas manuales con las automatizadas, como si una tuviera que sustituir a la otra. Yo lo veo más como dos formas distintas de mirar el mismo problema.</p>
+
+<p>Usar pruebas manuales no debería hacernos sentir menos, igual que usar pruebas automatizadas tampoco nos convierte de repente en ingenieros de la NASA. Al final, lo importante no es parecer más técnico, sino probar mejor.</p>
+
+<p>Probando a mano muchas veces entiendes mejor el camino, ves fallos raros y detectas cosas que no habías pensado. La automatización te ayuda a no tener que repetir siempre lo mismo a mano cuando el proyecto cambia.</p>
+
+<p>Cuando juntas las dos partes, el testing tiene más sentido. Primero puedes probar, observar y entender. Después puedes decidir qué merece la pena convertir en una prueba automática para que ese comportamiento quede protegido.</p>
+
+<p>Por eso no creo que automatizar sea dejar atrás las pruebas manuales. Para mí es más bien aprovechar lo que has aprendido probando a mano y convertirlo en pruebas que puedan repetirse cada vez que el proyecto cambia.</p>
+
+<h2>Qué me llevo de este cambio</h2>
+
+<p>Lo que más me llevo de pasar de probar a mano a automatizar no es una herramienta concreta, sino una forma más ordenada de pensar las pruebas.</p>
+
+<p>Antes podía quedarme más en la idea de “esto funciona” o “esto falla”. Ahora intento pensar un poco más en el camino completo: qué dato entra, qué condición se cumple, qué resultado espero y qué tendría que pasar para que el test me avise de un problema real.</p>
+
+<p>También he entendido que automatizar no significa hacerlo todo perfecto desde el principio. Muchas veces escribes un test, lo revisas, ves que no está comprobando lo que pensabas y tienes que corregirlo. Eso también forma parte del aprendizaje.</p>
+
+<p>Al final, para mí la automatización QA tiene sentido cuando te ayuda a probar con más orden, no cuando solo sirve para llenar el proyecto de tests. Si un test está en el proyecto, debería estar por algo.</p>
+
+<h2>Conclusión</h2>
+
+<p>Pasar de las pruebas manuales a la automatización QA me ha servido para entender mejor qué significa probar bien una aplicación.</p>
+
+<p>No lo veo como abandonar una cosa para pasar a otra, sino como aprender a usar cada parte en su momento. Las pruebas manuales ayudan a entender el comportamiento real del sistema, mientras que la automatización te permite repetir las pruebas importantes cada vez que cambias algo.</p>
+
+<p>También me ha hecho ver que un test no es mejor por ser más grande, por usar más herramientas o por aparecer en verde en la terminal. Un buen test tiene que tener sentido, seguir un camino claro y comprobar algo importante del comportamiento de la aplicación.</p>
+
+<p>Al final, automatizar no consiste solo en escribir código para probar. Consiste en pensar mejor qué estás probando, por qué lo estás probando y qué fallo quieres pillar antes de que llegue más lejos.</p>

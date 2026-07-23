@@ -1,0 +1,39 @@
+{
+  "slug": "microservice-observability-lab",
+  "title": "Microservice Observability Lab",
+  "summary": "Laboratorio reproducible de observabilidad sobre una API pequeña con FastAPI, Prometheus y Grafana, orientado a monitorización, logs estructurados y diagnóstico de incidencias.",
+  "date": "2026-04-09",
+  "stack": [
+    "Python 3.12",
+    "FastAPI",
+    "Uvicorn",
+    "Prometheus",
+    "Grafana",
+    "Docker Compose",
+    "JSON logging"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/microservice-observability-lab",
+  "live_url": "",
+  "featured": true,
+  "draft": false,
+  "intro": "Laboratorio técnico de observabilidad construido sobre una API mínima para mostrar una base clara, reproducible y útil de monitorización, análisis de logs y diagnóstico de degradación del servicio.",
+  "problem": "El proyecto busca trabajar la observabilidad sobre un servicio pequeño sin quedarse en una demo superficial de métricas o dashboards. La idea es disponer de una base sencilla pero útil para instrumentar una API, observar tráfico, latencia y errores, y entender cómo detectar una degradación controlada a partir de señales técnicas correlacionadas.",
+  "build": "La solución se apoya en una API desarrollada con FastAPI y servida con Uvicorn, con endpoints funcionales, de salud y de métricas. La aplicación genera logs estructurados en JSON y se integra con Prometheus y Grafana dentro de un entorno reproducible levantado con Docker Compose para centralizar recogida de métricas, visualización y análisis básico del comportamiento del servicio.",
+  "automation": "El laboratorio permite introducir latencia artificial para simular una degradación controlada y analizar su impacto sin convertir el escenario en una caída total. A partir de ahí, se pueden correlacionar métricas y logs para observar aumento de tiempos de respuesta, comportamiento de los endpoints y señales de error en un contexto local pensado para diagnóstico técnico y aprendizaje práctico.",
+  "highlights": [
+    "API mínima instrumentada con endpoints funcionales, /health y /metrics para observabilidad básica.",
+    "Integración reproducible con Prometheus y Grafana para analizar tráfico, latencia y errores.",
+    "Escenario de degradación controlada con latencia artificial para correlacionar métricas y logs."
+  ],
+  "title_en": "Microservice Observability Lab",
+  "summary_en": "Reproducible observability lab built around a small FastAPI API with Prometheus and Grafana, focused on monitoring, structured logs and incident diagnosis.",
+  "intro_en": "Technical observability lab built around a minimal API to provide a clear, reproducible and useful base for monitoring, log analysis and service degradation diagnosis.",
+  "problem_en": "The project is meant to explore observability on a small service without stopping at a superficial metrics or dashboard demo. The goal is to have a simple but useful base to instrument an API, observe traffic, latency and errors, and understand how to detect controlled degradation through correlated technical signals.",
+  "build_en": "The solution is based on an API built with FastAPI and served with Uvicorn, exposing functional, health and metrics endpoints. The application produces structured JSON logs and integrates with Prometheus and Grafana inside a reproducible environment started with Docker Compose to centralise metric collection, visualisation and basic service behaviour analysis.",
+  "automation_en": "The lab makes it possible to introduce artificial latency to simulate controlled degradation and analyse its impact without turning the scenario into a full outage. From there, metrics and logs can be correlated to observe increased response times, endpoint behaviour and error signals in a local environment designed for technical diagnosis and practical learning.",
+  "highlights_en": [
+    "Minimal API instrumented with functional, /health and /metrics endpoints for basic observability.",
+    "Reproducible integration with Prometheus and Grafana to analyse traffic, latency and errors.",
+    "Controlled degradation scenario with artificial latency to correlate metrics and logs."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "el-dragon-de-alejandria",
+  "title": "El Dragón de Alejandría",
+  "summary": "Biblioteca digital desplegada en servidor propio para gestionar ejemplares, portadas, categorías, citas y estadísticas de lectura, con zona privada de administración, autenticación y despliegue seguro sobre Nginx, Flask y PostgreSQL.",
+  "date": "2026-01-01",
+  "stack": [
+    "Linux",
+    "Nginx",
+    "Python",
+    "Flask",
+    "PostgreSQL",
+    "Jinja2",
+    "Gunicorn",
+    "Let's Encrypt",
+    "TLS",
+    "DNS"
+  ],
+  "repo_url": "",
+  "live_url": "https://eldragondealejandria.joseantoniocgonzalez.org/portada",
+  "featured": false,
+  "draft": false,
+  "intro": "Proyecto personal de biblioteca digital desarrollado y mantenido de forma integral sobre servidor propio, orientado a registrar y organizar ejemplares, portadas, categorías, citas y estadísticas de lectura en una aplicación web funcional.",
+  "problem": "El proyecto nace para centralizar en una sola plataforma la gestión de una biblioteca digital personalizada, con una zona privada para administración y una estructura técnica propia que permita controlar tanto la aplicación como el despliegue, la seguridad y la base de datos.",
+  "build": "Se desarrolló el backend en Python con Flask, plantillas con Jinja2 y base de datos PostgreSQL, junto con la gestión de ficheros estáticos, registro de usuarios, autenticación y control de sesiones. El despliegue se realizó en servidor propio con Nginx, Gunicorn y certificados TLS de Let’s Encrypt, incluyendo además migración a dominio .org, actualización de DNS en IONOS y ajuste de la configuración web.",
+  "automation": "El proyecto demuestra una base real de trabajo en administración de sistemas, despliegues web, seguridad, gestión de base de datos y mantenimiento de una aplicación en producción sobre infraestructura propia.",
+  "highlights": [
+    "Desarrollo y mantenimiento integral de una biblioteca digital en servidor propio.",
+    "Gestión de ejemplares, portadas, categorías, citas y estadísticas de lectura con zona privada de administración.",
+    "Migración a dominio .org y despliegue seguro con Nginx, Gunicorn, PostgreSQL y Let’s Encrypt."
+  ],
+  "title_en": "El Dragón de Alejandría",
+  "summary_en": "Digital library deployed on a self-managed server to manage items, covers, categories, quotes and reading statistics, with a private administration area, authentication and secure deployment on Nginx, Flask and PostgreSQL.",
+  "intro_en": "Personal digital library project fully developed and maintained on a self-managed server, focused on registering and organising items, covers, categories, quotes and reading statistics in a functional web application.",
+  "problem_en": "The project was created to centralise the management of a personalised digital library in a single platform, with a private administration area and a technical setup that allows full control over the application, deployment, security and database.",
+  "build_en": "The backend was developed in Python with Flask, Jinja2 templates and a PostgreSQL database, together with static file management, user registration, authentication and session handling. Deployment was carried out on a self-managed server with Nginx, Gunicorn and Let's Encrypt TLS certificates, including migration to a .org domain, DNS updates in IONOS and web server configuration adjustments.",
+  "automation_en": "The project demonstrates real hands-on work in systems administration, web deployments, security, database management and maintenance of a production application on self-managed infrastructure.",
+  "highlights_en": [
+    "Full development and maintenance of a digital library on a self-managed server.",
+    "Management of items, covers, categories, quotes and reading statistics with a private administration area.",
+    "Migration to a .org domain and secure deployment with Nginx, Gunicorn, PostgreSQL and Let's Encrypt."
+  ]
+}

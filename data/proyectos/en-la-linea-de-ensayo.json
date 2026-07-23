@@ -1,0 +1,39 @@
+{
+  "slug": "en-la-linea-de-ensayo",
+  "title": "En la línea de ensayo",
+  "summary": "Sitio web de noticias y análisis desarrollado con WordPress, orientado a la gestión de contenidos, optimización SEO y mantenimiento técnico del servidor, con configuración de dominio, base de datos y certificados SSL.",
+  "date": "2026-01-01",
+  "stack": [
+    "WordPress",
+    "MySQL",
+    "SEO",
+    "SSL/TLS",
+    "DNS",
+    "DevOps",
+    "Administración de servidores"
+  ],
+  "repo_url": "",
+  "live_url": "https://enlalineadeensayo.joseantoniocgonzalez.org/",
+  "featured": false,
+  "draft": false,
+  "intro": "Proyecto de desarrollo y gestión integral de un sitio web en WordPress, centrado tanto en la publicación de contenidos como en la parte técnica de servidor, base de datos, dominio y seguridad web.",
+  "problem": "El proyecto busca demostrar capacidad para mantener un sitio web real combinando gestión de contenidos, configuración técnica del entorno, seguridad, posicionamiento SEO y seguimiento de uso en una misma plataforma.",
+  "build": "Incluye instalación y configuración del servidor, gestión de base de datos MySQL, configuración de dominios, certificados SSL, publicación y automatización de entradas, así como tareas de optimización SEO y análisis de métricas de uso.",
+  "automation": "El sitio sirve como proyecto práctico para mostrar trabajo real en administración de sistemas, DevOps básico, seguridad web y gestión de contenidos digitales sobre una instalación WordPress operativa.",
+  "highlights": [
+    "Desarrollo y gestión integral de un sitio web con WordPress.",
+    "Configuración técnica de servidor, dominio, base de datos MySQL y certificados SSL.",
+    "Trabajo combinado de publicación de contenidos, automatización de entradas y optimización SEO."
+  ],
+  "title_en": "En la línea de ensayo",
+  "summary_en": "News and analysis website built with WordPress, focused on content management, SEO optimisation and technical server maintenance, including domain, database and SSL certificate configuration.",
+  "intro_en": "Project for the full development and management of a WordPress website, focused both on content publishing and on the technical side of server, database, domain and web security.",
+  "problem_en": "The project aims to demonstrate the ability to maintain a real website by combining content management, technical environment configuration, security, SEO positioning and usage tracking within the same platform.",
+  "build_en": "It includes server installation and configuration, MySQL database management, domain setup, SSL certificates, post publishing and scheduling, as well as SEO optimisation tasks and usage metrics analysis.",
+  "automation_en": "The site works as a practical project to show real hands-on work in systems administration, basic DevOps, web security and digital content management on an operational WordPress installation.",
+  "highlights_en": [
+    "Full development and management of a website with WordPress.",
+    "Technical setup of server, domain, MySQL database and SSL certificates.",
+    "Combined work in content publishing, post scheduling and SEO optimisation."
+  ]
+}

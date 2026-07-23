@@ -1,0 +1,17 @@
+{
+  "title": "JaCoCo: medir la cobertura en un proyecto Maven",
+  "slug": "jacoco-cobertura-proyecto-maven",
+  "date": "2026-05-11",
+  "category": "QA y desarrollo",
+  "tags": [
+    "JaCoCo",
+    "Maven",
+    "Java",
+    "testing",
+    "cobertura",
+    "JUnit",
+    "QA"
+  ],
+  "summary": "Hace poco descubrí JaCoCo en un proyecto para mi portafolio en el que estoy trabajando durante mayo. Me ayudó a entender qué es la cobertura de tests, cómo funcionan los reportes HTML y qué partes de mi código estaban verificadas.",
+  "body_file": "body/jacoco-cobertura-proyecto-maven.html"
+}

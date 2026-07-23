@@ -1,0 +1,79 @@
+<p>Mientras preparaba mi proyecto de contract testing descubrí algo importante: no basta con que una API responda. También tiene que devolver los datos con la estructura que espera la aplicación que la utiliza.</p>
+
+<p>Al principio puede parecer suficiente hacer una petición, recibir un <code>200 OK</code>, revisar el JSON y comprobar que los datos están ahí. Pero en una integración real eso no siempre significa que todo esté bien. Una API puede funcionar desde el punto de vista del proveedor y, aun así, romper al servicio que depende de ella.</p>
+
+<p>A partir de ahí empecé a entender mejor para qué servía realmente el contract testing.</p>
+
+<h2>Qué problema intenta resolver el contract testing</h2>
+
+<p>Cuando una aplicación consume una API, no espera cualquier respuesta. Espera unos campos concretos, unos tipos de datos determinados y una estructura que no cambie de forma inesperada.</p>
+
+<p>Un ejemplo sencillo sería una API que devuelve información de usuarios. Si la aplicación consumidora espera un campo llamado <code>email</code> y el proveedor lo cambia por <code>correo</code>, el endpoint puede seguir respondiendo con un <code>200 OK</code>. La API no ha desaparecido, pero la integración ya no funciona igual.</p>
+
+<p>El problema está en que se ha roto una parte del acuerdo entre las dos aplicaciones.</p>
+
+<p>El contract testing sirve precisamente para controlar ese acuerdo: qué espera el consumidor y qué debe seguir entregando el proveedor.</p>
+
+<h2>Lo que empecé a entender al trabajarlo</h2>
+
+<p>Antes de ver este enfoque, es fácil pensar en las pruebas de una API de una forma más directa: hago una petición, compruebo la respuesta y veo si todo parece correcto.</p>
+
+<p>Pero el contract testing obliga a mirar la comunicación entre servicios de otra manera. No se centra en probar toda la aplicación, sino una frontera muy concreta: lo que un servicio espera recibir y lo que el otro servicio entrega.</p>
+
+<p>No sustituye a las pruebas unitarias, funcionales o end-to-end. Tiene otro papel. Sirve para comprobar si dos partes que dependen entre sí siguen hablando el mismo idioma.</p>
+
+<p>Eso me parece importante porque muchas veces el fallo no está en que una aplicación esté caída. Puede estar en algo más pequeño: un campo que cambia, un tipo de dato distinto, una respuesta que ya no llega como antes o una estructura que el consumidor no esperaba.</p>
+
+<h2>El papel del consumidor, el proveedor y Pact Broker</h2>
+
+<p>En este enfoque, el consumidor define primero qué necesita de la API: qué endpoint va a usar, qué método HTTP espera, qué respuesta necesita y qué forma deben tener los datos.</p>
+
+<p>Después, ese contrato se puede publicar en una herramienta como Pact Broker. A partir de ahí, el proveedor puede verificar si su API sigue cumpliendo lo que el consumidor espera.</p>
+
+<p>Ahí cambia un poco la forma de mirar la prueba. Ya no se trata solo de comprobar si la API responde, sino de comprobar si responde de la forma que necesita quien depende de ella.</p>
+
+<p>Una prueba end-to-end puede decirte que algo ha fallado, pero no siempre te deja claro dónde está el problema a la primera. Puede fallar la interfaz, la API, los datos, la autenticación o cualquier punto intermedio.</p>
+
+<p>Con contract testing, el foco es más concreto. Si el proveedor cambia algo que rompe el contrato, el fallo aparece en ese acuerdo entre servicios.</p>
+
+<h2>Cómo lo he trabajado en mi proyecto</h2>
+
+<p>En mi caso, este enfoque lo he trabajado en el proyecto <strong>Cross-language contract testing with Pact + Broker</strong>.</p>
+
+<p>La idea del proyecto es separar un <strong>consumer en Python</strong> y un <strong>provider en Java/Spring Boot</strong>, usando <strong>Pact Broker</strong> sobre <strong>Docker</strong> y <strong>PostgreSQL</strong> para publicar y verificar contratos.</p>
+
+<p>Lo que más me costó al principio no fue entender la idea general del contrato, sino ver cómo encajaba todo el flujo: el consumer generando el contrato, el Broker almacenándolo, el provider verificándolo y GitHub Actions usando <code>can-i-deploy</code> para decidir si el cambio podía seguir adelante.</p>
+
+<p>Cuando ves cada pieza por separado, puede parecer que son herramientas sueltas. Pero cuando entiendes el recorrido completo, el proyecto tiene mucho más sentido.</p>
+
+<p>Lo que me gusta de este proyecto es que no se queda solo en generar un contrato y ya está. También añade versionado por commit, verificación desde el Broker y un paso de <code>can-i-deploy</code> en <strong>GitHub Actions</strong> para comprobar si un cambio puede desplegarse sin romper la compatibilidad entre servicios.</p>
+
+<p>Esa parte me parece bastante útil porque acerca el contract testing a un flujo más real de trabajo. No es solo ejecutar una prueba en local. El contrato pasa a formar parte del proceso de integración continua y ayuda a decidir si un cambio puede seguir adelante o no.</p>
+
+<h2>Por qué me encaja dentro de QA</h2>
+
+<p>Esta es una de las partes del QA que más me gusta: verificar las cosas con pruebas, evidencias y resultados claros. No quedarme solo en que algo “parece funcionar”.</p>
+
+<p>En este caso, el contrato deja por escrito qué espera un servicio de otro. Y lo importante es que ese acuerdo se puede comprobar. Si algo cambia y rompe la integración, no queda como una suposición: aparece como un fallo que se puede revisar.</p>
+
+<p>Para mí, este proyecto encaja muy bien entre QA y backend. Hay APIs, automatización, integración continua, servicios separados y pruebas pensadas para detectar problemas antes de que lleguen más lejos.</p>
+
+<p>No es probar por rellenar. Es entender cómo se comunican dos partes de una aplicación y qué puede romperse cuando una depende de la otra.</p>
+
+<h2>Proyecto relacionado</h2>
+
+<p><strong>Cross-language contract testing with Pact + Broker</strong></p>
+
+<p>Ficha en el portafolio:<br>
+<a href="https://joseantoniocgonzalez.org/proyectos/contract-testing-crosslang-pact-broker/" target="_blank" rel="noopener">https://joseantoniocgonzalez.org/proyectos/contract-testing-crosslang-pact-broker/</a></p>
+
+<p>Repositorio en GitHub:<br>
+<a href="https://github.com/joseantoniocgonzalez/contract-testing-crosslang-pact-broker" target="_blank" rel="noopener">https://github.com/joseantoniocgonzalez/contract-testing-crosslang-pact-broker</a></p>
+
+<h2>Conclusión</h2>
+
+<p>Al montar este proyecto me quedé con una idea bastante clara: una API no solo tiene que responder. Tiene que seguir respondiendo de la forma que necesita la aplicación que la consume.</p>
+
+<p>El contract testing me ha servido para entender mejor ese punto. No se trata solo de probar endpoints, sino de comprobar acuerdos entre servicios.</p>
+
+<p>Eso es lo que más me interesa de este enfoque: no quedarme en que algo parece funcionar, sino poder comprobarlo antes de que un cambio termine rompiendo una integración.</p>

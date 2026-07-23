@@ -3,7 +3,13 @@
   "title": "Pipeline CI/CD con Jenkins, Docker y Flask",
   "summary": "Pipeline CI/CD para una aplicación web en Flask que ejecuta pruebas automatizadas con pytest, construye y publica la imagen Docker, y despliega en un VPS Linux mediante SSH y docker-compose, con notificación por correo al finalizar.",
   "date": "2025-09-22",
-  "stack": ["Python", "Flask", "Docker", "Jenkins", "Linux"],
+  "stack": [
+    "Python",
+    "Flask",
+    "Docker",
+    "Jenkins",
+    "Linux"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/jenkins-pipeline-lab",
   "live_url": "",
   "featured": false,
@@ -16,5 +22,16 @@
     "Pipeline CI/CD con Jenkins para una aplicación Flask contenida en Docker.",
     "Pruebas con pytest, build de imagen y publicación automática en Docker Hub.",
     "Despliegue remoto por SSH en VPS Linux con docker-compose y notificación por correo."
+  ],
+  "title_en": "CI/CD pipeline with Jenkins, Docker and Flask",
+  "summary_en": "CI/CD pipeline for a Flask web application that runs automated tests with pytest, builds and publishes the Docker image, and deploys to a Linux VPS through SSH and docker-compose, with email notification at the end.",
+  "intro_en": "CI/CD project with Jenkins for a Flask web application, designed to show a complete workflow for validation, packaging, publication and remote deployment on a Linux VPS.",
+  "problem_en": "The project aims to avoid manual and inconsistent deployments in a simple web application. To do this, it automates everything from initial validation with tests to image build, publication and remote deployment on the server, leaving a repeatable end-to-end workflow.",
+  "build_en": "The solution is based on a Flask application containerised with Docker, with a Jenkinsfile to define pipeline stages, a Dockerfile for packaging and docker-compose for deployment on the VPS. The workflow connects GitHub, Docker Hub and the Linux server through SSH access to run the remote update.",
+  "automation_en": "The pipeline clones the repository, installs dependencies, runs automated tests with pytest, builds the Docker image and publishes it to Docker Hub. Then it connects to the VPS over SSH, deploys with docker-compose and sends an email notification at the end, leaving a reproducible continuous integration and delivery process.",
+  "highlights_en": [
+    "CI/CD pipeline with Jenkins for a Dockerised Flask application.",
+    "Pytest tests, image build and automatic publication to Docker Hub.",
+    "Remote SSH deployment on a Linux VPS with docker-compose and email notification."
   ]
 }

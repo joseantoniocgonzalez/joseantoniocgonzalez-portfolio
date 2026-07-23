@@ -1,0 +1,54 @@
+{% extends "base_en.html" %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Personal portfolio</p>
+  <h2>{{ site_title }}</h2>
+  <p class="hero-tagline">{{ tagline }}</p>
+  <p class="hero-summary">{{ summary }}</p>
+
+  <div class="hero-actions">
+    {% for link in hero_links %}
+      <a
+        href="{{ link.url }}"
+        class="{{ link.class_name }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ link.label }}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-block">
+  <h3>Latest project</h3>
+
+  {% if latest_project %}
+    <p class="project-title">
+      <a href="/en/projects/{{ latest_project.slug }}/" class="project-title-link">
+        <strong>{{ latest_project.title }}</strong>
+      </a>
+    </p>
+    <p class="project-summary">{{ latest_project.summary }}</p>
+
+    <p class="project-link-wrap">
+      <a href="/en/projects/{{ latest_project.slug }}/" class="button button-secondary">
+        View project
+      </a>
+    </p>
+  {% else %}
+    <p>Coming soon.</p>
+  {% endif %}
+</section>
+
+<section class="home-block" id="contact">
+  <h3>{{ contact.title }}</h3>
+  <p class="project-summary">{{ contact.intro }}</p>
+
+  <p class="project-summary">
+    <strong>Email:</strong>
+    <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+  </p>
+</section>
+{% endblock %}

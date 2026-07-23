@@ -3,7 +3,17 @@
   "title": "Java learning lab",
   "summary": "Repositorio de práctica en Java orientado a backend que combina katas de fundamentos validadas con JUnit y un módulo Spring Boot con API REST, respuestas JSON, validación de entrada, operaciones CRUD y tests de integración. El proyecto añade persistencia con H2 y JPA, documentación Swagger y cobertura con JaCoCo para reunir práctica de lenguaje y desarrollo backend en una base de trabajo estructurada.",
   "date": "2026-01-29",
-  "stack": ["Java", "JUnit", "Spring Boot", "JPA", "H2", "Swagger", "JaCoCo", "GitHub Actions", "Maven"],
+  "stack": [
+    "Java",
+    "JUnit",
+    "Spring Boot",
+    "JPA",
+    "H2",
+    "Swagger",
+    "JaCoCo",
+    "GitHub Actions",
+    "Maven"
+  ],
   "repo_url": "https://github.com/joseantoniocgonzalez/java-learning-lab",
   "live_url": "",
   "featured": false,
@@ -16,5 +26,16 @@
     "Katas y ejercicios de fundamentos en Java validados con JUnit.",
     "Módulo Spring Boot con API REST, validación, CRUD y persistencia con H2 y JPA.",
     "Cobertura con JaCoCo y ejecución reproducible en CI para práctica de lenguaje y backend."
+  ],
+  "title_en": "Java learning lab",
+  "summary_en": "Backend-oriented Java practice repository that combines foundational katas validated with JUnit and a Spring Boot module with a REST API, JSON responses, input validation, CRUD operations and integration tests. The project adds persistence with H2 and JPA, Swagger documentation and JaCoCo coverage to bring together language practice and backend development in a structured working base.",
+  "intro_en": "Backend-oriented Java practice repository that brings together foundational exercises and a Spring Boot module to work on REST APIs, validation and persistence within the same working base.",
+  "problem_en": "The project aims to combine language practice and backend development in a structure more useful than a collection of isolated exercises. It mixes work on Java fundamentals with a block closer to a real environment, where there is validation, CRUD, documentation and integration testing.",
+  "build_en": "The solution is divided between katas and exercises validated with JUnit, and a Spring Boot module with a REST API, JSON responses, input validation and CRUD operations. It adds persistence with H2 and JPA, Swagger documentation and an organised Maven base to expand practice gradually.",
+  "automation_en": "The project includes automated tests for both the exercises and the backend module, together with JaCoCo coverage and reproducible CI execution. This makes it possible to validate both the fundamentals logic and the behaviour of the Spring Boot module within the same workflow.",
+  "highlights_en": [
+    "Java katas and foundational exercises validated with JUnit.",
+    "Spring Boot module with REST API, validation, CRUD and persistence with H2 and JPA.",
+    "JaCoCo coverage and reproducible CI execution for language and backend practice."
   ]
 }

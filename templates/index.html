@@ -12,8 +12,6 @@
       <a
         href="{{ link.url }}"
         class="{{ link.class_name }}"
-        target="_blank"
-        rel="noopener noreferrer"
       >
         {{ link.label }}
       </a>
@@ -21,7 +19,152 @@
   </div>
 </section>
 
-<section class="home-block" id="contacto">
+<section class="home-block">
+  <h3>Buscar en la web</h3>
+  <p class="project-summary">
+    Busca por tecnologías, temas o etiquetas en proyectos, artículos y certificaciones.
+  </p>
+
+  <div class="home-search">
+    <input
+      type="search"
+      id="home-search-input"
+      name="q"
+      class="home-search-input"
+      placeholder="Ej.: docker, qa, terraform, redes..."
+      autocomplete="off"
+      aria-label="Buscar en la web"
+    >
+  </div>
+
+  <div id="home-search-results" class="home-search-results">
+  </div>
+
+  <script id="search-projects-data" type="application/json">{{ search_projects | tojson }}</script>
+  <script id="search-articles-data" type="application/json">{{ search_articles | tojson }}</script>
+  <script id="search-certifications-data" type="application/json">{{ search_certifications | tojson }}</script>
+
+  <script>
+    (function () {
+      const input = document.getElementById("home-search-input");
+      const results = document.getElementById("home-search-results");
+
+      const projects = JSON.parse(document.getElementById("search-projects-data").textContent);
+      const articles = JSON.parse(document.getElementById("search-articles-data").textContent);
+      const certifications = JSON.parse(document.getElementById("search-certifications-data").textContent);
+
+      function normalize(value) {
+        return (value || "")
+          .toString()
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+      }
+
+      function flattenTags(tags) {
+        if (!Array.isArray(tags)) return "";
+        return tags.join(" ");
+      }
+
+      function buildSearchText(item, type) {
+        if (type === "project") {
+          return normalize([
+            item.title,
+            item.summary,
+            flattenTags(item.tags)
+          ].join(" "));
+        }
+
+        if (type === "article") {
+          return normalize([
+            item.title,
+            item.summary,
+            flattenTags(item.tags)
+          ].join(" "));
+        }
+
+        return normalize([
+          item.titulo,
+          item.resumen,
+          flattenTags(item.etiquetas),
+          flattenTags(item.aptitudes)
+        ].join(" "));
+      }
+
+      function filterItems(items, query, type) {
+        const q = normalize(query).trim();
+        if (!q) return [];
+        return items.filter(item => buildSearchText(item, type).includes(q));
+      }
+
+      function renderSection(title, items, type) {
+        if (!items.length) return "";
+
+        const html = items.map(item => {
+          if (type === "project") {
+            return `
+              <article>
+                <p><strong><a href="/proyectos/${item.slug}/">${item.title}</a></strong></p>
+                <p class="project-summary">${item.summary || ""}</p>
+              </article>
+            `;
+          }
+
+          if (type === "article") {
+            return `
+              <article>
+                <p><strong><a href="/articulos/${item.slug}/">${item.title}</a></strong></p>
+                <p class="project-summary">${item.summary || ""}</p>
+              </article>
+            `;
+          }
+
+          return `
+            <article>
+              <p><strong><a href="/certificaciones/">${item.titulo}</a></strong></p>
+              <p class="project-summary">${item.resumen || ""}</p>
+            </article>
+          `;
+        }).join("<hr>");
+
+        return `
+          <section class="search-result-group">
+            <h4>${title}</h4>
+            ${html}
+          </section>
+        `;
+      }
+
+      function renderResults() {
+        const query = input.value;
+
+        if (!normalize(query).trim()) {
+          results.innerHTML = "";
+          return;
+        }
+
+        const projectMatches = filterItems(projects, query, "project");
+        const articleMatches = filterItems(articles, query, "article");
+        const certificationMatches = filterItems(certifications, query, "certification");
+
+        if (!projectMatches.length && !articleMatches.length && !certificationMatches.length) {
+          results.innerHTML = "<p>No se han encontrado resultados.</p>";
+          return;
+        }
+
+        results.innerHTML = [
+          renderSection("Proyectos", projectMatches, "project"),
+          renderSection("Artículos", articleMatches, "article"),
+          renderSection("Certificaciones", certificationMatches, "certification")
+        ].join("");
+      }
+
+      input.addEventListener("input", renderResults);
+    })();
+  </script>
+</section>
+
+<section class="home-block">
   <h3>Último proyecto</h3>
 
   {% if latest_project %}
@@ -59,7 +202,7 @@
   {% endif %}
 </section>
 
-<section class="home-block">
+<section class="home-block" id="contacto">
   <h3>{{ contact.title }}</h3>
   <p class="project-summary">{{ contact.intro }}</p>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +14,15 @@
         <p>{{ tagline }}</p>
       </div>
 
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="/">Inicio</a>
-        <a href="/curriculum/">Currículum</a>
-        <a href="/proyectos/">Portfolio</a>
-        <a href="/articulos/">Artículos</a>
-        <a href="/certificaciones/">Certificaciones</a>
-        <a href="/contacto/">Contacto</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/curriculum/">CV</a>
+        <a href="/en/projects/">Projects</a>
+        <a href="/en/contact/">Contact</a>
         <span class="lang-switch">
-          <span aria-current="page">ES</span>
+          <a href="{{ lang_switch_url }}">ES</a>
           <span aria-hidden="true"> | </span>
-          <a href="{{ lang_switch_url }}">EN</a>
+          <span aria-current="page">EN</span>
         </span>
       </nav>
     </div>

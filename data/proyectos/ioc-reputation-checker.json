@@ -1,0 +1,44 @@
+{
+  "slug": "ioc-reputation-checker",
+  "title": "IOC Reputation Checker",
+  "summary": "API backend para analizar indicadores de compromiso, clasificarlos, aplicar reglas locales de riesgo, simular enriquecimiento OSINT y conservar los resultados para consultas posteriores.",
+  "date": "2026-07-21",
+  "stack": [
+    "Python 3.13",
+    "FastAPI",
+    "Uvicorn",
+    "Pydantic",
+    "SQLAlchemy",
+    "PostgreSQL 16",
+    "Alembic",
+    "Docker Compose",
+    "Pytest",
+    "HTTPX",
+    "Ruff",
+    "GitHub Actions"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/ioc-reputation-checker",
+  "live_url": "",
+  "featured": true,
+  "draft": false,
+  "intro": "API REST orientada a ciberseguridad que reproduce un flujo completo de análisis de indicadores de compromiso, desde su clasificación y puntuación local hasta el enriquecimiento simulado, la persistencia y la consulta posterior de resultados.",
+  "problem": "El proyecto busca representar cómo podría organizarse técnicamente un servicio backend para analizar IOCs sin depender todavía de proveedores externos reales. La idea es recibir indicadores como IPs, dominios, URLs o hashes, detectar su tipo, aplicar reglas de riesgo explicables y conservar un historial que permita consultar análisis, búsquedas y estadísticas.",
+  "build": "La solución está desarrollada con FastAPI y organizada por capas de endpoints, schemas, servicios, repositorios, modelos y configuración. La lógica se divide en servicios específicos para detectar el tipo de IOC, calcular el scoring local, simular un proveedor OSINT y obtener el riesgo final. Los análisis y resultados del proveedor se almacenan en PostgreSQL mediante SQLAlchemy, mientras que Alembic gestiona las migraciones. El entorno local utiliza Docker Compose y la API se ejecuta con Uvicorn, con documentación interactiva disponible mediante Swagger.",
+  "automation": "La API valida la detección de IPs, dominios, URLs y hashes MD5, SHA1 y SHA256, además de aplicar reglas locales sobre señales como HTTP, uso de una IP en la URL o términos sospechosos. El proyecto incluye tests unitarios y de integración para scoring, proveedor simulado, riesgo final, persistencia y endpoints. GitHub Actions levanta PostgreSQL, aplica las migraciones con Alembic y ejecuta automáticamente Ruff y Pytest. El estado final documentado registra 45 tests superados y Ruff sin errores.",
+  "highlights": [
+    "Flujo completo de análisis de IOCs con clasificación, scoring local explicable y enriquecimiento mediante un proveedor OSINT simulado.",
+    "Persistencia en PostgreSQL con histórico, búsquedas, estadísticas y recuperación de análisis individuales mediante API REST.",
+    "Arquitectura por capas, migraciones con Alembic, 45 tests superados y CI con PostgreSQL, Ruff y Pytest en GitHub Actions."
+  ],
+  "title_en": "IOC Reputation Checker",
+  "summary_en": "Backend API for analysing indicators of compromise, classifying them, applying local risk rules, simulating OSINT enrichment and storing results for later queries.",
+  "intro_en": "Cybersecurity-oriented REST API that reproduces a complete indicator-of-compromise analysis flow, from classification and local scoring to simulated enrichment, persistence and later result retrieval.",
+  "problem_en": "The project is designed to represent how a backend service for analysing IOCs could be technically organised without depending on real external providers. The goal is to receive indicators such as IP addresses, domains, URLs or hashes, detect their type, apply explainable risk rules and keep a history that supports analysis retrieval, searches and statistics.",
+  "build_en": "The solution is developed with FastAPI and organised into endpoint, schema, service, repository, model and configuration layers. Its logic is divided into dedicated services for IOC type detection, local scoring, simulated OSINT enrichment and final risk calculation. Analyses and provider results are stored in PostgreSQL through SQLAlchemy, while Alembic manages database migrations. The local environment uses Docker Compose and the API runs with Uvicorn, with interactive documentation available through Swagger.",
+  "automation_en": "The API validates the detection of IP addresses, domains, URLs and MD5, SHA1 and SHA256 hashes, while applying local rules to signals such as HTTP usage, IP-based URLs or suspicious terms. The project includes unit and integration tests for scoring, the simulated provider, final risk calculation, persistence and the main endpoints. GitHub Actions starts PostgreSQL, applies Alembic migrations and automatically runs Ruff and Pytest. The documented final state records 45 passing tests and no Ruff errors.",
+  "highlights_en": [
+    "Complete IOC analysis flow with classification, explainable local scoring and enrichment through a simulated OSINT provider.",
+    "PostgreSQL persistence with history, searches, statistics and individual analysis retrieval through a REST API.",
+    "Layered architecture, Alembic migrations, 45 passing tests and CI with PostgreSQL, Ruff and Pytest in GitHub Actions."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "membership-rules-engine",
+  "title": "Membership Rules Engine",
+  "summary": "Backend en Java/Spring Boot que modela reglas de negocio para socios de un club ficticio, con descuentos, ventanas de venta, asignación de entradas para una final, lista de espera, cancelaciones, persistencia, tests, CI y demo visual.",
+  "date": "2026-05-12",
+  "stack": [
+    "Java 21",
+    "Spring Boot",
+    "Maven",
+    "REST API",
+    "PostgreSQL",
+    "Flyway",
+    "Spring Data JPA",
+    "JUnit 5",
+    "AssertJ",
+    "Testcontainers",
+    "JaCoCo",
+    "GitHub Actions",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "GitHub Pages"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/membership-rules-engine",
+  "live_url": "https://joseantoniocgonzalez.github.io/membership-rules-engine/",
+  "featured": true,
+  "draft": false,
+  "intro": "Proyecto backend en Java y Spring Boot orientado a modelar reglas de negocio de membresía sobre un caso ficticio, con foco en validación, elegibilidad, asignación de entradas, persistencia relacional, calidad de pruebas y documentación técnica.",
+  "problem": "El proyecto busca representar lógica de negocio real más allá de un CRUD básico, trabajando con reglas condicionales, ventanas de acceso, validación de identidad del socio, límites de aforo y estados de resultado según el contexto. La idea es disponer de una base backend donde se vea con claridad cómo diseñar y probar decisiones de negocio con distintos caminos de ejecución y restricciones funcionales.",
+  "build": "La solución está desarrollada con Java 21 y Spring Boot, siguiendo una estructura backend basada en API REST, capa de servicio, persistencia con PostgreSQL y control de esquema con Flyway. Modela distintos tipos de socios, operaciones de tienda y solicitudes de entradas, incluyendo acceso incluido para abonados, ventanas de venta para partido normal y asignación limitada para una final. El proyecto utiliza Spring Data JPA y Maven, añade documentación técnica y ejemplos de uso con curl, y se completa con una demo visual estática publicada con GitHub Pages para explicar el comportamiento del sistema sin necesidad de ejecutar la aplicación localmente.",
+  "automation": "El backend valida cada operación mediante memberNumber y accessCode antes de aplicar cualquier regla y resuelve distintos estados funcionales como CONFIRMED, NOT_YET_AVAILABLE, ALREADY_INCLUDED, WAITING_LIST, NOT_ELIGIBLE, DUPLICATE_REQUEST, CANCELLED o INVALID_MEMBER_ACCESS. La calidad se refuerza con tests unitarios, parametrizados e integración usando JUnit 5, AssertJ y Testcontainers con PostgreSQL real, además de integración continua en GitHub Actions y cobertura con JaCoCo para mantener una base reproducible y verificable.",
+  "highlights": [
+    "Backend centrado en reglas de negocio con validación de socios, descuentos, venta de entradas y asignación para una final con cupo limitado.",
+    "Persistencia real con PostgreSQL, control de esquema con Flyway y acceso a datos con Spring Data JPA.",
+    "Base de calidad con tests unitarios e integración, PostgreSQL real en pruebas mediante Testcontainers, CI en GitHub Actions y demo visual en GitHub Pages."
+  ],
+  "title_en": "Membership Rules Engine",
+  "summary_en": "Java/Spring Boot backend that models business rules for members of a fictional club, including discounts, sales windows, ticket allocation for a final, waiting list, cancellations, persistence, tests, CI and a visual demo.",
+  "intro_en": "Java and Spring Boot backend project focused on modelling membership business rules through a fictional use case, with emphasis on validation, eligibility, ticket allocation, relational persistence, test quality and technical documentation.",
+  "problem_en": "The project is designed to represent real business logic beyond a basic CRUD application by working with conditional rules, access windows, member identity validation, ticket capacity limits and outcome states depending on context. The goal is to provide a backend base that clearly shows how to design and test business decisions with multiple execution paths and functional constraints.",
+  "build_en": "The solution is developed with Java 21 and Spring Boot, following a backend structure based on a REST API, service layer, PostgreSQL persistence and schema control with Flyway. It models different member types, store operations and ticket requests, including included access for season ticket holders, sales windows for a regular match and limited allocation for a final. The project uses Spring Data JPA and Maven, adds technical documentation and curl API examples, and is completed with a static visual demo published on GitHub Pages to explain system behaviour without needing to run the application locally.",
+  "automation_en": "The backend validates every operation through memberNumber and accessCode before applying any rule and resolves different functional states such as CONFIRMED, NOT_YET_AVAILABLE, ALREADY_INCLUDED, WAITING_LIST, NOT_ELIGIBLE, DUPLICATE_REQUEST, CANCELLED or INVALID_MEMBER_ACCESS. Quality is reinforced with unit, parameterised and integration tests using JUnit 5, AssertJ and Testcontainers with real PostgreSQL, plus continuous integration in GitHub Actions and JaCoCo coverage to keep the project reproducible and verifiable.",
+  "highlights_en": [
+    "Business-rule-focused backend with member validation, discounts, ticket sales and allocation for a limited-capacity final.",
+    "Real persistence with PostgreSQL, schema control with Flyway and data access through Spring Data JPA.",
+    "Quality base with unit and integration tests, real PostgreSQL in tests through Testcontainers, CI in GitHub Actions and a visual demo on GitHub Pages."
+  ]
+}
