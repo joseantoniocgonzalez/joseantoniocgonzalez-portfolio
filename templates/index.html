@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
+<section class="hero hero-home">
   <p class="eyebrow">Portfolio personal</p>
   <h2>{{ site_title }}</h2>
   <p class="hero-tagline">{{ tagline }}</p>
@@ -164,6 +164,7 @@
   </script>
 </section>
 
+<div class="home-grid">
 <section class="home-block">
   <h3>Último proyecto</h3>
 
@@ -211,4 +212,5 @@
     <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
   </p>
 </section>
+</div>
 {% endblock %}

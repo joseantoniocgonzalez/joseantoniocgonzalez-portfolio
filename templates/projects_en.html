@@ -1,35 +1,44 @@
 {% extends "base_en.html" %}
 
 {% block content %}
-<section class="hero">
+<section class="hero hero-compact">
   <p class="eyebrow">Portfolio</p>
   <h2>Projects</h2>
   <p class="hero-summary">
-    Technical projects focused on QA, automation, backend and systems administration.
+    Technical projects focused on QA Automation, DevOps, backend and systems administration.
   </p>
 </section>
 
 {% if projects %}
-  {% for project in projects %}
-    <article class="project-card">
-      <h3 class="project-title">
-        <a href="/en/projects/{{ project.slug }}/" class="project-title-link">{{ project.title }}</a>
-      </h3>
-      <p class="project-summary">{{ project.summary }}</p>
+  <section class="projects-grid" aria-label="Project list">
+    {% for project in projects %}
+      <article class="project-card">
+        <div class="project-card-content">
+          <h3 class="project-title">
+            <a href="/en/projects/{{ project.slug }}/" class="project-title-link">
+              {{ project.title }}
+            </a>
+          </h3>
 
-      {% if project.stack %}
-        <p class="project-stack">
-          <strong>Stack:</strong> {{ project.stack | join(", ") }}
-        </p>
-      {% endif %}
+          <p class="project-summary">{{ project.summary }}</p>
 
-      <p class="project-link-wrap">
-        <a href="/en/projects/{{ project.slug }}/" class="button button-secondary">
-          View project
-        </a>
-      </p>
-    </article>
-  {% endfor %}
+          {% if project.stack %}
+            <div class="project-stack" aria-label="Technologies used">
+              {% for technology in project.stack %}
+                <span class="tech-tag">{{ technology }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="project-link-wrap">
+          <a href="/en/projects/{{ project.slug }}/" class="project-card-link">
+            View project <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
 {% else %}
   <section class="home-block">
     <h3>Projects</h3>
