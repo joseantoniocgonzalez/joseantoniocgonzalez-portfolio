@@ -1,0 +1,42 @@
+{
+  "slug": "data-quality-testing-pipeline",
+  "title": "Data Quality Testing Pipeline",
+  "summary": "Pipeline de QA en Python y DuckDB que valida lotes de clientes, pedidos y pagos mediante 19 reglas SQL, pruebas automatizadas e informes JSON y HTML.",
+  "date": "2026-09-08",
+  "stack": [
+    "Python 3.13",
+    "DuckDB",
+    "SQL",
+    "Pytest",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Docker",
+    "GitHub Actions",
+    "GitHub Pages"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/data-quality-testing-pipeline",
+  "live_url": "https://joseantoniocgonzalez.github.io/data-quality-testing-pipeline/",
+  "featured": true,
+  "draft": false,
+  "intro": "Pipeline de pruebas de calidad de datos que carga lotes CSV, ejecuta reglas SQL sobre DuckDB y genera evidencias e informes reproducibles. Incluye una demo pública para comparar un lote limpio con otro que contiene defectos controlados.",
+  "problem": "El proyecto representa un proceso de control de calidad previo al consumo de datos. Comprueba que la información de clientes, pedidos y pagos sea completa, válida, única y consistente, evitando que un lote con errores continúe dentro de un proceso automatizado.",
+  "build": "La solución está desarrollada en Python 3.13 y carga los archivos CSV en una base DuckDB en memoria. Un motor ejecuta 19 reglas SQL y reúne el resultado, el número de incumplimientos y sus evidencias. La aplicación genera informes JSON y dashboards HTML, ofrece una interfaz de línea de comandos, puede ejecutarse con Docker y dispone de 10 pruebas automatizadas con Pytest.",
+  "automation": "El pipeline aprueba el lote limpio y rechaza el lote defectuoso mediante códigos de salida utilizables como quality gate. GitHub Actions ejecuta las pruebas, valida ambos escenarios, comprueba la imagen Docker y conserva los informes como artefactos. La demo permite seleccionar uno de los dos lotes controlados y consultar los informes reales producidos por el motor.",
+  "highlights": [
+    "Motor de calidad con 19 reglas SQL para clientes, pedidos y pagos, incluyendo controles de completitud, unicidad, validez, integridad y consistencia.",
+    "Informes reproducibles en JSON y HTML con resumen, estado de cada regla y evidencias de los registros incorrectos.",
+    "Ejecución mediante CLI y Docker, 10 pruebas automatizadas y quality gates integrados con GitHub Actions."
+  ],
+  "title_en": "Data Quality Testing Pipeline",
+  "summary_en": "QA pipeline built with Python and DuckDB that validates customer, order and payment batches through 19 SQL rules, automated tests and JSON and HTML reports.",
+  "intro_en": "Data quality testing pipeline that loads CSV batches, executes SQL rules on DuckDB and generates reproducible evidence and reports. It includes a public demo for comparing a clean dataset with another containing controlled defects.",
+  "problem_en": "The project represents a data quality control process performed before information is consumed. It verifies that customer, order and payment data is complete, valid, unique and consistent, preventing an incorrect batch from continuing through an automated process.",
+  "build_en": "The solution is built with Python 3.13 and loads CSV files into an in-memory DuckDB database. An engine executes 19 SQL rules and collects their results, violation counts and evidence. The application generates JSON reports and HTML dashboards, provides a command-line interface, runs with Docker and includes 10 automated tests with Pytest.",
+  "automation_en": "The pipeline approves the clean batch and rejects the defective batch through exit codes that can be used as quality gates. GitHub Actions runs the tests, validates both scenarios, checks the Docker image and preserves reports as artifacts. The demo allows users to select either controlled dataset and inspect the real reports produced by the engine.",
+  "highlights_en": [
+    "Quality engine with 19 SQL rules for customers, orders and payments, covering completeness, uniqueness, validity, integrity and consistency.",
+    "Reproducible JSON and HTML reports with summaries, individual rule status and evidence for incorrect records.",
+    "CLI and Docker execution, 10 automated tests and quality gates integrated with GitHub Actions."
+  ]
+}
