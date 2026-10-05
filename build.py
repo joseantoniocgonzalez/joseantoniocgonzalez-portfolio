@@ -218,6 +218,7 @@ def build_certifications(env: Environment, certifications: list[dict]) -> None:
     block_order = [
         "QA y testing",
         "DevOps / cloud / automatización",
+        "Bases de datos",
         "Sistemas / redes / seguridad",
     ]
 

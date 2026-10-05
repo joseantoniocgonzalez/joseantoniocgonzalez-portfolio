@@ -1,0 +1,23 @@
+{
+  "slug": "getting-started-mongodb-atlas",
+  "titulo": "Getting Started with MongoDB Atlas",
+  "entidad": "MongoDB University",
+  "fecha_expedicion": "2023-03-07",
+  "fecha_texto": "mar. 2023",
+  "id_credencial": "MDB80c036kso5",
+  "enlace_credencial": null,
+  "bloque": "Bases de datos",
+  "resumen": "Formación introductoria sobre MongoDB Atlas completada en MongoDB University, centrada en el uso inicial de la plataforma cloud de MongoDB y con Proof of Completion emitido por MongoDB.",
+  "aptitudes": [
+    "MongoDB",
+    "MongoDB Atlas",
+    "Bases de datos NoSQL"
+  ],
+  "etiquetas": [
+    "mongodb",
+    "mongodb atlas",
+    "nosql",
+    "bases de datos",
+    "cloud"
+  ]
+}

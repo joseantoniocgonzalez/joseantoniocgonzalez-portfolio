@@ -1,0 +1,49 @@
+{
+  "slug": "archivo-digital-subastas-arte",
+  "title": "Archivo digital de subastas y obras de arte",
+  "summary": "Aplicación web en Flask y PostgreSQL para registrar, organizar y consultar obras de arte procedentes de subastas, libros y catálogos, con zona privada, lectura de fichas mediante Gemini y colección pública con búsqueda y filtros.",
+  "date": "2026-04-29",
+  "stack": [
+    "Python",
+    "Flask",
+    "PostgreSQL",
+    "HTML",
+    "CSS",
+    "Jinja2",
+    "Gemini API",
+    "Gunicorn",
+    "Nginx",
+    "systemd",
+    "Linux",
+    "Git",
+    "GitHub"
+  ],
+  "repo_url": "https://github.com/BTCESC/Subastas-",
+  "live_url": "https://btcsec.joseantoniocgonzalez.org/coleccion",
+  "featured": true,
+  "draft": false,
+  "intro": "Aplicación web desarrollada para una necesidad real de archivo y consulta de obras de arte. Permite mantener una colección organizada a partir de subastas, libros y catálogos, separando una zona pública de consulta de una zona privada de administración.",
+  "problem": "El proyecto parte de la necesidad de sustituir un registro manual y disperso de obras por una aplicación centralizada que permita guardar imágenes, autores, títulos, medidas, técnicas, procedencia y datos de subasta. También debía facilitar la incorporación de grandes cantidades de información sin perder control sobre los datos antes de publicarlos.",
+  "build": "La aplicación está desarrollada con Flask, Jinja2 y PostgreSQL. Incluye autenticación para la zona privada, altas, edición y borrado de obras, estados de borrador y publicación, gestión de autores, subida de imágenes y fichas individuales. La colección pública permite buscar por autor, título o casa de subastas y filtrar por libro o catálogo. El despliegue se realiza en un VPS Linux mediante Gunicorn, Nginx y systemd.",
+  "automation": "La zona privada integra Gemini para analizar imágenes de fichas de subasta y páginas de libros o catálogos. La IA propone datos como autor, título, técnica, medidas, año, descripción, bibliografía, lote o información de subasta, pero el usuario puede revisar y corregir el resultado antes de guardarlo. Las imágenes utilizadas como documentación interna se almacenan fuera de la carpeta pública y solo son accesibles con sesión iniciada.",
+  "highlights": [
+    "Aplicación Flask y PostgreSQL utilizada como archivo real de obras procedentes de subastas, libros y catálogos.",
+    "Integración de Gemini en la zona privada para extraer información de fichas e imágenes antes de su revisión manual.",
+    "Separación entre colección pública y administración privada, con borradores, notas internas y documentación protegida.",
+    "Búsqueda pública y filtro por libro o catálogo para navegar por la colección.",
+    "Despliegue propio en Linux con Gunicorn, Nginx, systemd y HTTPS."
+  ],
+  "title_en": "Digital Art Auction Archive",
+  "summary_en": "Flask and PostgreSQL web application for recording, organising and browsing artworks from auctions, books and catalogues, with a private administration area, Gemini-assisted data extraction and a searchable public collection.",
+  "intro_en": "Web application developed for a real-world artwork archiving and research need. It provides an organised collection of works from auctions, books and catalogues while separating the public browsing experience from a private administration area.",
+  "problem_en": "The project started from the need to replace a scattered manual record of artworks with a centralised application capable of storing images, artists, titles, dimensions, techniques, provenance and auction data. It also needed to make large amounts of information easier to enter without losing manual control over the data before publication.",
+  "build_en": "The application is built with Flask, Jinja2 and PostgreSQL. It includes authentication for the private area, artwork creation, editing and deletion, draft and published states, artist management, image uploads and individual artwork pages. The public collection supports searches by artist, title or auction house and filtering by book or catalogue. It is deployed on a Linux VPS using Gunicorn, Nginx and systemd.",
+  "automation_en": "The private administration area integrates Gemini to analyse images of auction records and pages from art books or catalogues. The AI proposes fields such as artist, title, technique, dimensions, year, description, bibliography, lot number and auction information, while the user can review and correct the result before saving it. Internal source images are stored outside the public directory and require an authenticated session.",
+  "highlights_en": [
+    "Flask and PostgreSQL application used as a real archive for artworks from auctions, books and catalogues.",
+    "Gemini integration in the private administration area to extract information from source images before manual review.",
+    "Clear separation between the public collection and private administration, including protected drafts, internal notes and source files.",
+    "Public search and filtering by book or catalogue.",
+    "Self-hosted Linux deployment using Gunicorn, Nginx, systemd and HTTPS."
+  ]
+}
