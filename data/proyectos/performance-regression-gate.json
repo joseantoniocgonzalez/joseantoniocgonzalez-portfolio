@@ -1,0 +1,42 @@
+{
+  "slug": "performance-regression-gate",
+  "title": "Performance Regression Gate",
+  "summary": "Proyecto de QA de rendimiento con FastAPI y k6 que detecta regresiones mediante thresholds automáticos e integración con Docker y GitHub Actions.",
+  "date": "2026-10-13",
+  "stack": [
+    "Python 3.13",
+    "FastAPI",
+    "k6",
+    "Docker",
+    "Docker Compose",
+    "GitHub Actions",
+    "GitHub Pages",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/performance-regression-gate",
+  "live_url": "https://joseantoniocgonzalez.github.io/performance-regression-gate/",
+  "featured": true,
+  "draft": false,
+  "intro": "Proyecto de pruebas de rendimiento que compara un escenario normal con otro degradado y utiliza k6 como quality gate. La demo pública permite consultar ambos escenarios y enlaza con las ejecuciones reales realizadas en GitHub Actions.",
+  "problem": "Una aplicación puede seguir respondiendo correctamente desde el punto de vista funcional y, al mismo tiempo, sufrir una regresión importante de rendimiento. El proyecto reproduce ese caso de forma controlada y comprueba automáticamente si la latencia, la tasa de errores HTTP y los checks se mantienen dentro de los límites definidos.",
+  "build": "La aplicación bajo prueba está desarrollada con FastAPI y expone un endpoint /work que puede ejecutarse en modo normal o degradado. En el segundo caso introduce aproximadamente un segundo de latencia artificial. k6 ejecuta las peticiones y aplica tres thresholds: p95 inferior a 500 ms, tasa de errores HTTP inferior al 1 % y más del 99 % de checks correctos. El servicio se ejecuta de forma reproducible mediante Docker y Docker Compose.",
+  "automation": "GitHub Actions construye y levanta la API con Docker Compose, espera a que el endpoint /health esté disponible, instala k6 y ejecuta el escenario seleccionado. En la ejecución normal el p95 fue de 2.03 ms y el quality gate terminó en PASS. En el escenario degradado las respuestas siguieron siendo HTTP 200 y los checks permanecieron al 100 %, pero el p95 alcanzó aproximadamente 1 segundo y el pipeline terminó en FAIL al superar el límite de latencia.",
+  "highlights": [
+    "Quality gate con thresholds sobre p95 de latencia, tasa de errores HTTP y porcentaje de checks correctos.",
+    "Escenario degradado controlado que demuestra que una aplicación puede seguir respondiendo HTTP 200 y, aun así, fallar por una regresión de rendimiento.",
+    "Entorno reproducible con Docker Compose, ejecución automatizada en GitHub Actions y demo pública desplegada con GitHub Pages."
+  ],
+  "title_en": "Performance Regression Gate",
+  "summary_en": "Performance QA project built with FastAPI and k6 that detects regressions through automated thresholds and integration with Docker and GitHub Actions.",
+  "intro_en": "Performance testing project that compares a normal scenario with a degraded one and uses k6 as a quality gate. The public demo presents both scenarios and links to the real executions performed in GitHub Actions.",
+  "problem_en": "An application can remain functionally correct while suffering a significant performance regression. The project reproduces that situation in a controlled way and automatically verifies whether latency, HTTP failure rate and checks remain within the defined limits.",
+  "build_en": "The system under test is built with FastAPI and exposes a /work endpoint that can run in normal or degraded mode. The degraded mode introduces approximately one second of artificial latency. k6 sends the requests and applies three thresholds: p95 below 500 ms, HTTP failure rate below 1%, and more than 99% successful checks. The service runs reproducibly with Docker and Docker Compose.",
+  "automation_en": "GitHub Actions builds and starts the API with Docker Compose, waits until the /health endpoint is available, installs k6 and runs the selected scenario. In the normal execution, p95 was 2.03 ms and the quality gate finished with PASS. In the degraded scenario, responses continued to return HTTP 200 and checks remained at 100%, but p95 reached approximately one second and the pipeline finished with FAIL after crossing the latency threshold.",
+  "highlights_en": [
+    "Quality gate with thresholds for p95 latency, HTTP failure rate and percentage of successful checks.",
+    "Controlled degraded scenario showing that an application can continue returning HTTP 200 while still failing because of a performance regression.",
+    "Reproducible Docker Compose environment, automated GitHub Actions execution and a public demo deployed with GitHub Pages."
+  ]
+}
