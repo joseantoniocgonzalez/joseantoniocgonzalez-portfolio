@@ -1,0 +1,36 @@
+{
+  "slug": "mongodb-it-tickets-lab",
+  "title": "MongoDB IT Tickets Lab",
+  "summary": "Laboratorio práctico con MongoDB para gestionar incidencias IT mediante operaciones CRUD, consultas, agregaciones e índices en un entorno local reproducible con Podman.",
+  "date": "2026-10-05",
+  "stack": [
+    "MongoDB 8",
+    "Mongosh",
+    "Podman",
+    "JavaScript"
+  ],
+  "repo_url": "https://github.com/joseantoniocgonzalez/mongodb-it-tickets-lab",
+  "live_url": "",
+  "featured": false,
+  "draft": false,
+  "intro": "Laboratorio técnico creado para practicar MongoDB sobre un escenario sencillo de gestión de incidencias IT, trabajando directamente con documentos, consultas y operaciones habituales desde Mongosh.",
+  "problem": "El objetivo es reforzar el uso práctico de MongoDB en un caso pequeño y reproducible, evitando una demo aislada de comandos. La colección de tickets representa incidencias de sistemas, redes y servidores con campos como prioridad, estado, categoría, técnico asignado y etiquetas.",
+  "build": "El laboratorio se ejecuta con MongoDB 8 en un contenedor Podman y se organiza mediante scripts JavaScript reproducibles. Incluye carga inicial de datos, consultas por prioridad y etiquetas, actualización de estados, inserción y eliminación de documentos, agregaciones por estado y categoría, y creación de un índice compuesto.",
+  "automation": "Los scripts permiten recrear la colección y repetir las operaciones principales sin depender del estado previo de la base local. El repositorio separa la carga de datos, consultas, actualizaciones, agregaciones e índices para facilitar su ejecución y revisión.",
+  "highlights": [
+    "Operaciones CRUD sobre una colección de incidencias IT.",
+    "Consultas sobre campos y arrays, junto con Aggregation Pipeline.",
+    "Índice compuesto sobre estado y prioridad en un entorno reproducible con Podman."
+  ],
+  "title_en": "MongoDB IT Tickets Lab",
+  "summary_en": "Hands-on MongoDB lab for managing IT incidents through CRUD operations, queries, aggregations and indexes in a reproducible local Podman environment.",
+  "intro_en": "Technical lab created to practise MongoDB through a simple IT incident management scenario, working directly with documents, queries and common operations from Mongosh.",
+  "problem_en": "The goal is to strengthen practical MongoDB skills through a small reproducible case instead of an isolated command demo. The tickets collection represents systems, network and server incidents with fields such as priority, status, category, assigned technician and tags.",
+  "build_en": "The lab runs MongoDB 8 in a Podman container and is organised through reproducible JavaScript scripts. It includes initial data loading, queries by priority and tags, status updates, document insertion and deletion, aggregations by status and category, and a compound index.",
+  "automation_en": "The scripts make it possible to recreate the collection and repeat the main operations without depending on the previous state of the local database. The repository separates data loading, queries, updates, aggregations and indexes for easier execution and review.",
+  "highlights_en": [
+    "CRUD operations on an IT incident collection.",
+    "Field and array queries together with Aggregation Pipeline.",
+    "Compound index on status and priority in a reproducible Podman environment."
+  ]
+}
